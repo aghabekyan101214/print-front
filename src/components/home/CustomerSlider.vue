@@ -1,0 +1,82 @@
+<template>
+    <section class="slider-banner full-container">
+        <div class="demo container">
+            <div class="item">
+                <h3 class="slider-title">Customer stories</h3>
+                <carousel id="content-slider" class="content-slider" :navigationNextLabel="''" :navigationPrevLabel="''" :navigationEnabled="true" :paginationEnabled="false" :perPageCustom="[[320, 1], [768, 2]]">
+                    <slide>
+                        <div class="slider-inner-box">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting.
+                        </div>
+                        <img src="../../assets/images/slider-item.png" alt="First slide">
+                    </slide>
+                    <slide>
+                        <div class="slider-inner-box">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting.
+                        </div>
+                        <img src="../../assets/images/slider-item.png" alt="First slide">
+                    </slide>
+                    <slide>
+                        <div class="slider-inner-box">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting.
+                        </div>
+                        <img src="../../assets/images/slider-item.png" alt="First slide">
+                    </slide>
+                    <slide>
+                        <div class="slider-inner-box">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting.
+                        </div>
+                        <img src="../../assets/images/slider-item.png" alt="First slide">
+                    </slide>
+                </carousel>
+            </div>
+        </div>
+    </section>
+</template>
+
+<script>
+    import { Carousel, Slide } from 'vue-carousel';
+
+    export default {
+        name: "CustomerSlider",
+        components: {
+            Carousel,
+            Slide
+        }
+    }
+</script>
+
+<style scoped>
+    .slider-banner img {
+        border: 2px solid #009fe4;
+        border-radius: 50px;
+        position: relative;
+        bottom: 60px;
+        left: 30px;
+        display: block;
+        z-index: 999999999999999999999!important;
+    }
+    .VueCarousel-slide{
+        position: relative;
+        padding-right: 10px;
+    }
+
+    .slider-banner {
+        background-image: url('../../assets/images/banner-img3.png');
+        background-size: cover;
+        padding-bottom: 30px;
+    }
+
+    .slider-inner-box{
+        background: #fafafa;
+        padding: 10px 20px 60px 20px;
+        height:200px;
+    }
+    .slider-title {
+        padding: 30px 0;
+        color: #ffffff;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+</style>
