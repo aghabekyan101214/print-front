@@ -38,7 +38,7 @@ const routes = [
     path: '/business-service/*',
     name: 'Business',
     // route level code-splitting
-    // this generates a separate chunk (business-service/*.[hash].js) for this route
+    // this generates a separate chunk (service-detail/*.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "service-detail" */ '../views/BusinessServiceDetail')
   },
@@ -46,9 +46,9 @@ const routes = [
     path: '/special-deals',
     name: 'Business',
     // route level code-splitting
-    // this generates a separate chunk (business-service/*.[hash].js) for this route
+    // this generates a separate chunk (special-deals/*.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "business-service" */ '../views/BusinessServiceDetail')
+    component: () => import(/* webpackChunkName: "special-deals" */ '../views/BusinessServiceDetail')
   },
 ]
 

@@ -10,10 +10,9 @@
                         <img src="../assets/images/item5.png" width="200" alt="">
                     </div>
                     <div class="col-lg-8">
-                        <h2>our story</h2>
+                        <h2 v-html="about_title"></h2>
                         <div class="story-decoration">
-                            <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                            </p>
+                            <p v-html="about_text"></p>
                         </div>
                     </div>
                 </div>
@@ -157,9 +156,24 @@
     import CustomerSlider from "../components/home/CustomerSlider";
     import PopularProducts from "../components/home/PopularProducts";
     import FirstSlider from "../components/home/FirstSlider";
+    import axios from "axios";
 
     export default {
         name: 'home',
+        data: () => {
+            return {
+                about_title: "",
+                about_text: "",
+            }
+        },
+        created() {
+            axios.get(process.env.VUE_APP_DATA_URL + "get-main").then(r => {
+               if(r.data) {
+                   this.about_title = r.data.about_title;
+                   this.about_text = r.data.about_text;
+               }
+            })
+        },
         components: {
             Carousel,
             Slide,
