@@ -3,6 +3,7 @@
         <div class="demo container">
             <div class="item">
                 <h3 class="slider-title">Customer stories</h3>
+                <p class="text-white text-center">We Appreciate Your Feedback. <a v-b-modal.review href="javascript:void(0)" class="text-white font-weight-bold font-italic border-bottom text-decoration-none">LEAVE A REVIEW</a> </p>
                 <carousel id="content-slider" class="content-slider" :navigationNextLabel="''" :navigationPrevLabel="''" :navigationEnabled="true" :paginationEnabled="false" :perPageCustom="[[320, 1], [768, 2]]">
                     <slide>
                         <div class="slider-inner-box">
@@ -31,18 +32,20 @@
                 </carousel>
             </div>
         </div>
+        <review-modal/>
     </section>
 </template>
 
 <script>
     import { Carousel, Slide } from 'vue-carousel';
-
+    import ReviewModal from "./ReviewModal";
     export default {
         name: "CustomerSlider",
         components: {
             Carousel,
-            Slide
-        }
+            Slide,
+            ReviewModal
+        },
     }
 </script>
 
@@ -78,5 +81,6 @@
         text-align: center;
         text-transform: uppercase;
     }
+    /*modal*/
 
 </style>

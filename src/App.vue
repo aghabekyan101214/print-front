@@ -262,6 +262,18 @@
         font-style: normal;
     }
     @font-face {
+        font-family: 'Poppins-Bold';
+        src: url('./assets/fonts/Poppins-Bold/Poppins-Bold.ttf');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Poppins-Medium';
+        src: url('./assets/fonts/Poppins-Bold/Poppins-Medium.ttf');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
         font-family: 'PTSans-Bold';
         src: url('./assets/fonts/PTSans-Bold/PTSans-Bold.eot');
         src: url('./assets/fonts/PTSans-Bold/PTSans-Bold.eot') format('embedded-opentype'),
