@@ -12,7 +12,7 @@
                     <div class="col-lg-8">
                         <h2 v-html="about_title"></h2>
                         <div class="story-decoration">
-                            <p v-html="about_text"></p>
+                            <div v-html="about_text" class="text-cont"></div>
                         </div>
                     </div>
                 </div>
@@ -224,7 +224,7 @@
 
 
 
-    .story-decoration p{
+    .story-decoration .text-cont{
         color: #fff;
         padding-left: 51px;
         margin-top: -25px;
