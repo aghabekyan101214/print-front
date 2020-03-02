@@ -18,93 +18,18 @@
                 </div>
             </div>
         </section>
-        <PopularProducts/>
-        <h2 class="title text-center">Everything you need: <span class="blue">Ask For!</span></h2>
-        <section class="container service-section">
-            <div class="box-bg box1">
-                <div class="box-bg-inner">
-                    <h3>Custom Vehicle Vinyl Lettering & </h3>
-                    <p>
-                        We ensure that your materials are printed and mailed according to the most current postal regulations.
-                    </p>
-                    <a href="#" class="order-btn">Order now</a>
-                </div>
-            </div>
-            <div class="box-bg box2">
-                <div class="box-bg-inner">
-                    <h3>Custom Vehicle Vinyl Lettering & </h3>
-                    <p>
-                        We ensure that your materials are printed and mailed according to the most current postal regulations.
-                    </p>
-                    <a href="#" class="order-btn">Order now</a>
-                </div>
-            </div>
-            <div class="box-bg box3">
-                <div class="box-bg-inner">
-                    <h3>Custom Vehicle Vinyl Lettering & </h3>
-                    <p>
-                        We ensure that your materials are printed and mailed according to the most current postal regulations.
-                    </p>
-                    <a href="#" class="order-btn">Order now</a>
-                </div>
-            </div>
-            <div class="box-bg box4">
-                <div class="box-bg-inner">
-                    <h3>Custom Vehicle Vinyl Lettering & </h3>
-                    <p>
-                        We ensure that your materials are printed and mailed according to the most current postal regulations.
-                    </p>
-                    <a href="#" class="order-btn">Order now</a>
-                </div>
-            </div>
-        </section>
-        <section class="whatwedo container text-center">
-            <h2 class="title text-center">
-                What <span class="blue">we do</span>
-            </h2>
-            <p class="decoration text-center">
-                We ensure that your materials are printed and mailed ccording to the most current postal regulations. We ensure that your materials are printed and mailed according to the most current postal regulations.
 
-            </p>
-            <div class="whatwedo-inner">
-                <div>
-                    <img src="../assets/images/item1.png" alt="First slide">
-                    <h2>We design</h2>
-                    <p>
-                        We ensure that your materials are designed.
-                    </p>
-                </div>
-                <div>
-                    <img src="../assets/images/item1.png" alt="First slide">
-                    <h2>We design</h2>
-                    <p>
-                        We ensure that your materials are designed.
-                    </p>
-                </div>
-                <div>
-                    <img src="../assets/images/item1.png" alt="First slide">
-                    <h2>We design</h2>
-                    <p>
-                        We ensure that your materials are designed.
-                    </p>
-                </div>
-                <div>
-                    <img src="../assets/images/item1.png" alt="First slide">
-                    <h2>We design</h2>
-                    <p>
-                        We ensure that your materials are designed.
-                    </p>
-                </div>
-            </div>
-        </section>
+        <PopularProducts/>
+
+        <ServiceBoxes/>
+
+        <WhatWeDo/>
+
         <section class="slider-banner1 full-container ">
             <div class="demo">
                 <div class="item">
-                    <h2 class="title text-center">trusted by <span class="blue">the brands</span></h2>
-                    <p class="decoration text-center">
-                        We ensure that your materials are printed and mailed ccording to the most current postal regulations. We ensure that your materials are printed and mailed according to the most current postal regulations.
+                    <h2 class="title text-center mb-5">trusted by <span class="blue">these brands</span></h2>
 
-                    </p>
                     <carousel :navigationNextLabel="''" :navigationPrevLabel="''" :perPageCustom="[[320, 1], [768, 3], [1024, 4], [1600, 6]]" :navigationEnabled="true" :paginationEnabled="false" :scrollPerPage="true">
                         <slide>
                             <img class="img-fluid" src="../assets/images/brand-item1.png" alt="First slide">
@@ -156,6 +81,8 @@
     import CustomerSlider from "../components/home/CustomerSlider";
     import PopularProducts from "../components/home/PopularProducts";
     import FirstSlider from "../components/home/FirstSlider";
+    import ServiceBoxes from "../components/home/ServiceBoxes";
+    import WhatWeDo from "../components/home/WhatWeDo";
     import axios from "axios";
 
     export default {
@@ -179,7 +106,9 @@
             Slide,
             CustomerSlider,
             PopularProducts,
-            FirstSlider
+            FirstSlider,
+            ServiceBoxes,
+            WhatWeDo
         }
 
     }
@@ -225,79 +154,9 @@
     .story-decoration{
         position:relative;
     }
-    .service-section {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin-top: 40px;
-    }
-    .box1{
-        background: url('../assets/images/box-bg1.png') no-repeat 0px;
-    }
-    .box2{
-        background: url('../assets/images/box-bg2.png') no-repeat 0px;
-    }
-    .box3{
-        background: url('../assets/images/box-bg3.png') no-repeat 0px;
-    }
-    .box4{
-        background: url('../assets/images/box-bg4.png') no-repeat 0px;
-    }
 
-    .box1 .box-bg-inner {
-        background:rgb(237, 96, 174, 0.8);
-
-    }
-    .box2 .box-bg-inner {
-        background:rgb(57,98,131, 0.8);
-
-    }
-    .box3 .box-bg-inner {
-        background:rgb(66,158,209, 0.8);
-
-    }
-    .box4 .box-bg-inner {
-        background:rgb(38,34,32, 0.8);
-
-    }
-    .box1 .box-bg-inner:hover {
-        background:rgb(237, 96, 174, 0.5);
-        height: 100%; -webkit-transition: width 4s; /* Safari prior 6.1 */
-    }
-    .box2 .box-bg-inner:hover {
-        background:rgb(57,98,131, 0.5);
-        height: 100%; -webkit-transition: width 4s; /* Safari prior 6.1 */
-    }
-
-    .box3 .box-bg-inner:hover {
-        background:rgb(66,158,209, 0.5);
-        height: 100%; -webkit-transition: width 4s; /* Safari prior 6.1 */
-    }
-
-    .box4 .box-bg-inner:hover {
-        background:rgb(38,34,32,0.5);
-        height: 100%; -webkit-transition: width 4s; /* Safari prior 6.1 */
-    }
-    .box-bg {
-        height: 350px;
-        width: 525px;
-        background-size: 100%;
-        margin: 15px;
-    }
-    .box-bg-inner {
-        height: 100%;
-        transition: 0.3s;
-        padding-top: 107px;
-        text-align: center;
-        color: #fff;
-        border-radius: 10px;
-    }
     .VueCarousel-navigation-button{
         position: relative!important;
-    }
-    .order-btn:hover{
-        color:#fff;
-        text-decoration:none;
     }
 
     .story-decoration:after {
@@ -323,30 +182,15 @@
     .banner-item{
         width:100%;
     }
-    .whatwedo-inner{
-        display: flex;
-        text-align: center;
-        justify-content: space-between;
-    }
+
     .blue{
         color:#009fe4;
     }
-    .whatwedo {
-        margin-top:50px;
-    }
+
     h2.title{
         text-transform:uppercase;
     }
-    .order-btn{
-        border: 2px solid #fff;
-        padding: 10px 31px;
-        border-radius: 8px;
-        color: #fff;
-        margin-top: 20px;
-        display: block;
-        width: 167px;
-        margin: 0 auto;
-    }
+
 
     .slider-banner1 {
         margin-top: 47px;
@@ -405,17 +249,7 @@
         transform: translateX(-11%);
     }
 
-    .whatwedo-inner h2{
-        font-size:20px;
-        margin-top:10px;
-        text-transform:uppercase;
-    }
-    .whatwedo-inner p{
-        width: 76%;
-        text-align: center;
-        display: block;
-        margin: 0 auto;
-    }
+
     .VueCarousel-navigation {
         margin: 10px 0 0;
         padding: 0;
@@ -424,9 +258,6 @@
     }
 
     @media only screen and (max-width: 600px) {
-        .whatwedo-inner {
-            display: block;
-        }
         .slider-banner1 .VueCarousel-navigation{
             text-align: center;
         }
