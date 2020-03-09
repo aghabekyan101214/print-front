@@ -116,7 +116,6 @@
             ServiceBoxes,
             WhatWeDo
         }
-
     }
 </script>
 <style>

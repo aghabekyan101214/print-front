@@ -9,25 +9,37 @@
                         <div class="slider-inner-box">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting.
                         </div>
-                        <img src="../../assets/images/slider-item.png" alt="First slide">
+                        <div class="img-box d-flex">
+                            <img src="../../assets/images/slider-item.png" alt="First slide">
+                            <p class="text-white ml-5 mt-3">Name Surname</p>
+                        </div>
                     </slide>
                     <slide>
                         <div class="slider-inner-box">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting.
                         </div>
-                        <img src="../../assets/images/slider-item.png" alt="First slide">
+                        <div class="img-box d-flex">
+                            <img src="../../assets/images/slider-item.png" alt="First slide">
+                            <p class="text-white ml-5 mt-3">Name Surname</p>
+                        </div>
                     </slide>
                     <slide>
                         <div class="slider-inner-box">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting.
                         </div>
-                        <img src="../../assets/images/slider-item.png" alt="First slide">
+                        <div class="img-box d-flex">
+                            <img src="../../assets/images/slider-item.png" alt="First slide">
+                            <p class="text-white ml-5 mt-3">Name Surname</p>
+                        </div>
                     </slide>
                     <slide>
                         <div class="slider-inner-box">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting.
                         </div>
-                        <img src="../../assets/images/slider-item.png" alt="First slide">
+                        <div class="img-box d-flex">
+                            <img src="../../assets/images/slider-item.png" alt="First slide">
+                            <p class="text-white ml-5 mt-3">Name Surname</p>
+                        </div>
                     </slide>
                 </carousel>
             </div>
@@ -54,7 +66,10 @@
         border: 2px solid #009fe4;
         border-radius: 50px;
         position: relative;
+        height: 105px;
+        width: 105px;
         bottom: 60px;
+        padding: 2px;
         left: 30px;
         display: block;
         z-index: 999999999999999999999!important;
@@ -74,6 +89,7 @@
         background: #fafafa;
         padding: 10px 20px 60px 20px;
         height:200px;
+        overflow-y: scroll;
     }
     .slider-title {
         padding: 30px 0;
