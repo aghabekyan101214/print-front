@@ -30,42 +30,48 @@
                 <div class="item">
                     <h2 class="title text-center mb-5">trusted by <span class="blue">these brands</span></h2>
 
-                    <carousel :navigationNextLabel="''" :navigationPrevLabel="''" :perPageCustom="[[320, 1], [768, 3], [1024, 4], [1600, 6]]" :navigationEnabled="true" :paginationEnabled="false" :scrollPerPage="true">
+                    <carousel :navigationNextLabel="''" :navigationPrevLabel="''" :perPageCustom="[[320, 1], [768, 3], [1024, 4], [1600, 6]]" :navigationEnabled="true" :paginationEnabled="false" :scrollPerPage="false">
                         <slide>
-                            <img class="img-fluid" src="../assets/images/brand-item1.png" alt="First slide">
+                            <img class="img-fluid" src="../assets/images/logos/autostar-logo.png" alt="Autostar Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/brand-item2.png" alt="First slide">
+                            <img class="img-fluid" src="../assets/images/logos/byblos-logo.png" alt="Byblos Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/brand-item1.png" alt="First slide">
+                            <img class="img-fluid" src="../assets/images/logos/compass-logo.png" alt="Compass Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/brand-item2.png" alt="First slide">
+                            <img class="img-fluid" src="../assets/images/logos/ellapay-logo.png" alt="EllaPay Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/brand-item1.png" alt="First slide">
+                            <img class="img-fluid" src="../assets/images/logos/henrikalaverdyan-logo.png" alt="HenrikAlaverdyan Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/brand-item2.png" alt="First slide">
+                            <img class="img-fluid" src="../assets/images/logos/hhem-logo.png" alt="HHEM Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/brand-item1.png" alt="First slide">
+                            <img class="img-fluid" src="../assets/images/logos/jk-logo.png" alt="JK Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/brand-item2.png" alt="First slide">
+                            <img class="img-fluid" src="../assets/images/logos/kap-logo.png" alt="Kap Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/brand-item1.png" alt="First slide">
+                            <img class="img-fluid" src="../assets/images/logos/kasier-logo.png" alt="Kaiser Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/brand-item2.png" alt="First slide">
+                            <img class="img-fluid" src="../assets/images/logos/kb-logo.png" alt="Kb Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/brand-item1.png" alt="First slide">
+                            <img class="img-fluid" src="../assets/images/logos/rpm-logo.png" alt="RPM Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/brand-item2.png" alt="First slide">
+                            <img class="img-fluid" src="../assets/images/logos/sfj-logo.png" alt="SFJ Logo">
+                        </slide>
+                        <slide>
+                            <img class="img-fluid" src="../assets/images/logos/yrg-logo.png" alt="YRG Logo">
+                        </slide>
+                        <slide>
+                            <img class="img-fluid" src="../assets/images/logos/zsangak-logo.png" alt="Zsangak Logo">
                         </slide>
                     </carousel>
                 </div>
