@@ -545,9 +545,6 @@
             padding: 50px 0 35px;
             font-size: 35px;
         }
-        .boxes  img{
-            width:94%;
-        }
         .banner {
             padding-bottom: 20px;
         }
@@ -635,9 +632,6 @@
         }
         .whatwedo-inner {
             display: block;
-        }
-        .boxes img {
-            width: 24%;
         }
         h2.title  , .slider-title{
             font-size: 20px;

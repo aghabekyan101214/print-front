@@ -39,29 +39,31 @@
             </div>
         </section>
         <section class="boxes container">
-            <div>
-                <a href="#">
-                    <img src="../assets/images/box1.png" class="h75" alt="Envelope">
-                    <img src="../assets/images/box1-hover.png" class="h75 d-none" alt="Envelope">
-                </a>
-            </div>
-            <div>
-                <a href="#">
-                    <img src="../assets/images/box2.png" class="h50" alt="Phone">
-                    <img src="../assets/images/box2-hover.png" class="h50 d-none" alt="Phone">
-                </a>
-            </div>
-            <div>
-                <a href="#">
-                    <img src="../assets/images/box3.png" class="h50" alt="Facebook">
-                    <img src="../assets/images/box3-hover.png" class="h50 d-none" alt="Facebook">
-                </a>
-            </div>
-            <div>
-                <a href="#">
-                    <img src="../assets/images/box4.png" class="h75" alt="Instagram">
-                    <img src="../assets/images/box4-hover.png" class="h75 d-none" alt="Instagram">
-                </a>
+            <div class="row">
+                <div class="col-xl-3 col-md-3 col-sm-6 col-12">
+                    <a href="#">
+                        <img src="../assets/images/box1.png" class="h75" alt="Envelope">
+                        <img src="../assets/images/box1-hover.png" class="h75 d-none" alt="Envelope">
+                    </a>
+                </div>
+                <div class="col-xl-3 col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="../assets/images/box2.png" class="h50" alt="Phone">
+                        <img src="../assets/images/box2-hover.png" class="h50 d-none" alt="Phone">
+                    </a>
+                </div>
+                <div class="col-xl-3 col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="../assets/images/box3.png" class="h50" alt="Facebook">
+                        <img src="../assets/images/box3-hover.png" class="h50 d-none" alt="Facebook">
+                    </a>
+                </div>
+                <div class="col-xl-3 col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="../assets/images/box4.png" class="h75" alt="Instagram">
+                        <img src="../assets/images/box4-hover.png" class="h75 d-none" alt="Instagram">
+                    </a>
+                </div>
             </div>
         </section>
     </div>
@@ -92,8 +94,9 @@
     }
     .contact-us-inner{
         margin:50px 0;
+        flex-wrap: wrap;
     }
-    .boxes , .contact-us-inner{
+    .contact-us-inner{
         display:flex;
         justify-content: space-between;
     }
