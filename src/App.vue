@@ -567,9 +567,6 @@
         }
     }
     @media only screen  and (max-width:991px) {
-        .our-story {
-            top: -87px;
-        }
         .box-bg {
 
             margin: 15px auto;
@@ -582,6 +579,16 @@
             left: 34px;
             width: 92%;
             min-height: 377px;
+        }
+        img.about-logo{
+            height: 100px;
+        }
+        section.our-story{
+            padding-top: 20px;
+        }
+        .ab-logo-cont{
+            text-align: center;
+            padding-bottom: 25px;
         }
     }
     @media  (min-width:768px) and (max-width:991px) {
@@ -633,7 +640,7 @@
             width: 24%;
         }
         h2.title  , .slider-title{
-            font-size: 30px;
+            font-size: 20px;
         }
         .form-details {
             display: block !important;

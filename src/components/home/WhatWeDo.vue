@@ -7,28 +7,28 @@
             We love what we do. We do what we love. Nothing prints until you’re 100% satisfied!
         </p>
         <div class="whatwedo-inner">
-            <div>
+            <div class="mb-5">
                 <img src="../../assets/images/free-file.png" alt="File Icon">
                 <h2>Free File Review</h2>
                 <p>
                     We ensure your designs and materials are in top shape before they hit the press.
                 </p>
             </div>
-            <div>
+            <div class="mb-5">
                 <img src="../../assets/images/quality-res.png" alt="Badge Icon">
                 <h2>Quality Results</h2>
                 <p>
                     We are committed to providing both quality of products and customer service.
                 </p>
             </div>
-            <div>
+            <div class="mb-5">
                 <img src="../../assets/images/mailing.png" alt="Envelope Icon">
                 <h2>Mailing And Posting</h2>
                 <p>
                     Allow us to lead your marketing campaign print-related projects to success.
                 </p>
             </div>
-            <div>
+            <div class="mb-5">
                 <img src="../../assets/images/custom.png" alt="T-shirt Icon">
                 <h2>Custom Apparel Branding</h2>
                 <p>

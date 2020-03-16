@@ -4,10 +4,10 @@
         <p class="decoration text-center">Focus on a products you love and we will handle the rest.</p>
         <div class="row">
 
-            <div v-for="i in 4" class="col-md-3 col-sm-2 col-xs-2 prod-cont">
+            <div class="col-md-6 col-xl-3 col-12 prod-cont">
                 <div class="product-box">
-                    <p class="text-center mt-2 mb-1 pre-title">16pt Premium</p>
-                    <h5 class="text-center  product-title">Most Popular</h5>
+                    <p class="text-center mt-2 mb-1 pre-title">16pt Premium Matte Business Cards</p>
+<!--                    <h5 class="text-center  product-title">Most Popular</h5>-->
                     <p class="m-0 text-center">
                         <i class="fa fa-caret-down"/>
                     </p>
@@ -20,13 +20,13 @@
                             <tr>
                                 <td>
                                     <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
-                                    <p class="pl-2 m0 d-inline-block">100 Corporate Cards</p>
+                                    <p class="pl-2 m0 d-inline-block">Printing</p>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
-                                    <p class="pl-2 m0 d-inline-block">Printing </p>
+                                    <p class="pl-2 m0 d-inline-block">Coating </p>
                                 </td>
                             </tr>
                             <tr>
@@ -38,38 +38,171 @@
                             <tr>
                                 <td>
                                     <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
-                                    <p class="pl-2 m0 d-inline-block">Packaging </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
                                     <p class="pl-2 m0 d-inline-block">Free Economy Shipping </p>
                                 </td>
                             </tr>
                         </table>
                     </div>
                     <div class="detail-box pl-2 pr-2 pt-3 pb-2">
-                        <div class="d-flex">
-                            <p>&mdash;</p>
-                            <p class="ml-2">Eye Catching Premium Quality Cards</p>
-                        </div>
-                        <div class="d-flex">
-                            <p>&mdash;</p>
-                            <p class="ml-2">Eye Catching Premium Quality Cards</p>
-                        </div>
-                        <div class="d-flex">
-                            <p>&mdash;</p>
-                            <p class="ml-2">Eye Catching Premium Quality Cards</p>
-                        </div>
-                        <div class="d-flex">
-                            <p>&mdash;</p>
-                            <p class="ml-2">Eye Catching Premium Quality Cards</p>
-                        </div>
-                        <div class="d-flex">
-                            <p>&mdash;</p>
-                            <p class="ml-2">Eye Catching Premium Quality Cards</p>
-                        </div>
+                        <ul class="list">
+                            <li>Eye Catching Premium Quality Cards</li>
+                            <li>Full color double sided printing</li>
+                            <li>AQ coated, Semi Matte finish</li>
+                            <li>100% satisfaction guarantee</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3 col-12 prod-cont">
+                <div class="product-box">
+                    <p class="text-center mt-2 mb-1 pre-title">14pt Gloss Cover Greeting Cards</p>
+                    <!--                    <h5 class="text-center  product-title">Most Popular</h5>-->
+                    <p class="m-0 text-center">
+                        <i class="fa fa-caret-down"/>
+                    </p>
+                    <div class="price-box">
+                        <h5 class="font-weight-bold ls-1">Size 5.5" x 8"</h5>
+                        <h3 class="price-qnt">$88.20/ <span class="qty">Qty 250</span> </h3>
+                    </div>
+                    <div class="services-box">
+                        <table class="table table-striped m0">
+                            <tr>
+                                <td>
+                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
+                                    <p class="pl-2 m0 d-inline-block">Printing</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
+                                    <p class="pl-2 m0 d-inline-block">Coating </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
+                                    <p class="pl-2 m0 d-inline-block">Cutting </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
+                                    <p class="pl-2 m0 d-inline-block">Scoring </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="detail-box pl-2 pr-2 pt-3 pb-2">
+                        <ul class="list">
+                            <li>Attractive and attention grabbing</li>
+                            <li>Full color double sided printing</li>
+                            <li>UV coated, gloss finish</li>
+                            <li>Pre scored to fold to 4.25"x5.5"</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3 col-12 prod-cont">
+                <div class="product-box">
+                    <p class="text-center mt-2 mb-1 pre-title">100# Gloss CVR <br> Door Hangers</p>
+                    <!--                    <h5 class="text-center  product-title">Most Popular</h5>-->
+                    <p class="m-0 text-center">
+                        <i class="fa fa-caret-down"/>
+                    </p>
+                    <div class="price-box">
+                        <h5 class="font-weight-bold ls-1">Size 4.25" x 11"</h5>
+                        <h3 class="price-qnt">$94.77/ <span class="qty">Qty 250</span> </h3>
+                    </div>
+                    <div class="services-box">
+                        <table class="table table-striped m0">
+                            <tr>
+                                <td>
+                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
+                                    <p class="pl-2 m0 d-inline-block">Printing</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
+                                    <p class="pl-2 m0 d-inline-block">Coating </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
+                                    <p class="pl-2 m0 d-inline-block">Cutting </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
+                                    <p class="pl-2 m0 d-inline-block">Die-Cutting </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="detail-box pl-2 pr-2 pt-3 pb-2">
+                        <ul class="list">
+                            <li>Grab your neighborhood attention</li>
+                            <li>Full color one sided printing</li>
+                            <li>UV coated, gloss finish</li>
+                            <li>Die-cut hole option</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3 col-12 prod-cont">
+                <div class="product-box">
+                    <p class="text-center mt-2 mb-1 pre-title">70lb Uncoated <br> Notepads</p>
+                    <!--                    <h5 class="text-center  product-title">Most Popular</h5>-->
+                    <p class="m-0 text-center">
+                        <i class="fa fa-caret-down"/>
+                    </p>
+                    <div class="price-box">
+                        <h5 class="font-weight-bold ls-1">Size 4" x 6"</h5>
+                        <h3 class="price-qnt">$146.42/ <span class="qty">Qty 100</span> </h3>
+                    </div>
+                    <div class="services-box">
+                        <table class="table table-striped m0">
+                            <tr>
+                                <td>
+                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
+                                    <p class="pl-2 m0 d-inline-block">Printing</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
+                                    <p class="pl-2 m0 d-inline-block">Coating </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
+                                    <p class="pl-2 m0 d-inline-block">Cutting </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
+                                    <p class="pl-2 m0 d-inline-block">Glueing </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="detail-box pl-2 pr-2 pt-3 pb-2">
+                        <ul class="list">
+                            <li>Enhance customer value</li>
+                            <li>Your name or logo printed on every page</li>
+                            <li>Full color one sided printing</li>
+                            <li>50 sheets per pad</li>
+                        </ul>
 
                     </div>
                 </div>
@@ -171,6 +304,18 @@
         line-height: 22px;
         font-family: Poppins-Medium, sans-serif;
         margin-bottom: 10px;
+    }
+    .list{
+        padding-left: 20px;
+    }
+    .list li{
+        color: white;
+        margin-bottom: 5px;
+    }
+    @media all and (max-width: 991px) {
+        .popular-products{
+            padding: 40px 0;
+        }
     }
 
 </style>

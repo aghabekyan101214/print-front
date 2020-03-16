@@ -130,4 +130,10 @@
         width: 167px;
         margin: 0 auto;
     }
+    @media all and (max-width: 991px) {
+        .service-section{
+            display: flex;
+            justify-content: center;
+        }
+    }
 </style>

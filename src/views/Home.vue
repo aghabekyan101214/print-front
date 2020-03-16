@@ -6,8 +6,8 @@
         <section class="our-story  full-container">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3">
-                        <img class="img-fluid" src="../assets/images/about-logo.png" width="200" alt="">
+                    <div class="col-lg-3 ab-logo-cont">
+                        <img class="img-fluid about-logo" src="../assets/images/about-logo.png" alt="About">
                     </div>
                     <div class="col-lg-8">
                         <h2 v-html="about_title"></h2>
