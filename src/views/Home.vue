@@ -100,6 +100,7 @@
             }
         },
         created() {
+            console.log(process.env.VUE_APP_DATA_URL)
             axios.get(process.env.VUE_APP_DATA_URL + "get-main").then(r => {
                if(r.data) {
                    this.about_title = r.data.about_title;
