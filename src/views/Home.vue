@@ -30,7 +30,7 @@
                 <div class="item">
                     <h2 class="title text-center mb-5">trusted by <span class="blue">these brands</span></h2>
 
-                    <carousel :navigationNextLabel="''" :navigationPrevLabel="''" :perPageCustom="[[320, 2], [768, 3], [1024, 4], [1600, 6]]" :navigationEnabled="true" :paginationEnabled="false" :scrollPerPage="false">
+                    <carousel :navigationNextLabel="''" :navigationPrevLabel="''" :perPageCustom="[[0, 1], [768, 3], [1024, 4], [1600, 6]]" :navigationEnabled="true" :paginationEnabled="false" :scrollPerPage="false">
                         <slide>
                             <img class="img-fluid" src="../assets/images/logos/Autostar-Logo1.png" alt="Autostar Logo">
                         </slide>
