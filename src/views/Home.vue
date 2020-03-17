@@ -34,21 +34,35 @@
                         <slide>
                             <img class="img-fluid" src="../assets/images/logos/Autostar-Logo1.png" alt="Autostar Logo">
                         </slide>
-
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/Byblos-logo.png" alt="Byblos Logo">
-                        </slide>
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/COMPASS-logo.png" alt="Compass Logo">
-                        </slide>
                         <slide>
                             <img class="img-fluid" src="../assets/images/logos/EllaPay-Logo.png" alt="Ellapay Logo">
+                        </slide>
+                        <slide>
+                            <img class="img-fluid" src="../assets/images/logos/HenrikALOGO.png" alt="Henrik Alaverdyan Logo">
+                        </slide>
+                        <slide>
+                            <img class="img-fluid" src="../assets/images/logos/KAPLOGO.png" alt="Kap Logo">
                         </slide>
                         <slide>
                             <img class="img-fluid" src="../assets/images/logos/Final-logo.png" alt="Final Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/HenrikALOGO.png" alt="Henrik Alaverdyan Logo">
+                            <img class="img-fluid" src="../assets/images/logos/Byblos-logo.png" alt="Byblos Logo">
+                        </slide>
+                        <slide>
+                            <img class="img-fluid" src="../assets/images/logos/LendingArenalogo.png" alt="Lending Arena Logo">
+                        </slide>
+                        <slide>
+                            <img class="img-fluid" src="../assets/images/logos/Sanjak-Logo.png" alt="Sanjak Logo">
+                        </slide>
+                        <slide>
+                            <img class="img-fluid" src="../assets/images/logos/COMPASS-logo.png" alt="Compass Logo">
+                        </slide>
+                        <slide>
+                            <img class="img-fluid" src="../assets/images/logos/YRG-website-logo.png" alt="YRG Logo">
+                        </slide>
+                        <slide>
+                            <img class="img-fluid" src="../assets/images/logos/Kaiser-Logo.png" alt="Kaiser Logo">
                         </slide>
                         <slide>
                             <img class="img-fluid" src="../assets/images/logos/kb-logo.png" alt="KB Logo">
@@ -57,23 +71,9 @@
                             <img class="img-fluid" src="../assets/images/logos/JK1.png" alt="Jack Kassabian Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/KAPLOGO.png" alt="Kap Logo">
-                        </slide>
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/Kaiser-Logo.png" alt="Kaiser Logo">
-                        </slide>
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/Sanjak-Logo.png" alt="Sanjak Logo">
-                        </slide>
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/LendingArenalogo.png" alt="Lending Arena Logo">
-                        </slide>
-                        <slide>
                             <img class="img-fluid" src="../assets/images/logos/SFJLOGO.png" alt="SFJ Logo">
                         </slide>
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/YRG-website-logo.png" alt="YRG Logo">
-                        </slide>
+
 
                     </carousel>
                 </div>
