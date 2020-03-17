@@ -64,10 +64,9 @@
 <style scoped>
     .slider-banner img {
         border: 2px solid #009fe4;
-        border-radius: 50px;
+        border-radius: 50%;
         position: relative;
         height: 105px;
-        width: 105px;
         bottom: 60px;
         padding: 2px;
         left: 30px;
@@ -89,7 +88,7 @@
         background: #fafafa;
         padding: 10px 20px 60px 20px;
         height:200px;
-        overflow-y: scroll;
+        overflow-y: auto;
     }
     .slider-title {
         padding: 30px 0;

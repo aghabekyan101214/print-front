@@ -34,68 +34,45 @@
                         <slide>
                             <img class="img-fluid" src="../assets/images/logos/Autostar-Logo1.png" alt="Autostar Logo">
                         </slide>
+
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/Autostar-Logo2.png" alt="Autostar Logo">
+                            <img class="img-fluid" src="../assets/images/logos/Byblos-logo.png" alt="Byblos Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/Byblos-logo.png" alt="Autostar Logo">
+                            <img class="img-fluid" src="../assets/images/logos/COMPASS-logo.png" alt="Compass Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/COMPASS.png" alt="Autostar Logo">
+                            <img class="img-fluid" src="../assets/images/logos/EllaPay-Logo.png" alt="Ellapay Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/COMPASS2.png" alt="Autostar Logo">
+                            <img class="img-fluid" src="../assets/images/logos/Final-logo.png" alt="Final Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/EllaPay-Logo2.png" alt="Autostar Logo">
+                            <img class="img-fluid" src="../assets/images/logos/HenrikALOGO.png" alt="Henrik Alaverdyan Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/Final-logo1.png" alt="Autostar Logo">
+                            <img class="img-fluid" src="../assets/images/logos/JK1.png" alt="Jack Kassabian Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/Final-logo2.png" alt="Autostar Logo">
+                            <img class="img-fluid" src="../assets/images/logos/kb-logo.png" alt="KB Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/HenrikALOGO1.png" alt="Autostar Logo">
+                            <img class="img-fluid" src="../assets/images/logos/Kaiser-Logo.png" alt="Kaiser Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/HenrikALOGO2.png" alt="Autostar Logo">
+                            <img class="img-fluid" src="../assets/images/logos/KAPLOGO.png" alt="Kap Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/JK1.png" alt="Autostar Logo">
+                            <img class="img-fluid" src="../assets/images/logos/LendingArenalogo.png" alt="Lending Arena Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/K_B-Logo-Final2.png" alt="Autostar Logo">
+                            <img class="img-fluid" src="../assets/images/logos/Sanjak-Logo.png" alt="Sanjak Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/Kaiser-Logo1.png" alt="Autostar Logo">
+                            <img class="img-fluid" src="../assets/images/logos/SFJLOGO.png" alt="SFJ Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/Kaiser-Logo2.png" alt="Autostar Logo">
-                        </slide>
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/KAPLOGO1.png" alt="Autostar Logo">
-                        </slide>
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/KAPLOGO2.png" alt="Autostar Logo">
-                        </slide>
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/LendingArenalogo1.png" alt="Autostar Logo">
-                        </slide>
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/Sanjak-Logot2.png" alt="Autostar Logo">
-                        </slide>
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/SFJLOGO1.png" alt="Autostar Logo">
-                        </slide>
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/SFJLOGO2.png" alt="Autostar Logo">
-                        </slide>
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/YRG-website-logo1.png" alt="Autostar Logo">
-                        </slide>
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/YRG-website-logo2.png" alt="Autostar Logo">
+                            <img class="img-fluid" src="../assets/images/logos/YRG-website-logo.png" alt="YRG Logo">
                         </slide>
 
                     </carousel>
@@ -153,6 +130,7 @@
     .banner {
         background:#fafafa;
     }
+
     .top-title{
         padding-top:120px;
     }
@@ -230,7 +208,9 @@
         padding: 80px;
     }
     .slider-banner1 .VueCarousel-slide{
-        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .VueCarousel-navigation > button {
         cursor: pointer;
