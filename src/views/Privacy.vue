@@ -29,7 +29,7 @@
             <p class="mb-1"><b>Third party links</b></p>
             <p>We do not include or offer third party products or services on our website.</p>
             <p class="mb-1"><b>Children’s online privacy protection</b></p>
-            <p>We do not collect any information from anyone under 13 years of age. Caliprintworks.com<router-link to="/">Caliprintworks.com </router-link> products and services are all directed to people who are at least 13 years old or older. User’s under the age of 13 must ask for assistance of a parent or guardian before they use, visit or fill out any information on our website.</p>
+            <p>We do not collect any information from anyone under 13 years of age. <router-link to="/">Caliprintworks.com </router-link> products and services are all directed to people who are at least 13 years old or older. User’s under the age of 13 must ask for assistance of a parent or guardian before they use, visit or fill out any information on our website.</p>
             <p class="mb-1"><b>Online privacy policy only</b></p>
             <p>This online privacy policy applies only to information collected through our website and not to information collected offline.</p>
             <p class="mb-1"><b>Terms and conditions</b></p>
@@ -81,5 +81,8 @@
     }
     a{
         color: #009fe4;
+    }
+    .privacy{
+        padding-bottom: 75px;
     }
 </style>

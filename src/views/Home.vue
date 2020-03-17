@@ -30,49 +30,74 @@
                 <div class="item">
                     <h2 class="title text-center mb-5">trusted by <span class="blue">these brands</span></h2>
 
-                    <carousel :navigationNextLabel="''" :navigationPrevLabel="''" :perPageCustom="[[320, 1], [768, 3], [1024, 4], [1600, 6]]" :navigationEnabled="true" :paginationEnabled="false" :scrollPerPage="false">
+                    <carousel :navigationNextLabel="''" :navigationPrevLabel="''" :perPageCustom="[[320, 2], [768, 3], [1024, 4], [1600, 6]]" :navigationEnabled="true" :paginationEnabled="false" :scrollPerPage="false">
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/autostar-logo.png" alt="Autostar Logo">
+                            <img class="img-fluid" src="../assets/images/logos/Autostar-Logo1.png" alt="Autostar Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/byblos-logo.png" alt="Byblos Logo">
+                            <img class="img-fluid" src="../assets/images/logos/Autostar-Logo2.png" alt="Autostar Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/compass-logo.png" alt="Compass Logo">
+                            <img class="img-fluid" src="../assets/images/logos/Byblos-logo.png" alt="Autostar Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/ellapay-logo.png" alt="EllaPay Logo">
+                            <img class="img-fluid" src="../assets/images/logos/COMPASS.png" alt="Autostar Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/henrikalaverdyan-logo.png" alt="HenrikAlaverdyan Logo">
+                            <img class="img-fluid" src="../assets/images/logos/COMPASS2.png" alt="Autostar Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/hhem-logo.png" alt="HHEM Logo">
+                            <img class="img-fluid" src="../assets/images/logos/EllaPay-Logo2.png" alt="Autostar Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/jk-logo.png" alt="JK Logo">
+                            <img class="img-fluid" src="../assets/images/logos/Final-logo1.png" alt="Autostar Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/kap-logo.png" alt="Kap Logo">
+                            <img class="img-fluid" src="../assets/images/logos/Final-logo2.png" alt="Autostar Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/kasier-logo.png" alt="Kaiser Logo">
+                            <img class="img-fluid" src="../assets/images/logos/HenrikALOGO1.png" alt="Autostar Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/kb-logo.png" alt="Kb Logo">
+                            <img class="img-fluid" src="../assets/images/logos/HenrikALOGO2.png" alt="Autostar Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/rpm-logo.png" alt="RPM Logo">
+                            <img class="img-fluid" src="../assets/images/logos/JK1.png" alt="Autostar Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/sfj-logo.png" alt="SFJ Logo">
+                            <img class="img-fluid" src="../assets/images/logos/K_B-Logo-Final2.png" alt="Autostar Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/yrg-logo.png" alt="YRG Logo">
+                            <img class="img-fluid" src="../assets/images/logos/Kaiser-Logo1.png" alt="Autostar Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/zsangak-logo.png" alt="Zsangak Logo">
+                            <img class="img-fluid" src="../assets/images/logos/Kaiser-Logo2.png" alt="Autostar Logo">
                         </slide>
+                        <slide>
+                            <img class="img-fluid" src="../assets/images/logos/KAPLOGO1.png" alt="Autostar Logo">
+                        </slide>
+                        <slide>
+                            <img class="img-fluid" src="../assets/images/logos/KAPLOGO2.png" alt="Autostar Logo">
+                        </slide>
+                        <slide>
+                            <img class="img-fluid" src="../assets/images/logos/LendingArenalogo1.png" alt="Autostar Logo">
+                        </slide>
+                        <slide>
+                            <img class="img-fluid" src="../assets/images/logos/Sanjak-Logot2.png" alt="Autostar Logo">
+                        </slide>
+                        <slide>
+                            <img class="img-fluid" src="../assets/images/logos/SFJLOGO1.png" alt="Autostar Logo">
+                        </slide>
+                        <slide>
+                            <img class="img-fluid" src="../assets/images/logos/SFJLOGO2.png" alt="Autostar Logo">
+                        </slide>
+                        <slide>
+                            <img class="img-fluid" src="../assets/images/logos/YRG-website-logo1.png" alt="Autostar Logo">
+                        </slide>
+                        <slide>
+                            <img class="img-fluid" src="../assets/images/logos/YRG-website-logo2.png" alt="Autostar Logo">
+                        </slide>
+
                     </carousel>
                 </div>
             </div>
@@ -100,7 +125,6 @@
             }
         },
         created() {
-            console.log(process.env.VUE_APP_DATA_URL)
             axios.get(process.env.VUE_APP_DATA_URL + "get-main").then(r => {
                if(r.data) {
                    this.about_title = r.data.about_title;
@@ -197,7 +221,9 @@
         text-transform:uppercase;
     }
 
-
+    .item img{
+        max-height: 80px;
+    }
     .slider-banner1 {
         margin-top: 47px;
         background: #fafafa;

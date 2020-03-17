@@ -188,4 +188,7 @@
     ul{
         padding-left: 15px;
     }
+    .terms{
+        padding-bottom: 75px;
+    }
 </style>
