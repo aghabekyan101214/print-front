@@ -192,10 +192,10 @@
                         <h2>Useful links</h2>
                         <ul>
                             <li>
-                                <a href="#">Privacy Policy</a>
+                                <router-link to="/privacy-policy">Privacy Policy</router-link>
                             </li>
                             <li>
-                                <a href="#">Terms and Conditions</a>
+                                <router-link to="/terms-and-conditions">Terms and Conditions</router-link>
                             </li>
                         </ul>
                     </div>
