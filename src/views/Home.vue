@@ -51,22 +51,22 @@
                             <img class="img-fluid" src="../assets/images/logos/HenrikALOGO.png" alt="Henrik Alaverdyan Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/JK1.png" alt="Jack Kassabian Logo">
-                        </slide>
-                        <slide>
                             <img class="img-fluid" src="../assets/images/logos/kb-logo.png" alt="KB Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/Kaiser-Logo.png" alt="Kaiser Logo">
+                            <img class="img-fluid" src="../assets/images/logos/JK1.png" alt="Jack Kassabian Logo">
                         </slide>
                         <slide>
                             <img class="img-fluid" src="../assets/images/logos/KAPLOGO.png" alt="Kap Logo">
                         </slide>
                         <slide>
-                            <img class="img-fluid" src="../assets/images/logos/LendingArenalogo.png" alt="Lending Arena Logo">
+                            <img class="img-fluid" src="../assets/images/logos/Kaiser-Logo.png" alt="Kaiser Logo">
                         </slide>
                         <slide>
                             <img class="img-fluid" src="../assets/images/logos/Sanjak-Logo.png" alt="Sanjak Logo">
+                        </slide>
+                        <slide>
+                            <img class="img-fluid" src="../assets/images/logos/LendingArenalogo.png" alt="Lending Arena Logo">
                         </slide>
                         <slide>
                             <img class="img-fluid" src="../assets/images/logos/SFJLOGO.png" alt="SFJ Logo">
