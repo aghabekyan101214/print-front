@@ -127,6 +127,9 @@
     .m0{
         margin: 0!important;
     }
+    .item .img-fluid{
+        max-width: 70%!important;
+    }
     .banner {
         background:#fafafa;
     }

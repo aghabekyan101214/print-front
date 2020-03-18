@@ -567,6 +567,9 @@
         .contact-us-inner {
             display: block;
         }
+        .navbar-brand img{
+            height: 25px;
+        }
     }
     @media only screen  and (max-width:991px) {
         .box-bg {
@@ -601,15 +604,10 @@
         .nav-item:hover .fa-sort-up-list {
             top: 27px !important;
         }
-        .navbar-brand img{
-            width: 100%;
-        }
         .nav-item {
             font-size:12px;
             margin:0;
         }
-
-
     }
 
     @media only screen and (max-width:768px) {

@@ -66,6 +66,14 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "privacy" */ '../views/Privacy')
   },
+  {
+    path: '/get-quote',
+    name: 'Quote',
+    // route level code-splitting
+    // this generates a separate chunk (quote/*.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "quote" */ '../views/GetQuote')
+  },
 ]
 
 const router = new VueRouter({
