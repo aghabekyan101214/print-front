@@ -8,6 +8,9 @@
                     <label for="pr-p">Step 1: Select A Print Product</label>
                     <select class="form-control print-product" id="pr-p">
                         <option value="">Choose A print Product</option>
+                        <option value="1">Product 1</option>
+                        <option value="2">Product 2</option>
+                        <option value="3">Product 3</option>
                     </select>
                 </div>
 
@@ -97,7 +100,7 @@
                             <input type="radio" checked name="contact-type" class="custom-control-input" id="phone">
                             <label class="custom-control-label" for="phone">Phone</label>
                         </div>
-                        <div class="custom-control custom-checkbox ml-lg-2">
+                        <div class="custom-control custom-checkbox ml-2">
                             <input type="radio" name="contact-type" class="custom-control-input" id="email">
                             <label class="custom-control-label" for="email">Email</label>
                         </div>
@@ -114,7 +117,9 @@
                 <div class="col-xl-6 col-md-6 mb-3">
                     <p class="mb-1">Step 1: Select A Print Product*</p>
                     <select class="form-control print-product" id="stock">
-                        <option value="">100# Dull Cover</option>
+                        <option value="0">100# Dull Cover</option>
+                        <option value="">Another Product</option>
+                        <option value="">One more Product</option>
                     </select>
                 </div>
 
@@ -127,6 +132,9 @@
                     <p class="mb-1">Colors</p>
                     <select class="form-control print-product" id="colors">
                         <option value="">4/1 Full Color Front/Black</option>
+                        <option value="">White</option>
+                        <option value="">Green</option>
+                        <option value="">Yellow</option>
                     </select>
                 </div>
 
@@ -139,6 +147,9 @@
                     <p class="mb-1">Quantity</p>
                     <select class="form-control print-product" id="quantity">
                         <option value="">4/1 Full Color Front/Black</option>
+                        <option value="">10</option>
+                        <option value="">100</option>
+                        <option value="">100</option>
                     </select>
                 </div>
 
