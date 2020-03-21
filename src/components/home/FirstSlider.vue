@@ -3,17 +3,8 @@
         <carousel :per-page="1" :paginationEnabled="true" :scrollPerPage="true">
             <slide>
                 <div class="row m0">
-                    <div class="col-lg-6 col-md-6">
-                        <img class="img-fluid" src="../../assets/images/banner-img.png" alt="First slide">
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="col-lg-9 f-right-banner">
-                            <h2 class="title top-title"><span class="blue">Business </span>Services</h2>
-                            <p class="generic-details">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                            </p>
-                            <a href="#" class="more-btn">Learn more</a>
-                        </div>
+                    <div class="col-xl-12 pl-0 pr-0">
+                        <img class="img-fluid" src="../../assets/images/baner1.jpg" alt="First slide">
                     </div>
                 </div>
             </slide>

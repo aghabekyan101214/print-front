@@ -67,7 +67,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "privacy" */ '../views/Privacy')
   },
   {
-    path: '/get-quote',
+    path: '/get-quote/:product',
     name: 'Quote',
     // route level code-splitting
     // this generates a separate chunk (quote/*.[hash].js) for this route

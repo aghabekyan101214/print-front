@@ -6,11 +6,8 @@
 
                 <div class="col-xl-6 col-md-6">
                     <label for="pr-p">Step 1: Select A Print Product</label>
-                    <select class="form-control print-product" id="pr-p">
-                        <option value="">Choose A print Product</option>
-                        <option value="1">Product 1</option>
-                        <option value="2">Product 2</option>
-                        <option value="3">Product 3</option>
+                    <select @change="changeRoute" v-model="product" class="form-control print-product" id="pr-p">
+                        <option v-for="product in products" :key="product" :value="product.toLocaleLowerCase().replace(' ', '-')">{{ product}}</option>
                     </select>
                 </div>
 
@@ -149,7 +146,7 @@
                         <option value="">4/1 Full Color Front/Black</option>
                         <option value="">10</option>
                         <option value="">100</option>
-                        <option value="">100</option>
+                        <option value="">100y</option>
                     </select>
                 </div>
 
@@ -183,6 +180,7 @@
 
 <script>
     import Breadcrumb from "../components/Breadcrumb";
+    import products from "../data/printProducts"
 
     export default {
         name: "Privacy",
@@ -191,7 +189,25 @@
         },
         data: () => {
             return {
-                title: "Get Quote"
+                title: "Get Quote",
+                products,
+                product: "",
+            }
+        },
+        created: function() {
+          this.changeProduct(this.$route.params.product);
+        },
+        methods: {
+            changeProduct(product) {
+                this.product = product
+            },
+            changeRoute() {
+                this.$router.push(`/get-quote/${this.product}`);
+            }
+        },
+        watch: {
+            $route(to, from) {
+                this.changeProduct(this.$route.params.product);
             }
         }
     }

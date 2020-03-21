@@ -19,66 +19,10 @@
                                                 <li>
                                                     <a href="#"><p>Print services</p></a>
                                                 </li>
-                                                <li>
-                                                    <a href="#">Booklets</a>
+                                                <li v-for="product in products" :key="product">
+                                                    <router-link :to="'/get-quote/' + product.toLocaleLowerCase().replace(' ', '-')">{{ product}}</router-link>
                                                 </li>
-                                                <li>
-                                                    <a href="#">Bookmarks</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Brochures</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Business cards</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Calendars</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Door Hangers</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Envelopes</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Event Tickets</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Flyers</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Folders</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Greeting Cards</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Letterheads</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Notepads</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Postcards</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Posters</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Rack Cards</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Roll Labels</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Special Shapes</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Stickers</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Table Tents</a>
-                                                </li>
+
 
                                             </ul>
                                             <ul>
@@ -219,10 +163,13 @@
     </div>
 </template>
 <script>
+    import products from "./data/printProducts"
+
     export default {
         data: () => {
             return {
                 static_url: process.env.VUE_APP_STATIC_URL,
+                products
             }
         },
         created() {
@@ -365,7 +312,7 @@
         background: #fff;
         z-index: 300000;
         border: 2px solid #009fe4;
-        padding: 34px 17px;
+        padding: 14px 17px;
         color: #1c1b1a;
         top: 40px;
         left: 0;
