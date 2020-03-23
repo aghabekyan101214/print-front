@@ -137,7 +137,12 @@
 
                 <div class="col-xl-6 col-md-6 mb-3">
                     <p class="mb-1">Finishing</p>
-                    <input type="text" class="form-control" placeholder="--">
+                    <select class="form-control print-product" id="finishing">
+                        <option value="">4/1 Full Color Front/Black</option>
+                        <option value="">White</option>
+                        <option value="">Green</option>
+                        <option value="">Yellow</option>
+                    </select>
                 </div>
 
                 <div class="col-xl-6 col-md-6 mb-3">

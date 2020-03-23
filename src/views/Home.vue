@@ -10,7 +10,6 @@
                         <img class="img-fluid about-logo" src="../assets/images/about-logo.png" alt="About">
                     </div>
                     <div class="col-lg-8">
-                        <h2 v-html="about_title"></h2>
                         <div class="story-decoration">
                             <div v-html="about_text" class="text-cont"></div>
                         </div>
@@ -223,7 +222,12 @@
         margin-top: 30px;
         position: static;
     }
-
+    .slider-banner .VueCarousel-navigation > button{
+        margin-top: 0;
+    }
+    .slider-banner .VueCarousel-navigation{
+        margin-top: 0;
+    }
 
     .menu li {
         display: inline-block;

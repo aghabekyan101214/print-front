@@ -32,7 +32,7 @@
                 </div>
                 <div>
                     <div class="flex">
-                        <p class="blue">Horse:</p>
+                        <p class="blue">Hours:</p>
                         <p>Monday-Friday: 8:00am  - 7:00pm </p>
                     </div>
                 </div>

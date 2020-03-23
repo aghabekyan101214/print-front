@@ -2,43 +2,43 @@
     <section class="slider-banner full-container">
         <div class="demo container">
             <div class="item">
-                <h3 class="slider-title">Customer stories</h3>
+                <h3 class="slider-title pt-0">Customer stories</h3>
                 <p class="text-white text-center">We Appreciate Your Feedback. <a v-b-modal.review href="javascript:void(0)" class="text-white font-weight-bold font-italic border-bottom text-decoration-none">LEAVE A REVIEW</a> </p>
                 <carousel id="content-slider" class="content-slider" :navigationNextLabel="''" :navigationPrevLabel="''" :scrollPerPage="false" :navigationEnabled="true" :paginationEnabled="false" :perPageCustom="[[320, 1], [768, 2]]">
                     <slide>
                         <div class="slider-inner-box">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting.
                         </div>
-                        <div class="img-box d-flex">
+                        <div class="img-box">
                             <img src="../../assets/images/slider-item.png" alt="First slide">
-                            <p class="text-white ml-5 mt-3">Name Surname</p>
+                            <p class="text-white">Name Surname</p>
                         </div>
                     </slide>
                     <slide>
                         <div class="slider-inner-box">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting.
                         </div>
-                        <div class="img-box d-flex">
+                        <div class="img-box">
                             <img src="../../assets/images/slider-item.png" alt="First slide">
-                            <p class="text-white ml-5 mt-3">Name Surname</p>
+                            <p class="text-white">Name Surname</p>
                         </div>
                     </slide>
                     <slide>
                         <div class="slider-inner-box">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting.
                         </div>
-                        <div class="img-box d-flex">
+                        <div class="img-box">
                             <img src="../../assets/images/slider-item.png" alt="First slide">
-                            <p class="text-white ml-5 mt-3">Name Surname</p>
+                            <p class="text-white">Name Surname</p>
                         </div>
                     </slide>
                     <slide>
                         <div class="slider-inner-box">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting.
                         </div>
-                        <div class="img-box d-flex">
+                        <div class="img-box">
                             <img src="../../assets/images/slider-item.png" alt="First slide">
-                            <p class="text-white ml-5 mt-3">Name Surname</p>
+                            <p class="text-white">Name Surname</p>
                         </div>
                     </slide>
                 </carousel>
@@ -81,7 +81,7 @@
     .slider-banner {
         background-image: url('../../assets/images/banner-img3.png');
         background-size: cover;
-        padding-bottom: 30px;
+        padding: 80px 0;
     }
 
     .slider-inner-box{
@@ -97,5 +97,10 @@
         text-transform: uppercase;
     }
     /*modal*/
-
+    .img-box p{
+        position: relative;
+        margin-bottom: 0;
+        bottom: 60px;
+        left: 30%;
+    }
 </style>

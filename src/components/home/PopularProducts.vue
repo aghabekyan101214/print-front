@@ -1,6 +1,6 @@
 <template>
     <section class="popular-products container">
-        <h2 class="title text-center">Most <span class="blue">Popular</span> Products</h2>
+        <h2 class="title text-center">Most <span class="blue">Popular</span> Demands</h2>
         <p class="decoration text-center">Focus on a products you love and we will handle the rest.</p>
         <div class="row">
 
@@ -15,33 +15,11 @@
                         <h5 class="font-weight-bold ls-1">Size 2"x3.5"</h5>
                         <h3 class="price-qnt">$34.50/ <span class="qty">Qty 1000</span> </h3>
                     </div>
-                    <div class="services-box">
-                        <table class="table table-striped m0">
-                            <tr>
-                                <td>
-                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
-                                    <p class="pl-2 m0 d-inline-block">Printing</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
-                                    <p class="pl-2 m0 d-inline-block">Coating </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
-                                    <p class="pl-2 m0 d-inline-block">Cutting </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
-                                    <p class="pl-2 m0 d-inline-block">Free Economy Shipping </p>
-                                </td>
-                            </tr>
-                        </table>
+                    <div class="services-box pt-3 pb-3">
+                        <p class="text-center mb-0">Printing <br> <span class="blue-web">+</span></p>
+                        <p class="text-center mb-0">Coating <br> <span class="blue-web">+</span></p>
+                        <p class="text-center mb-0">Cutting <br> <span class="blue-web">+</span></p>
+                        <p class="text-center mb-0">Free Economy Shipping</p>
                     </div>
                     <div class="detail-box pl-2 pr-2 pt-3 pb-2">
                         <ul class="list">
@@ -67,32 +45,12 @@
                         <h3 class="price-qnt">$88.20/ <span class="qty">Qty 250</span> </h3>
                     </div>
                     <div class="services-box">
-                        <table class="table table-striped m0">
-                            <tr>
-                                <td>
-                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
-                                    <p class="pl-2 m0 d-inline-block">Printing</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
-                                    <p class="pl-2 m0 d-inline-block">Coating </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
-                                    <p class="pl-2 m0 d-inline-block">Cutting </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
-                                    <p class="pl-2 m0 d-inline-block">Scoring </p>
-                                </td>
-                            </tr>
-                        </table>
+                        <div class="services-box pt-3 pb-3">
+                            <p class="text-center mb-0">Printing <br> <span class="blue-web">+</span></p>
+                            <p class="text-center mb-0">Coating <br> <span class="blue-web">+</span></p>
+                            <p class="text-center mb-0">Cutting <br> <span class="blue-web">+</span></p>
+                            <p class="text-center mb-0">Scoring</p>
+                        </div>
                     </div>
                     <div class="detail-box pl-2 pr-2 pt-3 pb-2">
                         <ul class="list">
@@ -118,32 +76,12 @@
                         <h3 class="price-qnt">$94.77/ <span class="qty">Qty 250</span> </h3>
                     </div>
                     <div class="services-box">
-                        <table class="table table-striped m0">
-                            <tr>
-                                <td>
-                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
-                                    <p class="pl-2 m0 d-inline-block">Printing</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
-                                    <p class="pl-2 m0 d-inline-block">Coating </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
-                                    <p class="pl-2 m0 d-inline-block">Cutting </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
-                                    <p class="pl-2 m0 d-inline-block">Die-Cutting </p>
-                                </td>
-                            </tr>
-                        </table>
+                        <div class="services-box pt-3 pb-3">
+                            <p class="text-center mb-0">Printing <br> <span class="blue-web">+</span></p>
+                            <p class="text-center mb-0">Coating <br> <span class="blue-web">+</span></p>
+                            <p class="text-center mb-0">Cutting <br> <span class="blue-web">+</span></p>
+                            <p class="text-center mb-0">Die-Cutting</p>
+                        </div>
                     </div>
                     <div class="detail-box pl-2 pr-2 pt-3 pb-2">
                         <ul class="list">
@@ -169,32 +107,12 @@
                         <h3 class="price-qnt">$146.42/ <span class="qty">Qty 100</span> </h3>
                     </div>
                     <div class="services-box">
-                        <table class="table table-striped m0">
-                            <tr>
-                                <td>
-                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
-                                    <p class="pl-2 m0 d-inline-block">Printing</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
-                                    <p class="pl-2 m0 d-inline-block">Coating </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
-                                    <p class="pl-2 m0 d-inline-block">Cutting </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img class="check" src="../../assets/images/check.svg" alt="Check Icon">
-                                    <p class="pl-2 m0 d-inline-block">Glueing </p>
-                                </td>
-                            </tr>
-                        </table>
+                        <div class="services-box pt-3 pb-3">
+                            <p class="text-center mb-0">Printing <br> <span class="blue-web">+</span></p>
+                            <p class="text-center mb-0">Coating <br> <span class="blue-web">+</span></p>
+                            <p class="text-center mb-0">Cutting <br> <span class="blue-web">+</span></p>
+                            <p class="text-center mb-0">Gluing</p>
+                        </div>
                     </div>
                     <div class="detail-box pl-2 pr-2 pt-3 pb-2">
                         <ul class="list">
@@ -317,5 +235,7 @@
             padding: 40px 0;
         }
     }
-
+    .blue-web{
+        color: #009fe4;
+    }
 </style>

@@ -64,8 +64,8 @@
         padding: 0!important;
         margin-right: 7px;
         border: 1px solid #0083cd;
-        width: 6px!important;
-        height: 6px!important;
+        width: 10px!important;
+        height: 10px!important;
         transition: 1s;
     }
     .adaptive .VueCarousel-pagination button:hover{
@@ -73,5 +73,8 @@
     }
     .adaptive .VueCarousel-dot--active {
         background-color: #0083cd!important;
+    }
+    .adaptive .VueCarousel-pagination{
+        margin-bottom: 15px;
     }
 </style>
