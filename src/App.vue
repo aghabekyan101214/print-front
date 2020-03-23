@@ -600,9 +600,6 @@
         .select-blue{
             width:100% !important;
         }
-        .box-bg-inner {
-            padding-top: 52px;
-        }
         .slider-banner1 {
             padding: 20px;
         }

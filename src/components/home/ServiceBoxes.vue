@@ -7,6 +7,7 @@
                     <div class="bg-layout">
                         <a href="#" class="order-btn">Order now</a>
                     </div>
+                    <img class="img-fluid" src="../../assets/images/banners/lt-min.jpg" alt="">
                 </div>
             </div>
             <div class="box-bg box2">
@@ -14,6 +15,7 @@
                     <div class="bg-layout">
                         <a href="#" class="order-btn">Order now</a>
                     </div>
+                    <img class="img-fluid" src="../../assets/images/banners/rt-min.jpg" alt="">
                 </div>
             </div>
             <div class="box-bg box3">
@@ -21,6 +23,7 @@
                     <div class="bg-layout">
                         <a href="#" class="order-btn">Order now</a>
                     </div>
+                    <img class="img-fluid" src="../../assets/images/banners/lb-min.jpg" alt="">
                 </div>
             </div>
             <div class="box-bg box4">
@@ -28,6 +31,7 @@
                     <div class="bg-layout">
                         <a href="#" class="order-btn">Order now</a>
                     </div>
+                    <img class="img-fluid" src="../../assets/images/banners/rb-min.jpg" alt="">
                 </div>
             </div>
         </section>
@@ -47,18 +51,18 @@
         justify-content: space-between;
         margin-top: 40px;
     }
-    .box1{
-        background: url('../../assets/images/banners/lt-min.jpg') no-repeat 0px;
-    }
-    .box2{
-        background: url('../../assets/images/banners/rt-min.jpg') no-repeat 0px;
-    }
-    .box3{
-        background: url('../../assets/images/banners/lb-min.jpg') no-repeat 0px;
-    }
-    .box4{
-        background: url('../../assets/images/banners/rb-min.jpg') no-repeat 0px;
-    }
+    /*.box1{*/
+    /*    background: url('../../assets/images/banners/lt-min.jpg') no-repeat 0px;*/
+    /*}*/
+    /*.box2{*/
+    /*    background: url('../../assets/images/banners/rt-min.jpg') no-repeat 0px;*/
+    /*}*/
+    /*.box3{*/
+    /*    background: url('../../assets/images/banners/lb-min.jpg') no-repeat 0px;*/
+    /*}*/
+    /*.box4{*/
+    /*    background: url('../../assets/images/banners/rb-min.jpg') no-repeat 0px;*/
+    /*}*/
     .bg-layout{
         position: absolute;
         height: 100%;
@@ -73,11 +77,8 @@
         opacity: 1;
     }
     .box-bg {
-        height: 350px;
         width: 525px;
-        background-size: 100%;
         margin: 15px;
-        position: relative;
     }
     .box-bg-inner {
         height: 100%;
@@ -85,6 +86,7 @@
         text-align: center;
         color: #fff;
         border-radius: 10px;
+        position: relative;
     }
     .order-btn:hover{
         color:#fff;

@@ -122,7 +122,12 @@
 
                 <div class="col-xl-6 col-md-6 mb-3">
                     <p class="mb-1">Size*</p>
-                    <input type="text" class="form-control" placeholder="1300*1000">
+                    <select class="form-control print-product" id="size">
+                        <option value="">1300*100</option>
+                        <option value="">1300*1300</option>
+                        <option value="">1600*1600</option>
+                        <option value="">2100*1700</option>
+                    </select>
                 </div>
 
                 <div class="col-xl-6 col-md-6 mb-3">
@@ -156,7 +161,13 @@
                 </div>
 
                 <div class="col-xl-6 col-md-6 mb-3">
-                    <button class="submit btn">Submit</button>
+                    <p class="mb-1">Production Time</p>
+                    <select class="form-control print-product" id="duration">
+                        <option value="">13/11/2020</option>
+                        <option value="">15/11/2020</option>
+                        <option value="">17/11/2020</option>
+                        <option value="">19/11/2020</option>
+                    </select>
                 </div>
 
             </div>
@@ -165,11 +176,6 @@
                 <div class="col-xl-3 col-md-3">
                     <p>
                         <label for="">Price</label> <b>150$</b>
-                    </p>
-                </div>
-                <div class="col-xl-3 col-md-3">
-                    <p>
-                        <label for="">Duration</label> <b>03/05/2020</b>
                     </p>
                 </div>
             </div>
