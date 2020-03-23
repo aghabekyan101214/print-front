@@ -571,9 +571,7 @@
             float: left;
             width: 70%;
         }
-        .navbar-brand img{
-            width: 100%;
-        }
+
         .section2 {
             padding: 0;
         }
