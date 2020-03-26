@@ -19,35 +19,10 @@
                 </div>
             </div>
             <div class="services-panel row">
-                <div @click="goTo('/business-service/every-door-direct')" class="services-box col-lg-4">
-                    <p>Every Door Direct Mail <i class="fa fa-sort-down"/></p>
+                <div v-for="service in services" :key="service.slug" @click="goTo(`${'/business-service/' + service.slug}`)" class="services-box col-lg-4">
+                    <p>{{ service.title }} <i class="fa fa-sort-down"/></p>
                     <i class="fa fa-sort-down img-icon"/>
-                    <img src="../assets/images/services-item1.png" alt="banner" >
-                </div>
-                <div @click="goTo('/business-service/mail-printing')" class="services-box col-lg-4">
-                    <p>MailPrinting <i class="fa fa-sort-down"/></p>
-                    <i class="fa fa-sort-down img-icon"/>
-                    <img src="../assets/images/services-item2.png" alt="banner" >
-                </div>
-                <div @click="goTo('/business-service/direct-mail')" class="services-box col-lg-4">
-                    <p>Direct Mail <i class="fa fa-sort-down"/></p>
-                    <i class="fa fa-sort-down img-icon"/>
-                    <img src="../assets/images/services-item3.png" alt="banner" >
-                </div>
-                <div @click="goTo('/business-service/bulk-mail-letters')" class="services-box col-lg-4">
-                    <p>Bulk Mail Letters (Marketing Mail) <i class="fa fa-sort-down"/></p>
-                    <i class="fa fa-sort-down img-icon"/>
-                    <img src="../assets/images/services-item1.png" alt="banner" >
-                </div>
-                <div @click="goTo('/business-service/custom-lettering')" class="services-box col-lg-4">
-                    <p>Custom Vinyl Lettering <i class="fa fa-sort-down"/></p>
-                    <i class="fa fa-sort-down img-icon"/>
-                    <img src="../assets/images/services-item2.png" alt="banner" >
-                </div>
-                <div @click="goTo('/business-service/embroidery')" class="services-box col-lg-4">
-                    <p>Embroidery<i class="fa fa-sort-down"/></p>
-                    <i class="fa fa-sort-down img-icon"/>
-                    <img src="../assets/images/services-item3.png" alt="banner" >
+                    <img :src="service.image" alt="banner" >
                 </div>
             </div>
         </section>
@@ -56,9 +31,15 @@
 
 <script>
     import Breadcrumb from "../components/Breadcrumb";
+    import axios from "axios";
 
     export default {
         name: "BusinessServices",
+        data: () => {
+            return {
+                services: []
+            }
+        },
         components: {
             Breadcrumb
         },
@@ -66,6 +47,13 @@
             goTo(url){
                 this.$router.push(url)
             }
+        },
+        created() {
+            axios.get(process.env.VUE_APP_DATA_URL + "api/get-business-services").then(r => {
+                if(r.data) {
+                    this.services = r.data;
+                }
+            })
         }
     }
 </script>

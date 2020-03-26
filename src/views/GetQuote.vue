@@ -172,7 +172,7 @@
 
             </div>
 
-            <div class="row mt-3">
+            <div class="row bg-white mt-3">
                 <div class="col-xl-3 col-md-3">
                     <p>
                         <label for="">Price</label> <b>150$</b>
@@ -180,7 +180,7 @@
                 </div>
             </div>
 
-            <div class="row mt-3">
+            <div class="row bg-white mt-3">
                 <div class="col-xl-12">
                     <button class="submit filled btn">Submit</button>
                 </div>

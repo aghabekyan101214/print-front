@@ -12,39 +12,18 @@
 <script>
 
     import Breadcrumb from "../components/Breadcrumb";
-    // require styles
-    import 'swiper/dist/css/swiper.css'
 
-    import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
     export default {
         data() {
             return {
                 title: "Special Deals",
-                swiperOptionTop: {
-                    spaceBetween: 10,
-                    loop: true,
-                    loopedSlides: 5, //looped slides should be the same
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev'
-                    }
-                },
-                swiperOptionThumbs: {
-                    spaceBetween: 10,
-                    slidesPerView: 4,
-                    touchRatio: 0.2,
-                    loop: true,
-                    loopedSlides: 5, //looped slides should be the same
-                    slideToClickedSlide: true,
-                }
+
             }
         },
         name: "BusinessServiceDetail",
         components: {
             Breadcrumb,
-            swiper,
-            swiperSlide
         },
         methods: {
             getTitle() {

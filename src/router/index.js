@@ -35,7 +35,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "quote" */ '../views/Quote')
   },
   {
-    path: '/business-service/*',
+    path: '/business-service/:slug',
     name: 'Business',
     // route level code-splitting
     // this generates a separate chunk (service-detail/*.[hash].js) for this route

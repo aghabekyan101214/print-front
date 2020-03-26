@@ -101,7 +101,7 @@
             }
         },
         created() {
-            axios.get(process.env.VUE_APP_DATA_URL + "get-main").then(r => {
+            axios.get(process.env.VUE_APP_DATA_URL + "api/get-main").then(r => {
                if(r.data) {
                    this.about_title = r.data.about_title;
                    this.about_text = r.data.about_text;
