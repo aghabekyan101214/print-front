@@ -30,49 +30,9 @@
                     <h2 class="title text-center mb-5">trusted by <span class="blue">these brands</span></h2>
 
                     <carousel :navigationNextLabel="''" :navigationPrevLabel="''" :perPageCustom="[[0, 1], [768, 3], [1024, 4], [1600, 6]]" :navigationEnabled="true" :paginationEnabled="false" :scrollPerPage="false">
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/Autostar-Logo1.png" alt="Autostar Logo">
+                        <slide v-for="logo in logos" :key="logo.id">
+                            <img class="img-fluid" :src="logo.image" alt="Autostar Logo">
                         </slide>
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/EllaPay-Logo.png" alt="Ellapay Logo">
-                        </slide>
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/HenrikALOGO.png" alt="Henrik Alaverdyan Logo">
-                        </slide>
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/KAPLOGO.png" alt="Kap Logo">
-                        </slide>
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/Final-logo.png" alt="Final Logo">
-                        </slide>
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/Byblos-logo.png" alt="Byblos Logo">
-                        </slide>
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/LendingArenalogo.png" alt="Lending Arena Logo">
-                        </slide>
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/Sanjak-Logo.png" alt="Sanjak Logo">
-                        </slide>
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/COMPASS-logo.png" alt="Compass Logo">
-                        </slide>
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/YRG-website-logo.png" alt="YRG Logo">
-                        </slide>
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/Kaiser-Logo.png" alt="Kaiser Logo">
-                        </slide>
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/kb-logo.png" alt="KB Logo">
-                        </slide>
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/JK1.png" alt="Jack Kassabian Logo">
-                        </slide>
-                        <slide>
-                            <img class="img-fluid" src="../assets/images/logos/SFJLOGO.png" alt="SFJ Logo">
-                        </slide>
-
 
                     </carousel>
                 </div>
@@ -96,15 +56,15 @@
         name: 'home',
         data: () => {
             return {
-                about_title: "",
                 about_text: "",
+                logos: []
             }
         },
         created() {
             axios.get(process.env.VUE_APP_DATA_URL + "api/get-main").then(r => {
                if(r.data) {
-                   this.about_title = r.data.about_title;
-                   this.about_text = r.data.about_text;
+                   this.about_text = r.data.about.about_text;
+                   this.logos = r.data.logos;
                }
             })
         },
@@ -201,9 +161,6 @@
         text-transform:uppercase;
     }
 
-    .item img{
-        max-height: 80px;
-    }
     .slider-banner1 {
         margin-top: 47px;
         background: #fafafa;
