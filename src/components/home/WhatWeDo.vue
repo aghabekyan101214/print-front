@@ -30,7 +30,7 @@
             </div>
             <div class="mb-5">
                 <img src="../../assets/images/custom.png" alt="T-shirt Icon">
-                <h2>Custom Apparel Branding</h2>
+                <h2>Apparel Branding</h2>
                 <p>
                     Our prints lasts the lifetime of the garment with no cracking, peeling or fading.
                 </p>

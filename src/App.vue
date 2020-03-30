@@ -20,7 +20,7 @@
                                                     <a href="#"><p>Print services</p></a>
                                                 </li>
                                                 <li v-for="product in products" :key="product">
-                                                    <router-link :to="'/get-quote/' + product.toLocaleLowerCase().replace(' ', '-')">{{ product}}</router-link>
+                                                    <router-link :to="'/print-services/get-quote/' + product.toLocaleLowerCase().replace(' ', '-')">{{ product}}</router-link>
                                                 </li>
 
 
@@ -29,88 +29,27 @@
                                                 <li>
                                                     <a href="#"><p>Banner/Signage</p></a>
                                                 </li>
-                                                <li>
-                                                    <a href="#">A-Frames</a>
+                                                <li v-for="s in signage" :key="s">
+                                                    <router-link :to="'/banners/get-quote/' + s.toLocaleLowerCase().replace(' ', '-')">{{ s }}</router-link>
                                                 </li>
-                                                <li>
-                                                    <a href="#">Banners</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Car Magnets</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Floor Decals </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Posters (Large Format)</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Retractable stands</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Rigid Signs</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Window Cling</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Window Decals</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Window Perfs</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Yard Signs</a>
-                                                </li>
+
                                                 <br>
-                                                <li>
-                                                    <a href="#"><p>Apparel</p></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Screen Printing</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Digital Transfer</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Vinyl Heat Transfer </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Embroidery</a>
-                                                </li>
+                                                <ul class="w-200">
+                                                    <li>
+                                                        <a href="#"><p>Apparel Branding</p></a>
+                                                    </li>
+                                                    <li v-for="a in apparel" :key="a.slug">
+                                                        <router-link :to="'/apparel/get-quote/' + a.slug" v-html="a.name"></router-link>
+                                                    </li>
+                                                </ul>
 
                                             </ul>
                                             <ul>
                                                 <li>
                                                     <a href="#"><p>Services</p></a>
                                                 </li>
-                                                <li>
-                                                    <router-link to="/business-service/every-door-direct">Every Door Direct </router-link>
-                                                </li>
-                                                <li>
-                                                    <router-link to="/business-service/mail-printing">MailPrinting</router-link>
-                                                </li>
-                                                <li>
-                                                    <router-link to="/business-service/direct-mail">Direct Mail</router-link>
-                                                </li>
-                                                <li>
-                                                    <router-link to="/business-service/bulk-mail-letters">Bulk Mail letters
-                                                        (Marketing Mail)</router-link>
-                                                </li>
-                                                <li>
-                                                    <router-link to="/business-service/custom-lettering">Custom Lettering</router-link>
-                                                </li>
-                                                <li>
-                                                    <router-link to="/business-service/embroidery">Embroidery</router-link>
-                                                </li>
-                                                <li>
-                                                    <router-link to="/graphic-design">Graphic Design</router-link>
-                                                </li>
-                                                <li>
-                                                    <router-link to="/web-design">Web Design</router-link>
-                                                </li>
-                                                <li>
-                                                    <router-link to="/web-development">Web Development</router-link>
+                                                <li v-for="service in services" :key="service.slug">
+                                                    <router-link :to="'/business-service/' + service.slug">{{ service.title }}</router-link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -147,10 +86,10 @@
                         <h2>Follow us</h2>
                         <ul class="social-list">
                             <li>
-                                <a href="#"><img src="./assets/images/fb-icon.png" alt=""></a>
+                                <a href="https://www.facebook.com/caliprintworks" target="_blank"><img src="./assets/images/fb-icon.png" alt=""></a>
                             </li>
                             <li>
-                                <a href="#"><img src="./assets/images/insta-icon.png" alt=""></a>
+                                <a href="https://www.instagram.com/caliprintworks" target="_blank"><img src="./assets/images/insta-icon.png" alt=""></a>
                             </li>
                         </ul>
                     </div>
@@ -163,17 +102,26 @@
     </div>
 </template>
 <script>
-    import products from "./data/printProducts"
+    import {products, signage, apparel} from "./data/printProducts"
+    import axios from "axios"
 
     export default {
         data: () => {
             return {
                 static_url: process.env.VUE_APP_STATIC_URL,
-                products
+                products,
+                signage,
+                apparel,
+                services: []
             }
         },
         created() {
             window.addEventListener('scroll', this.handleScroll);
+            axios.get(process.env.VUE_APP_DATA_URL + "api/get-business-services").then(r => {
+                if(r.data) {
+                    this.services = r.data;
+                }
+            })
         },
         methods: {
             handleClick(e) {
@@ -670,6 +618,9 @@
             margin: 40px auto;
             text-align: center;
         }
+    }
+    ul.w-200{
+        width: 200px;
     }
 
 

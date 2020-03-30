@@ -1,22 +1,44 @@
 <template>
     <section class="service-quote container">
-        <div class="form-details">
-            <div class="form-group fill-name">
-                <span class="form-icon"> <img src="../../assets/images/user-icon.png" alt="icon"></span>
-                <input type="text" class=""  placeholder="Full Name">
+        <div class="row first">
+
+            <div class="col-xl-6 col-md-6 mb-3">
+
+                <b-input-group>
+                    <b-input-group-prepend>
+                            <span class="input-group-text">
+                                <img src="../../assets/images/user-icon.png" alt="User Icon">
+                            </span>
+                    </b-input-group-prepend>
+                    <b-form-input class="LoginInput" placeholder="Full Name">
+                    </b-form-input>
+                </b-input-group>
+
             </div>
-            <div class="form-group fill-c-name">
-                <span class="form-icon"> <img src="../../assets/images/company-icon.png" alt="icon"></span>
-                <input type="text" class=""  placeholder="Company Name">
+
+            <div class="col-xl-6 col-md-6 mb-3">
+
+                <b-input-group>
+                    <b-input-group-prepend>
+                            <span class="input-group-text">
+                                <img src="../../assets/images/company-icon.png" alt="User Icon">
+                            </span>
+                    </b-input-group-prepend>
+                    <b-form-input class="LoginInput" placeholder="Company Name">
+                    </b-form-input>
+                </b-input-group>
+
             </div>
+
         </div>
+
         <div class="form-more-details row">
             <div class="col-lg-4">
                 <p class="decoration">Shipping Estimate</p>
                 <p>Enter Shipping address or zip code to get an estimate for taxes and shipping with your quote.</p>
                 </br>
                 </br>
-                <input type="text" class="generic-input">
+                <input type="text" class="form-control">
             </div>
             <div class="col-lg-4">
                 <p class="decoration">Project Deadline Estimate</p>
@@ -35,7 +57,7 @@
                     <label class="label">
                         Due Date*
                     </label>
-                    <div class="select select-blue col-md-m">
+                    <div class="select-blue col-md-m">
                         <select class="form-control" id="sel1">
                             <option>Month</option>
                             <option>2</option>
@@ -43,7 +65,7 @@
                             <option>4</option>
                         </select>
                     </div>
-                    <div class="select select-blue col-sm-m">
+                    <div class="select-blue col-sm-m">
                         <select class="form-control" id="sel1">
                             <option>Day</option>
                             <option>2</option>
@@ -51,7 +73,7 @@
                             <option>4</option>
                         </select>
                     </div>
-                    <div class="select select-blue col-sm-m">
+                    <div class="select-blue col-sm-m">
                         <select class="form-control" id="sel1">
                             <option>Year</option>
                             <option>2</option>
@@ -78,18 +100,23 @@
                         <label for="radio5" class="radio__label">Phone and Email</label>
                     </div><br>
                 </div>
-                <div><input type="text" class="generic-input" placeholder="Phone number*"></div>
+                <div><input type="text" class="form-control" placeholder="Phone number*"></div>
                 </br>
-                <div><input type="text" class="generic-input" placeholder="Email*"></div>
+                <div><input type="text" class="form-control" placeholder="Email*"></div>
             </div>
         </div>
-        <div class="form-more-details container form-textarea">
-			<textarea rows="4" cols="50" placeholder="Describe yourself here...">
-
-			</textarea>
-            <span class="form-icon"> <img src="../../assets/images/message-icon.png" alt="icon"></span>
+        <div class="container pl-0 pr-0 textarea-form">
+            <b-input-group>
+                <b-input-group-prepend>
+                    <span class="input-group-text">
+                        <img src="../../assets/images/message-icon.png" alt="User Icon">
+                    </span>
+                </b-input-group-prepend>
+                <b-form-textarea class="LoginInput" rows="5" placeholder="Describe Yourself Here">
+                </b-form-textarea>
+            </b-input-group>
         </div>
-        <div class="select select-blue col-lg-m pull-left">
+        <div class="select-blue col-lg-m pull-left">
             <select class="form-control" id="sel1">
                 <option>Which of our service center is closest to you?</option>
                 <option>2</option>
@@ -98,7 +125,7 @@
             </select>
         </div>
         <p class="clear">You are able to add more than 1 file by selecting multiple files at once</p>
-        <div class="upload-file"> Upload A file<input type="file" class="custom-file-input" ></div>
+        <div class="upload-file "> Upload A file<input type="file" class="custom-file-input" ></div>
 
         <form action="" method="post" class="validate-form">
             <vue-recaptcha :loadRecaptchaScript="true" sitekey="6Ldbdg0TAAAAAI7KAf72Q6uagbWzWecTeBWmrCpJ">
@@ -127,14 +154,12 @@
         display:flex;
 
     }
-    select{
-        border: none;
-        appearance: none!important;
-        /* for Firefox */
-        -moz-appearance: none!important;
-        /* for Chrome */
-        -webkit-appearance: none!important;
+    .form-control{
+        font-size: 13px;
+        border-radius: 8px!important;
+        border: 1px solid #009fe4!important;
     }
+
     .form-details div {
         width: 50%;
         justify-content: space-between;
@@ -152,16 +177,6 @@
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
     }
-    .form-icon {
-        background: #009fe4;
-        display: block;
-        width: 54px;
-        float: left;
-        height: 50px;
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
-        padding: 11px 18px;
-    }
     .form-more-details {
         border: 1px solid #009fe4;
         border-radius: 10px;
@@ -178,12 +193,10 @@
     }
     .select-blue {
         margin: 10px 3px;
-        border: 1px solid #009fe4;
-        border-radius: 10px;
         height: 50px;
         padding: 6px 0;
     }
-    .select-blue::after {
+    .select-blue:after {
         top: 15px;
     }
     .form-control:focus {
@@ -196,7 +209,7 @@
         font-size: 14px;
     }
     .form-more-details .form-control {
-        padding: 8px;
+        padding: 2px 8px;
         font-size: 14px;
         color: #000;
     }
@@ -216,12 +229,8 @@
         position:relative;
         padding:0;
     }
-    .form-textarea .form-icon {
-        position: absolute;
-        top: -1px;
-        left: -1px;
-        padding-top: 15px;
-        border-bottom-left-radius: 0;
+    .first .input-group-text img{
+        height: 18px;
     }
     .form-textarea textarea{
         width: 100%;
@@ -357,6 +366,8 @@
         font-weight: bold;
         text-transform: uppercase;
         position:relative;
+        font-size: 12px;
+        letter-spacing: 1px;
     }
 
     .custom-file-input {
@@ -373,5 +384,30 @@
         text-transform: uppercase;
         font-weight: bold;
         margin-top: 12px;
+        font-size: 12px;
+        letter-spacing: 1px;
     }
+
+
+    .input-group-text{
+        background-color: #009fe4!important;
+        border: 1px solid #009fe4!important;
+        border-bottom-left-radius: 8px!important;
+        border-top-left-radius: 8px!important;
+    }
+    .input-group-text img{
+        height: 18px;
+    }
+    .input-group-prepend + .form-control{
+        border-bottom-left-radius: 0!important;
+        border-top-left-radius: 0!important;
+    }
+    p{
+        font-size: 12px;
+    }
+ @media (max-width: 480px) {
+     .upload-file{
+         width: 100%;
+     }
+ }
 </style>

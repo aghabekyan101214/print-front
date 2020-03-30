@@ -122,41 +122,52 @@
                 </div>
 
                 <div class="col-xl-6 col-md-6 mb-3">
-                    <p class="mb-1">Paper Type*</p>
-                    <select class="form-control print-product" id="stock">
-                        <option value="0">Type1</option>
-                        <option value="">Type2</option>
-                        <option value="">Type3</option>
-                    </select>
-                </div>
-
-                <div class="col-xl-6 col-md-6 mb-3">
-                    <p class="mb-1">Colors</p>
-                    <select class="form-control print-product" id="colors">
-                        <option value="">4/1 Full Color Front/Black</option>
-                        <option value="">White</option>
-                        <option value="">Green</option>
-                        <option value="">Yellow</option>
-                    </select>
-                </div>
-
-                <div class="col-xl-6 col-md-6 mb-3">
-                    <p class="mb-1">Finishing</p>
-                    <select class="form-control print-product" id="finishing">
-                        <option value="">4/1 Full Color Front/Black</option>
-                        <option value="">White</option>
-                        <option value="">Green</option>
-                        <option value="">Yellow</option>
-                    </select>
-                </div>
-
-                <div class="col-xl-6 col-md-6 mb-3">
                     <p class="mb-1">Shape</p>
                     <select class="form-control print-product" id="quantity">
                         <option value="">Shape1</option>
                         <option value="">Shape2</option>
                         <option value="">Shape3</option>
                         <option value="">Shape4</option>
+                    </select>
+                </div>
+
+                <div class="col-xl-6 col-md-6 mb-3">
+                    <p class="mb-1">Print Side Type*</p>
+                    <select class="form-control print-product" id="stock">
+                        <option value="0">Side1</option>
+                        <option value="0">Side2</option>
+                        <option value="0">Side3</option>
+                        <option value="0">Side4</option>
+                    </select>
+                </div>
+
+                <div class="col-xl-6 col-md-6 mb-3">
+                    <p class="mb-1">Thickness</p>
+                    <select class="form-control print-product" id="colors">
+                        <option value="">2</option>
+                        <option value="">4</option>
+                        <option value="">6</option>
+                        <option value="">8</option>
+                    </select>
+                </div>
+
+                <div class="col-xl-6 col-md-6 mb-3">
+                    <p class="mb-1">Material Type</p>
+                    <select class="form-control print-product" id="finishing">
+                        <option value="">Type1</option>
+                        <option value="">Type2</option>
+                        <option value="">Type3</option>
+                        <option value="">Type4</option>
+                    </select>
+                </div>
+
+                <div class="col-xl-6 col-md-6 mb-3">
+                    <p class="mb-1">Finishing</p>
+                    <select class="form-control print-product" id="duration">
+                        <option value="">100</option>
+                        <option value="">1000</option>
+                        <option value="">10000</option>
+                        <option value="">100000</option>
                     </select>
                 </div>
 
@@ -170,10 +181,7 @@
                     </select>
                 </div>
 
-            </div>
-
-            <div class="row bg-white mt-3">
-                <div class="col-xl-12 center-xs">
+                <div class="col-xl-6 col-md-6 mb-3">
                     <p class="mb-1">Production Time</p>
                     <div class="radio-toolbar">
                         <input type="radio" id="radioApple" name="radioFruit" value="apple" checked>
@@ -192,6 +200,7 @@
 
                     </div>
                 </div>
+
             </div>
 
             <div class="row bg-white mt-5">
@@ -207,29 +216,8 @@
                 </div>
             </div>
 
-            <div class="row bg-white mt-5">
-                <div class="col-xl-2 col-12 col-md-2 center-xs">
-                    <div class="img-cont">
-                        <img @click="$refs.file.click()" ref="preview" class="img-fluid" src="../assets/images/upload.png" alt="asd">
-                        <p class="mt-3">Upload Your Image</p>
-                    </div>
-                    <input type="file" @change="handleFileUpload()" ref="file" accept="image/*" class="d-none">
-                </div>
-                <div class="col-xl-10 col-12 col-md-10 center-xs">
-                    <p>Accepted File Format</p>
-                    <div class="detail-box pl-3">
-                        <p>Bleed: 0.125</p>
-                        <p>Resolution: 300 dpi</p>
-                        <p>Color Mode: CMYK</p>
-                        <p>File Type: PDF, EPS, TIFF & All(created outline)</p>
-                        <p>Maxiumum Upload Size: 10 MB</p>
-                    </div>
-                    <button class="submit upload filled btn" @click="$refs.file.click()">Upload Your Artwork</button>
-                </div>
-            </div>
-
             <div class="row bg-white mt-3">
-                <div class="col-xl-12 text-center">
+                <div class="col-xl-12 center-xs">
                     <button class="submit filled btn">Submit</button>
                 </div>
             </div>
@@ -239,17 +227,17 @@
 
 <script>
     import Breadcrumb from "../components/Breadcrumb";
-    import {products} from "../data/printProducts"
+    import {signage} from "../data/printProducts"
 
     export default {
-        name: "Privacy",
+        name: "Get Quote Signage",
         components: {
             Breadcrumb
         },
         data: () => {
             return {
                 title: "Get Quote",
-                products,
+                products: signage,
                 product: "",
                 image: ""
             }
@@ -262,7 +250,7 @@
                 this.product = product
             },
             changeRoute() {
-                this.$router.push(`/print-services/get-quote/${this.product}`);
+                this.$router.push(`/banners/get-quote/${this.product}`);
             },
             handleFileUpload(){
                 this.image = this.$refs.file.files[0];

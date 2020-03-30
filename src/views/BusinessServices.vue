@@ -169,5 +169,6 @@
     }
     .services-box{
         cursor: pointer;
+        padding-top: 30px;
     }
 </style>

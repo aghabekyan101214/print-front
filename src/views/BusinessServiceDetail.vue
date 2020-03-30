@@ -30,7 +30,7 @@
                     <p>Colors of printing</p>
                     <p>Quantity</p>
                     <p>Finishing (lamination,die-cut)</p>
-                    <a href="#" class="blue-btn">get a quote</a>
+                    <router-link :to="service.slug + '/get-quote'" class="blue-btn">get a quote</router-link>
 
                 </div>
             </div>
@@ -81,6 +81,14 @@
                 let path = this.$route.path;
                 let title = (path.split("/")[2]).split("-").join(" ");
                 this.title = (title != undefined && title != null) ? title : "";
+            },
+            getData() {
+                axios.get(process.env.VUE_APP_DATA_URL + "api/business-service/" + this.$route.params.slug).then(r => {
+                    if(r.data) {
+                        this.service = r.data;
+                        console.log(r.data)
+                    }
+                });
             }
         },
         mounted() {
@@ -93,11 +101,7 @@
             this.getTitle();
         },
         created() {
-            axios.get(process.env.VUE_APP_DATA_URL + "api/business-service/" + this.$route.params.slug).then(r => {
-                if(r.data) {
-                    this.service = r.data;
-                }
-            });
+            this.getData();
         },
         computed: {
             swiper() {
@@ -107,6 +111,7 @@
         watch:{
             $route (to, from){
                 this.getTitle();
+                this.getData();
             }
         }
     }
