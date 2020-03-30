@@ -112,21 +112,21 @@
                 </div>
 
                 <div class="col-xl-6 col-md-6 mb-3">
-                    <p class="mb-1">Step 1: Select A Print Product*</p>
-                    <select class="form-control print-product" id="stock">
-                        <option value="0">100# Dull Cover</option>
-                        <option value="">Another Product</option>
-                        <option value="">One more Product</option>
-                    </select>
-                </div>
-
-                <div class="col-xl-6 col-md-6 mb-3">
                     <p class="mb-1">Size*</p>
                     <select class="form-control print-product" id="size">
                         <option value="">1300*100</option>
                         <option value="">1300*1300</option>
                         <option value="">1600*1600</option>
                         <option value="">2100*1700</option>
+                    </select>
+                </div>
+
+                <div class="col-xl-6 col-md-6 mb-3">
+                    <p class="mb-1">Paper Type*</p>
+                    <select class="form-control print-product" id="stock">
+                        <option value="0">Type1</option>
+                        <option value="">Type2</option>
+                        <option value="">Type3</option>
                     </select>
                 </div>
 
@@ -151,31 +151,58 @@
                 </div>
 
                 <div class="col-xl-6 col-md-6 mb-3">
-                    <p class="mb-1">Quantity</p>
+                    <p class="mb-1">Shape</p>
                     <select class="form-control print-product" id="quantity">
-                        <option value="">4/1 Full Color Front/Black</option>
-                        <option value="">10</option>
-                        <option value="">100</option>
-                        <option value="">100y</option>
+                        <option value="">Shape1</option>
+                        <option value="">Shape2</option>
+                        <option value="">Shape3</option>
+                        <option value="">Shape4</option>
                     </select>
                 </div>
 
                 <div class="col-xl-6 col-md-6 mb-3">
-                    <p class="mb-1">Production Time</p>
+                    <p class="mb-1">Quantity</p>
                     <select class="form-control print-product" id="duration">
-                        <option value="">13/11/2020</option>
-                        <option value="">15/11/2020</option>
-                        <option value="">17/11/2020</option>
-                        <option value="">19/11/2020</option>
+                        <option value="">100</option>
+                        <option value="">1000</option>
+                        <option value="">10000</option>
+                        <option value="">100000</option>
                     </select>
                 </div>
 
             </div>
 
             <div class="row bg-white mt-3">
-                <div class="col-xl-3 col-md-3">
+                <div class="col-xl-12 center-xs">
+                    <p class="mb-1">Production Time</p>
+                    <div class="radio-toolbar">
+                        <input type="radio" id="radioApple" name="radioFruit" value="apple" checked>
+                        <label for="radioApple">
+                            Regular
+                            <br>
+                            <small>4-6 Business Days</small>
+                        </label>
+
+                        <input type="radio" id="radioBanana" name="radioFruit" value="banana">
+                        <label for="radioBanana" class="text-center ml-1">
+                            Rush
+                            <br>
+                            <small>Not Available</small>
+                        </label>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row bg-white mt-3">
+                <div class="col-xl-3 col-md-3 col-9">
                     <p>
-                        <label for="">Price</label> <b>150$</b>
+                        <label for="">Subtotal (excludes shipping): </label>
+                    </p>
+                </div>
+                <div class="col-xl-3 col-md-3 col-3">
+                    <p>
+                        <b>$150</b>
                     </p>
                 </div>
             </div>
@@ -278,5 +305,33 @@
         background-color: #009fe4;
         color: white;
         margin-top: 0;
+    }
+    .radio-toolbar input[type="radio"] {
+        opacity: 0;
+        position: fixed;
+        width: 0;
+    }
+    .radio-toolbar label {
+        display: inline-block;
+        cursor: pointer;
+        padding: 7px 0;
+        text-align: center;
+        width: 130px;
+        font-family: Poppins-Regular, sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        border: 1px solid #009fe4;
+        border-radius: 4px;
+        color: black;
+        line-height: 15px;
+    }
+    .radio-toolbar input[type="radio"]:checked + label {
+        background-color: #009fe4;
+        color: white;
+    }
+    @media (max-width: 480px) {
+        .center-xs{
+            text-align: center;
+        }
     }
 </style>
