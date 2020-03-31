@@ -112,12 +112,12 @@
                 </div>
 
                 <div class="col-xl-6 col-md-6 mb-3">
-                    <p class="mb-1">Size*</p>
-                    <select class="form-control print-product" id="size">
-                        <option value="">1300*100</option>
-                        <option value="">1300*1300</option>
-                        <option value="">1600*1600</option>
-                        <option value="">2100*1700</option>
+                    <p class="mb-1">Material Type</p>
+                    <select class="form-control print-product" id="finishing">
+                        <option value="">Type1</option>
+                        <option value="">Type2</option>
+                        <option value="">Type3</option>
+                        <option value="">Type4</option>
                     </select>
                 </div>
 
@@ -131,8 +131,9 @@
                     </select>
                 </div>
 
+
                 <div class="col-xl-6 col-md-6 mb-3">
-                    <p class="mb-1">Print Side Type*</p>
+                    <p class="mb-1">Print Side*</p>
                     <select class="form-control print-product" id="stock">
                         <option value="0">Side1</option>
                         <option value="0">Side2</option>
@@ -152,12 +153,12 @@
                 </div>
 
                 <div class="col-xl-6 col-md-6 mb-3">
-                    <p class="mb-1">Material Type</p>
-                    <select class="form-control print-product" id="finishing">
-                        <option value="">Type1</option>
-                        <option value="">Type2</option>
-                        <option value="">Type3</option>
-                        <option value="">Type4</option>
+                    <p class="mb-1">Size*</p>
+                    <select class="form-control print-product" id="size">
+                        <option value="">1300*100</option>
+                        <option value="">1300*1300</option>
+                        <option value="">1600*1600</option>
+                        <option value="">2100*1700</option>
                     </select>
                 </div>
 
@@ -230,7 +231,7 @@
     import {signage} from "../data/printProducts"
 
     export default {
-        name: "Get Quote Signage",
+        name: "GetQuoteSignage",
         components: {
             Breadcrumb
         },

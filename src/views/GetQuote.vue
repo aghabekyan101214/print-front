@@ -112,21 +112,21 @@
                 </div>
 
                 <div class="col-xl-6 col-md-6 mb-3">
-                    <p class="mb-1">Size*</p>
-                    <select class="form-control print-product" id="size">
-                        <option value="">1300*100</option>
-                        <option value="">1300*1300</option>
-                        <option value="">1600*1600</option>
-                        <option value="">2100*1700</option>
-                    </select>
-                </div>
-
-                <div class="col-xl-6 col-md-6 mb-3">
                     <p class="mb-1">Paper Type*</p>
                     <select class="form-control print-product" id="stock">
                         <option value="0">Type1</option>
                         <option value="">Type2</option>
                         <option value="">Type3</option>
+                    </select>
+                </div>
+
+                <div class="col-xl-6 col-md-6 mb-3">
+                    <p class="mb-1">Shape</p>
+                    <select class="form-control print-product" id="quantity">
+                        <option value="">Shape1</option>
+                        <option value="">Shape2</option>
+                        <option value="">Shape3</option>
+                        <option value="">Shape4</option>
                     </select>
                 </div>
 
@@ -151,12 +151,12 @@
                 </div>
 
                 <div class="col-xl-6 col-md-6 mb-3">
-                    <p class="mb-1">Shape</p>
-                    <select class="form-control print-product" id="quantity">
-                        <option value="">Shape1</option>
-                        <option value="">Shape2</option>
-                        <option value="">Shape3</option>
-                        <option value="">Shape4</option>
+                    <p class="mb-1">Size*</p>
+                    <select class="form-control print-product" id="size">
+                        <option value="">1300*100</option>
+                        <option value="">1300*1300</option>
+                        <option value="">1600*1600</option>
+                        <option value="">2100*1700</option>
                     </select>
                 </div>
 
@@ -194,14 +194,14 @@
                 </div>
             </div>
 
-            <div class="row bg-white mt-5">
-                <div class="col-xl-3 col-md-3 col-9">
+            <div class="row mt-5">
+                <div class="col-xl-5 col-md-5 col-9">
                     <p>
-                        <label for="">Subtotal (excludes shipping): </label>
+                        <label for="" class="sub">Subtotal (excludes shipping): </label>
                     </p>
                 </div>
                 <div class="col-xl-3 col-md-3 col-3">
-                    <p>
+                    <p class="sub">
                         <b>$150</b>
                     </p>
                 </div>
@@ -209,9 +209,9 @@
 
             <div class="row bg-white mt-5">
                 <div class="col-xl-2 col-12 col-md-2 center-xs">
-                    <div class="img-cont">
-                        <img @click="$refs.file.click()" ref="preview" class="img-fluid" src="../assets/images/upload.png" alt="asd">
-                        <p class="mt-3">Upload Your Image</p>
+                    <div class="img-cont text-center">
+                        <img @click="$refs.file.click()" ref="preview" class="img-fluid uplaod-img" src="../assets/images/upload.png" alt="asd">
+                        <p class="mt-3 text-center">Upload Your Image</p>
                     </div>
                     <input type="file" @change="handleFileUpload()" ref="file" accept="image/*" class="d-none">
                 </div>
@@ -224,7 +224,6 @@
                         <p>File Type: PDF, EPS, TIFF & All(created outline)</p>
                         <p>Maxiumum Upload Size: 10 MB</p>
                     </div>
-                    <button class="submit upload filled btn" @click="$refs.file.click()">Upload Your Artwork</button>
                 </div>
             </div>
 
@@ -365,5 +364,16 @@
     }
     .submit.upload{
         width: auto;
+    }
+    .uplaod-img{
+        cursor: pointer;
+    }
+    .sub{
+        font-size: 18px;
+    }
+    .img-cont{
+        border-radius: 8px;
+        border: 1px solid #009fe4;
+        overflow: hidden;
     }
 </style>

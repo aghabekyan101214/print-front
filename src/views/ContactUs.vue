@@ -17,15 +17,15 @@
                 <div>
                     <div class="flex">
                         <p class="blue">Phone number:</p>
-                        <p>+1(818)814-4220, +1(818)221-5451</p>
+                        <p class="ml-2">+1(818)814-4220, +1(818)221-5451</p>
                     </div>
                     <div class="flex">
                         <p class="blue">Address:</p>
-                        <p>PO Box 11174 Glendale, CA 91226</p>
+                        <p class="ml-2">PO Box 11174 Glendale, CA 91226</p>
                     </div>
                     <div class="flex">
                         <p class="blue">Email:</p>
-                        <p>
+                        <p class="ml-2">
                             production@caliprintworks.com, Info@caliprintworks.com
                         </p>
                     </div>
@@ -33,7 +33,7 @@
                 <div>
                     <div class="flex">
                         <p class="blue">Hours:</p>
-                        <p>Monday-Friday: 8:00am  - 7:00pm </p>
+                        <p class="ml-2">Monday-Friday: 8:00am  - 7:00pm </p>
                     </div>
                 </div>
             </div>

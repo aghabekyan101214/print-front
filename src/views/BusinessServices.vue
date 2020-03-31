@@ -82,6 +82,7 @@
         color: #fff;
         z-index: 5;
         transition: .5s;
+        top: 10px;
     }
     .services-panel p .fa{
         position: absolute;
@@ -165,7 +166,7 @@
     }
     .services-box:hover  p{
         cursor: pointer;
-        transform: translateY(23px);
+        transform: translateY(13px);
     }
     .services-box{
         cursor: pointer;

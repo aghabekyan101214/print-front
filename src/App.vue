@@ -140,6 +140,10 @@
         watch:{
             $route (to, from){
                 window.scrollTo(0, 0);
+                this.$refs.drop.classList.add("d-none");
+                setTimeout(() => {
+                    this.$refs.drop.classList.remove("d-none");
+                }, 100)
             }
         }
     }
@@ -620,8 +624,10 @@
         }
     }
     ul.w-200{
-        width: 200px;
+        width: 250px;
     }
-
+    .dropdown-list a:hover{
+        color: #007bff;
+    }
 
 </style>
