@@ -36,8 +36,8 @@ let signage = [
 ];
 
 let apparel = [
-    {slug: "screen-printing", name: "Screen Printing ( high volume )"},
-    {slug: "digital-transfer", name: "Digital Transfer ( low volume )"},
+    {slug: "screen-printing", name: "Screen Printing (high volume)"},
+    {slug: "digital-transfer", name: "Digital Transfer (low volume)"},
     {slug: "vinyl-heat-transfer", name: "Vinyl Heat Transfer"},
     {slug: "embroidery", name: "Embroidery"},
 ];

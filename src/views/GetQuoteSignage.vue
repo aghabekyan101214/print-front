@@ -204,21 +204,41 @@
 
             </div>
 
-            <div class="row bg-white mt-5">
-                <div class="col-xl-3 col-md-3 col-9">
+            <div class="row mt-5">
+                <div class="col-xl-5 col-md-5 col-9">
                     <p>
-                        <label for="">Subtotal (excludes shipping): </label>
+                        <label for="" class="sub">Subtotal (excludes shipping): </label>
                     </p>
                 </div>
                 <div class="col-xl-3 col-md-3 col-3">
-                    <p>
+                    <p class="sub">
                         <b>$150</b>
                     </p>
                 </div>
             </div>
 
+            <div class="row bg-white mt-5">
+                <div class="col-xl-2 col-12 col-md-2 center-xs">
+                    <div class="img-cont text-center">
+                        <img @click="$refs.file.click()" ref="preview" class="img-fluid uplaod-img" src="../assets/images/upload.png" alt="asd">
+                        <p class="mt-3 text-center">Upload Your Image</p>
+                    </div>
+                    <input type="file" @change="handleFileUpload()" ref="file" accept="image/*" class="d-none">
+                </div>
+                <div class="col-xl-10 col-12 col-md-10 center-xs">
+                    <p>Accepted File Format</p>
+                    <div class="detail-box pl-3">
+                        <p>Bleed: 0.125</p>
+                        <p>Resolution: 300 dpi</p>
+                        <p>Color Mode: CMYK</p>
+                        <p>File Type: PDF, EPS, TIFF & All(created outline)</p>
+                        <p>Maxiumum Upload Size: 10 MB</p>
+                    </div>
+                </div>
+            </div>
+
             <div class="row bg-white mt-3">
-                <div class="col-xl-12 center-xs">
+                <div class="col-xl-12 text-center">
                     <button class="submit filled btn">Submit</button>
                 </div>
             </div>
@@ -354,5 +374,16 @@
     }
     .submit.upload{
         width: auto;
+    }
+    .uplaod-img{
+        cursor: pointer;
+    }
+    .sub{
+        font-size: 18px;
+    }
+    .img-cont{
+        border-radius: 8px;
+        border: 1px solid #009fe4;
+        overflow: hidden;
     }
 </style>

@@ -4,7 +4,8 @@
             <slide>
                 <div class="row m0">
                     <div class="col-xl-12 pl-0 pr-0">
-                        <img class="img-fluid" src="../../assets/images/baner1.jpg" alt="First slide">
+                        <img class="img-fluid d-none d-lg-block" src="../../assets/images/banner1.jpg" alt="First slide">
+                        <img class="img-fluid d-lg-none" src="../../assets/images/banner1-mob.jpeg" alt="First slide">
                     </div>
                 </div>
             </slide>

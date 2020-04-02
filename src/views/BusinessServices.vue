@@ -7,17 +7,7 @@
                     <img src="../assets/images/services-bg.png" alt="banner" >
                 </div>
             </div>
-            <div class="select-item">
-                <label>Sort by : </label>
-                <div class="select">
-                    <select name="slct" id="slct">
-                        <option selected disabled>Select</option>
-                        <option value="1">item1</option>
-                        <option value="2">item1</option>
-                        <option value="3">item1</option>
-                    </select>
-                </div>
-            </div>
+
             <div class="services-panel row">
                 <div v-for="service in services" :key="service.slug" @click="goTo(`${'/business-service/' + service.slug}`)" class="services-box col-lg-4">
                     <p>{{ service.title }} <i class="fa fa-sort-down"/></p>
@@ -25,6 +15,7 @@
                     <img :src="service.image" alt="banner" >
                 </div>
             </div>
+
         </section>
     </div>
 </template>

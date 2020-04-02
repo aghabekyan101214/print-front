@@ -241,7 +241,9 @@
         border-bottom:2px solid #009fe4;
         transition: width .2s;
     }
-
+    .navbar-brand img{
+        max-height: 50px;
+    }
     .nav-item:hover .fa-sort-up-list {
         visibility: visible;
         position: absolute;
