@@ -2,16 +2,16 @@
     <div class="get-quote">
         <Breadcrumb/>
         <div class="container">
-            <div class="row">
+<!--            <div class="row">-->
 
-                <div class="col-xl-6 col-md-6">
-                    <label for="pr-p">Step 1: Select A Print Product</label>
-                    <select @change="changeRoute" v-model="product" class="form-control print-product" id="pr-p">
-                        <option v-for="product in products" :key="product" :value="product.toLocaleLowerCase().replace(' ', '-')">{{ product}}</option>
-                    </select>
-                </div>
+<!--                <div class="col-xl-6 col-md-6">-->
+<!--                    <label for="pr-p">Step 1: Select A Print Product</label>-->
+<!--                    <select @change="changeRoute" v-model="product" class="form-control print-product" id="pr-p">-->
+<!--                        <option v-for="product in products" :key="product.id" :value="product.slug">{{ product.name }}</option>-->
+<!--                    </select>-->
+<!--                </div>-->
 
-            </div>
+<!--            </div>-->
 
             <div class="row pt-5">
                 <div class="col-xl-12">
@@ -111,69 +111,64 @@
                     <label for="">Step 2: Select Product Options</label>
                 </div>
 
-                <div class="col-xl-6 col-md-6 mb-3">
-                    <p class="mb-1">Paper Type*</p>
-                    <select class="form-control print-product" id="stock">
-                        <option value="0">Type1</option>
-                        <option value="">Type2</option>
-                        <option value="">Type3</option>
+                <div v-for="form in forms" :key="form.id" class="col-xl-6 col-md-6 mb-3">
+                    <p class="mb-1">{{ form.form.name }}</p>
+                    <select @change="chF" :data-form_id="form.form_id" class="form-control print-product" id="stock">
+                        <option v-for="val in form.values" :key="val.id" :value="val.id">{{ val.name }}</option>
                     </select>
                 </div>
 
-                <div class="col-xl-6 col-md-6 mb-3">
-                    <p class="mb-1">Shape</p>
-                    <select class="form-control print-product" id="quantity">
-                        <option value="">Shape1</option>
-                        <option value="">Shape2</option>
-                        <option value="">Shape3</option>
-                        <option value="">Shape4</option>
-                    </select>
-                </div>
+<!--                <div class="col-xl-6 col-md-6 mb-3">-->
+<!--                    <p class="mb-1">Shape</p>-->
+<!--                    <select class="form-control print-product" id="quantity">-->
+<!--                        <option value="">Shape1</option>-->
+<!--                        <option value="">Shape2</option>-->
+<!--                        <option value="">Shape3</option>-->
+<!--                        <option value="">Shape4</option>-->
+<!--                    </select>-->
+<!--                </div>-->
 
-                <div class="col-xl-6 col-md-6 mb-3">
-                    <p class="mb-1">Colors</p>
-                    <select class="form-control print-product" id="colors">
-                        <option value="">4/1 Full Color Front/Black</option>
-                        <option value="">White</option>
-                        <option value="">Green</option>
-                        <option value="">Yellow</option>
-                    </select>
-                </div>
+<!--                <div class="col-xl-6 col-md-6 mb-3">-->
+<!--                    <p class="mb-1">Colors</p>-->
+<!--                    <select class="form-control print-product" id="colors">-->
+<!--                        <option value="">4/1 Full Color Front/Black</option>-->
+<!--                        <option value="">White</option>-->
+<!--                        <option value="">Green</option>-->
+<!--                        <option value="">Yellow</option>-->
+<!--                    </select>-->
+<!--                </div>-->
 
-                <div class="col-xl-6 col-md-6 mb-3">
-                    <p class="mb-1">Finishing</p>
-                    <select class="form-control print-product" id="finishing">
-                        <option value="">4/1 Full Color Front/Black</option>
-                        <option value="">White</option>
-                        <option value="">Green</option>
-                        <option value="">Yellow</option>
-                    </select>
-                </div>
+<!--                <div class="col-xl-6 col-md-6 mb-3">-->
+<!--                    <p class="mb-1">Finishing</p>-->
+<!--                    <select class="form-control print-product" id="finishing">-->
+<!--                        <option value="">4/1 Full Color Front/Black</option>-->
+<!--                        <option value="">White</option>-->
+<!--                        <option value="">Green</option>-->
+<!--                        <option value="">Yellow</option>-->
+<!--                    </select>-->
+<!--                </div>-->
 
-                <div class="col-xl-6 col-md-6 mb-3">
-                    <p class="mb-1">Size*</p>
-                    <select class="form-control print-product" id="size">
-                        <option value="">1300*100</option>
-                        <option value="">1300*1300</option>
-                        <option value="">1600*1600</option>
-                        <option value="">2100*1700</option>
-                    </select>
-                </div>
+<!--                <div class="col-xl-6 col-md-6 mb-3">-->
+<!--                    <p class="mb-1">Size*</p>-->
+<!--                    <select class="form-control print-product" id="size">-->
+<!--                        <option value="">1300*100</option>-->
+<!--                        <option value="">1300*1300</option>-->
+<!--                        <option value="">1600*1600</option>-->
+<!--                        <option value="">2100*1700</option>-->
+<!--                    </select>-->
+<!--                </div>-->
 
-                <div class="col-xl-6 col-md-6 mb-3">
-                    <p class="mb-1">Quantity</p>
-                    <select class="form-control print-product" id="duration">
-                        <option value="">100</option>
-                        <option value="">1000</option>
-                        <option value="">10000</option>
-                        <option value="">100000</option>
-                    </select>
-                </div>
+<!--                <div class="col-xl-6 col-md-6 mb-3">-->
+<!--                    <p class="mb-1">Quantity</p>-->
+<!--                    <select class="form-control print-product" id="duration">-->
+<!--                        <option value="">100</option>-->
+<!--                        <option value="">1000</option>-->
+<!--                        <option value="">10000</option>-->
+<!--                        <option value="">100000</option>-->
+<!--                    </select>-->
+<!--                </div>-->
 
-            </div>
-
-            <div class="row bg-white mt-3">
-                <div class="col-xl-12 center-xs">
+                <div class="col-xl-6 col-md-6 mb-3 center-xs">
                     <p class="mb-1">Production Time</p>
                     <div class="radio-toolbar">
                         <input type="radio" id="radioApple" name="radioFruit" value="apple" checked>
@@ -192,6 +187,7 @@
 
                     </div>
                 </div>
+
             </div>
 
             <div class="row mt-5">
@@ -238,7 +234,8 @@
 
 <script>
     import Breadcrumb from "../components/Breadcrumb";
-    import {products} from "../data/printProducts"
+    // import {products} from "../data/printProducts"
+    import axios from "axios"
 
     export default {
         name: "Privacy",
@@ -248,15 +245,46 @@
         data: () => {
             return {
                 title: "Get Quote",
-                products,
+                // products: [],
+                forms: [],
                 product: "",
-                image: ""
+                image: "",
+                data:[]
             }
         },
         created: function() {
-          this.changeProduct(this.$route.params.product);
+            this.getForms();
         },
         methods: {
+            getForms(){
+                axios.get(process.env.VUE_APP_DATA_URL + "api/get-form/" + this.$route.params.product).then(r => {
+                    if(r.data) {
+                        this.forms = r.data.data.forms || [];
+                    }
+                })
+            },
+            chF(e){
+                let formValue = e.target.value;
+                let formId = e.target.getAttribute("data-form_id");
+                let push = true;
+                this.data.forEach(function(e){
+                    if(e.formId == formId) {
+                        e.formValue = formValue;
+                        push = false;
+                        return;
+                    }
+                });
+                if(push) {
+                    this.data.push({
+                        formId, formValue
+                    });
+                }
+                if(this.data.length != this.forms.length) {
+
+
+                }
+                console.log(this.data.length, this.forms.length)
+            },
             changeProduct(product) {
                 this.product = product
             },
@@ -271,6 +299,7 @@
         watch: {
             $route(to, from) {
                 this.changeProduct(this.$route.params.product);
+                this.getForms();
             }
         }
     }

@@ -7,53 +7,75 @@
 
                         <b-navbar toggleable="lg">
                             <router-link class="navbar-brand" to="/"><img src="./assets/images/logo.png" alt="logo"></router-link>
-
-                            <b-navbar-toggle target="nav-collapse"/>
+                            <b-navbar-toggle ref="hamburger" id="hamb" target="nav-collapse"/>
 
                             <b-collapse id="nav-collapse" is-nav>
                                 <b-navbar-nav right>
-                                    <a class="nav-dropdown nav-item nav-link" @click="handleClick">ALL products <i class="fa fa-angle-down"/>
-                                        <div class="dropdown-list" ref="drop">
-                                            <i class="fa fa-sort-up"/>
-                                            <ul>
-                                                <li>
-                                                    <a href="#"><p>Print services</p></a>
-                                                </li>
-                                                <li v-for="product in products" :key="product">
-                                                    <router-link :to="'/print-services/get-quote/' + product.toLocaleLowerCase().replace(' ', '-')">{{ product}}</router-link>
-                                                </li>
+                                    <b-nav-item-dropdown class="nav-dropdown pt-0" text="ALL products">
+                                        <i class="fa fa-sort-up"></i>
 
+                                        <ul>
+                                            <b-dropdown-item href="#"><p>Print services</p></b-dropdown-item>
+                                            <b-dropdown-item v-for="product in products" :key="product.id" :to="'/get-quote/' + product.slug">{{ product.name }}</b-dropdown-item>
+                                        </ul>
 
+                                        <ul>
+                                            <b-dropdown-item href="#"><p>Banner/Signage</p></b-dropdown-item>
+
+                                            <b-dropdown-item v-for="s in signage" :key="s.key" :to="'/get-quote/' + s.slug">{{ s.name }}</b-dropdown-item>
+
+                                            <ul class="w-200">
+                                                <b-dropdown-item href="#"><p>Apparel Branding</p></b-dropdown-item>
+
+                                                <b-dropdown-item v-for="a in apparel" :key="a.key" :to="'/get-quote/' + a.slug">{{ a.name }}</b-dropdown-item>
                                             </ul>
-                                            <ul>
-                                                <li>
-                                                    <a href="#"><p>Banner/Signage</p></a>
-                                                </li>
-                                                <li v-for="s in signage" :key="s">
-                                                    <router-link :to="'/banners/get-quote/' + s.toLocaleLowerCase().replace(' ', '-')">{{ s }}</router-link>
-                                                </li>
+                                        </ul>
 
-                                                <br>
-                                                <ul class="w-200">
-                                                    <li>
-                                                        <a href="#"><p>Apparel Branding</p></a>
-                                                    </li>
-                                                    <li v-for="a in apparel" :key="a.slug">
-                                                        <router-link :to="'/apparel/get-quote/' + a.slug" v-html="a.name"></router-link>
-                                                    </li>
-                                                </ul>
+                                        <ul>
+                                            <b-dropdown-item href="#"><p>Services</p></b-dropdown-item>
+                                            <b-dropdown-item v-for="service in services" :key="service.key" :to="'/business-service/' + service.slug">{{ service.name }}</b-dropdown-item>
+                                        </ul>
+                                            <!--                                        <ul class="dropdown-list" ref="drop">-->
+<!--                                            <i class="fa fa-sort-up"/>-->
+<!--                                            <ul>-->
+<!--                                                <li>-->
+<!--                                                    <a href="#"><p>Print services</p></a>-->
+<!--                                                </li>-->
+<!--                                                <li v-for="product in products" :key="product.id">-->
+<!--                                                    <router-link class="dropdown-item" :to="'/get-quote/' + product.slug">{{ product.name }}</router-link>-->
+<!--                                                </li>-->
 
-                                            </ul>
-                                            <ul>
-                                                <li>
-                                                    <a href="#"><p>Services</p></a>
-                                                </li>
-                                                <li v-for="service in services" :key="service.slug">
-                                                    <router-link :to="'/business-service/' + service.slug">{{ service.title }}</router-link>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </a>
+
+<!--                                            </ul>-->
+<!--                                            <ul>-->
+<!--                                                <li>-->
+<!--                                                    <a href="#"><p>Banner/Signage</p></a>-->
+<!--                                                </li>-->
+<!--                                                <li v-for="s in signage" :key="s.key">-->
+<!--                                                    <router-link :to="'/get-quote/' + s.slug">{{ s.name }}</router-link>-->
+<!--                                                </li>-->
+
+<!--                                                <br>-->
+<!--                                                <ul class="w-200">-->
+<!--                                                    <li>-->
+<!--                                                        <a href="#"><p>Apparel Branding</p></a>-->
+<!--                                                    </li>-->
+<!--                                                    <li v-for="a in apparel" :key="a.key">-->
+<!--                                                        <router-link :to="'/get-quote/' + a.slug" v-html="a.name"></router-link>-->
+<!--                                                    </li>-->
+<!--                                                </ul>-->
+
+<!--                                            </ul>-->
+<!--                                            <ul>-->
+<!--                                                <li>-->
+<!--                                                    <a href="#"><p>Services</p></a>-->
+<!--                                                </li>-->
+<!--                                                <li v-for="service in services" :key="service.slug">-->
+<!--                                                    <router-link :to="'/business-service/' + service.slug">{{ service.title }}</router-link>-->
+<!--                                                </li>-->
+<!--                                            </ul>-->
+<!--                                        </ul>-->
+                                    </b-nav-item-dropdown>
                                     <b-nav-item to="/business-services" class="nav-item">Business Services <i class="fa fa-sort-up fa-sort-up-list"/></b-nav-item>
                                     <b-nav-item to="/contact" class="nav-item">Contact us <i class="fa fa-sort-up fa-sort-up-list"/></b-nav-item>
                                     <b-nav-item to="/special-deals" class="nav-item">Special Deals <i class="fa fa-sort-up fa-sort-up-list"/></b-nav-item>
@@ -66,7 +88,9 @@
             </div>
 
         </div>
-        <router-view/>
+        <div class="content" @click="closeHamburger">
+            <router-view/>
+        </div>
         <footer class="full-container footer">
             <div class="footer-inner">
                 <div class="row m0">
@@ -102,16 +126,15 @@
     </div>
 </template>
 <script>
-    import {products, signage, apparel} from "./data/printProducts"
     import axios from "axios"
 
     export default {
         data: () => {
             return {
                 static_url: process.env.VUE_APP_STATIC_URL,
-                products,
-                signage,
-                apparel,
+                products: [],
+                signage: [],
+                apparel: [],
                 services: []
             }
         },
@@ -119,13 +142,32 @@
             window.addEventListener('scroll', this.handleScroll);
             axios.get(process.env.VUE_APP_DATA_URL + "api/get-business-services").then(r => {
                 if(r.data) {
-                    this.services = r.data;
+                    this.services = r.data.services;
+                    this.products = r.data.printServices;
+                    this.signage = r.data.signage;
+                    this.apparel = r.data.apparel;
                 }
             })
         },
         methods: {
             handleClick(e) {
                 e.stopPropagation()
+                console.log("s")
+                this.$refs.drop.classList.remove("d-none");
+            },
+            closeHamburger(){
+                if(this.$refs.hamburger.toggleState) {
+                    document.getElementById("hamb").click();
+                }
+                // this.$refs.hamburger.style.display = 'none';
+            },
+            handleLeave(e){
+                e.stopPropagation()
+                // this.$refs.drop.classList.add("d-none");
+            },
+            openDrop(e) {
+                console.log("s")
+                e.trigger("click")
             },
             handleScroll () {
                 let header = document.getElementById("menu-header");
@@ -140,10 +182,9 @@
         watch:{
             $route (to, from){
                 window.scrollTo(0, 0);
-                this.$refs.drop.classList.add("d-none");
-                setTimeout(() => {
-                    this.$refs.drop.classList.remove("d-none");
-                }, 100)
+                // setTimeout(() => {
+                //     this.$refs.drop.classList.remove("d-none");
+                // }, 100)
             }
         }
     }
@@ -187,6 +228,10 @@
         font-weight: normal;
         font-style: normal;
     }
+
+    .dropdown-item:active{
+        background-color: transparent!important;
+    }
     .sticky {
         position: fixed;
         top: 0;
@@ -207,9 +252,14 @@
     .nav-item{
         cursor: pointer;
     }
-    .dropdown-list{
+    .dropdown-menu{
         cursor: initial;
         text-transform: capitalize;
+        padding: 0!important;
+    }
+    .navbar-nav .dropdown-menu{
+        float: left!important;
+        overflow-y: scroll;
     }
     *{
         font-family: 'Poppins-Regular', sans-serif;
@@ -260,7 +310,7 @@
     .nav-dropdown{
         position:relative;
     }
-    .nav-dropdown .dropdown-list {
+    .nav-dropdown .dropdown-menu {
         position: absolute;
         width: 580px;
         background: #fff;
@@ -268,24 +318,21 @@
         border: 2px solid #009fe4;
         padding: 14px 17px;
         color: #1c1b1a;
-        top: 40px;
         left: 0;
     }
-    .dropdown-list{
-        display:none;
-    }
-    .nav-dropdown:hover  .dropdown-list{
-        display:block;
-    }
-    .nav-dropdown .dropdown-list  a{
+    /*.dropdown-menu{*/
+    /*    display:none;*/
+    /*}*/
+
+    .nav-dropdown .dropdown-menu  a{
         color: #1c1b1a;
         font-family: 'Poppins-Regular', sans-serif;
         font-size: 14px;
     }
-    .nav-dropdown .dropdown-list  a:hover{
+    .nav-dropdown .dropdown-menu  a:hover{
         text-decoration:none;
     }
-    .nav-dropdown .dropdown-list  p{
+    .nav-dropdown .dropdown-menu  p{
         color: #1c1b1a;
         font-family: 'Poppins-Regular', sans-serif;
         font-weight: bold;
@@ -442,7 +489,11 @@
         transition: .25s all ease;
         font-size: 13px;
     }
-
+    @media (min-width: 992px) {
+        /*.nav-dropdown:hover  .dropdown-menu{*/
+        /*    display:block;*/
+        /*}*/
+    }
     @media only screen  and (max-width:1200px) {
         .top-title {
             padding-top: 35px;
@@ -476,6 +527,12 @@
         .box-bg {
 
             margin: 15px auto;
+        }
+        .dropdown-menu{
+            height: 300px;
+        }
+        .nav-dropdown .dropdown-menu p{
+            margin-top: 1rem;
         }
         .slider-inner-box {
             line-height: 20px;
@@ -579,7 +636,7 @@
         .navbar.navbar-expand-md.navbar-light{
             padding:0;
         }
-        .nav-dropdown .dropdown-list {
+        .nav-dropdown .dropdown-menu {
             max-width: 580px !important;
             width: auto !important;
         }
@@ -628,7 +685,7 @@
     ul.w-200{
         width: 250px;
     }
-    .dropdown-list a:hover{
+    .dropdown-menu a:hover{
         color: #007bff;
     }
 

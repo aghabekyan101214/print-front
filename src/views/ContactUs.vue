@@ -13,30 +13,59 @@
         <section class="container">
             <p class="text-center">Our specialists stay late to answer and reply to all your needs. To get your order in advance and make sure everything is processed correctly, also to ensure  an uninterrupted flow of work for next day early production team.
             </p>
-            <div class="contact-us-inner">
-                <div>
-                    <div class="flex">
-                        <p class="blue">Phone number:</p>
-                        <p class="ml-2">+1(818)814-4220, +1(818)221-5451</p>
-                    </div>
-                    <div class="flex">
-                        <p class="blue">Address:</p>
-                        <p class="ml-2">PO Box 11174 Glendale, CA 91226</p>
-                    </div>
-                    <div class="flex">
-                        <p class="blue">Email:</p>
-                        <p class="ml-2">
-                            production@caliprintworks.com, Info@caliprintworks.com
-                        </p>
-                    </div>
+
+            <div class="row pt-3">
+                <div class="col-4 col-md-2">
+                    <p class="blue">Phone number:</p>
                 </div>
-                <div>
-                    <div class="flex">
-                        <p class="blue">Hours:</p>
-                        <p class="ml-2">Monday-Friday: 8:00am  - 7:00pm </p>
-                    </div>
+                <div class="col-6 col-md-4 pl-0">
+                    <p>+1(818)814-4220, +1(818)221-5451</p>
+                </div>
+
+                <div class="col-4 col-md-2">
+                    <p class="blue">Address:</p>
+                </div>
+                <div class="col-6 col-md-4 pl-0">
+                    <p>PO Box 11174 Glendale, CA 91226</p>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-4 col-md-2">
+                    <p class="blue">Email:</p>
+                </div>
+                <div class="col-6 col-md-4 pl-0">
+                    <p>production@caliprintworks.com, Info@caliprintworks.com</p>
+                </div>
+
+                <div class="col-4 col-md-2">
+                    <p class="blue">Hours:</p>
+                </div>
+                <div class="col-6 col-md-4 pl-0">
+                    <p>Monday-Friday: 8:00am  - 7:00pm </p>
+                </div>
+            </div>
+
+
+<!--                <div>-->
+<!--                    <div class="flex">-->
+<!--                        <p class="blue">Phone number:</p>-->
+<!--                        <p class="ml-2">+1(818)814-4220, +1(818)221-5451</p>-->
+<!--                    </div>-->
+<!--                    <div class="flex">-->
+<!--                        <p class="blue">Address:</p>-->
+<!--                        <p class="ml-2">PO Box 11174 Glendale, CA 91226</p>-->
+<!--                    </div>-->
+<!--                    <div class="flex">-->
+<!--                        <p class="blue">Email:</p>-->
+<!--                        <p class="ml-2">production@caliprintworks.com, Info@caliprintworks.com</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+                <div>
+                    <div class="flex">
+
+
+                    </div>
+                </div>
         </section>
         <section class="boxes container">
             <div class="row">
@@ -90,7 +119,7 @@
         height: 200px;
     }
     .boxes a > img:first-child:not(.d-none):hover + .d-none{
-        display: block!important;
+        display: inline-block!important;
     }
     .contact-us-inner{
         margin:50px 0;

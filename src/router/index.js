@@ -67,21 +67,21 @@ const routes = [
     component: () => import(/* webpackChunkName: "privacy" */ '../views/Privacy')
   },
   {
-    path: '/print-services/get-quote/:product',
+    path: '/get-quote/:product',
     name: 'GetQuote',
     // route level code-splitting
     // this generates a separate chunk (quote/*.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "quote" */ '../views/GetQuote')
   },
-  {
-    path: '/banners/get-quote/:product',
-    name: 'QuoteSignage',
-    // route level code-splitting
-    // this generates a separate chunk (quoteSignage/*.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "quoteSignage" */ '../views/GetQuoteSignage')
-  },
+  // {
+  //   path: '/banners/get-quote/:product',
+  //   name: 'QuoteSignage',
+  //   // route level code-splitting
+  //   // this generates a separate chunk (quoteSignage/*.[hash].js) for this route
+  //   // which is lazy-loaded when the route is visited.
+  //   component: () => import(/* webpackChunkName: "quoteSignage" */ '../views/GetQuoteSignage')
+  // },
 ]
 
 const router = new VueRouter({

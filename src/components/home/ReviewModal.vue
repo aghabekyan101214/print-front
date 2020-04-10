@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-4 d-flex align-items-center justify-content-center">
                 <div class="img-cont text-center">
-                    <img @click="$refs.file.click()" class="img-fluid" src="../../assets/images/upload.png" alt="asd">
+                    <img @click="$refs.file.click()" ref="preview" class="img-fluid" src="../../assets/images/upload-icon.png" alt="asd">
                     <p class="mt-3">Upload Your Image</p>
                 </div>
                 <input type="file" @change="handleFileUpload()" ref="file" accept="image/*" class="d-none">
@@ -36,6 +36,7 @@
         methods: {
             handleFileUpload(){
                 this.image = this.$refs.file.files[0];
+                this.$refs.preview.setAttribute("src", URL.createObjectURL(this.image));
             },
             sendReview() {
                 let formData = new FormData();
@@ -83,5 +84,8 @@
     }
     #review .close{
         color: white;
+    }
+    .img-cont img{
+        height: 150px;
     }
 </style>
