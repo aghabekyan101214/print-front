@@ -4,7 +4,7 @@
         <section class="services-banner container">
             <div class="row services-banner-img">
                 <div class="col-lg-12 padding0">
-                    <img src="../assets/images/services-bg.png" alt="banner" >
+                    <img src="../assets/images/services-bg.jpg" alt="banner" >
                 </div>
             </div>
 
