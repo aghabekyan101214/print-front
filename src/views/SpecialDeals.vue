@@ -1,10 +1,18 @@
 <template>
     <div class="special-deals">
         <breadcrumb :endpoint="title"/>
-        <div class="container-fluid text-center">
-            <h2>Special Deals</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at commodi cumque debitis deleniti dignissimos.</p>
-            <img class="img-fluid" src="../assets/images/special-deal.png" alt="">
+        <div class="container text-center pb-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Special Deals</h2>
+                </div>
+                <div class="col-md-6 pb-3">
+                    <img class="img-fluid" src="../assets/images/special/open-house-min.jpg" alt="">
+                </div>
+                <div class="col-md-6 pb-3">
+                    <img class="img-fluid" src="../assets/images/special/t-shirt-min.jpg" alt="">
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -24,22 +32,6 @@
         name: "BusinessServiceDetail",
         components: {
             Breadcrumb,
-        },
-        methods: {
-            getTitle() {
-                let path = this.$route.path;
-                let title = (path.split("/")[2]).split("-").join(" ");
-                this.title = (title != undefined && title != null) ? title : "";
-            }
-        },
-        mounted() {
-            this.$nextTick(() => {
-                const swiperTop = this.$refs.swiperTop.swiper
-                const swiperThumbs = this.$refs.swiperThumbs.swiper
-                swiperTop.controller.control = swiperThumbs
-                swiperThumbs.controller.control = swiperTop
-            })
-            this.getTitle();
         },
         watch:{
             $route (to, from){
