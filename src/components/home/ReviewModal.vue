@@ -9,14 +9,21 @@
                 <input type="file" @change="handleFileUpload()" ref="file" accept="image/*" class="d-none">
             </div>
             <div class="col-md-8 input-cont">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Name Or Company Name:">
+                <div class="form-group" v-show="error">
+                    <p style="color: red"><strong>{{ error }}</strong></p>
+                </div>
+                <div class="form-group" v-show="success">
+                    <p style="color: #155724"><strong>{{ success }}</strong></p>
                 </div>
                 <div class="form-group">
-                    <textarea name="" class="form-control" placeholder="Write A Review:" rows="3"></textarea>
+                    <input type="text" v-model="name" class="form-control" placeholder="Name Or Company Name:">
                 </div>
                 <div class="form-group">
-                    <button class="btn submit-btn">SUBMIT</button>
+                    <textarea name="" v-model="text" class="form-control" placeholder="Write A Review:" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <button ref="submit" v-show="!loading" @click="sendReview" class="btn submit-btn">SUBMIT</button>
+                    <img style="position: relative; height: 50px; left: 50%; transform: translateX(-50%)" src="../../assets/images/loading.gif" v-show="loading" alt="loading">
                 </div>
             </div>
         </div>
@@ -30,7 +37,12 @@
         name: "ReviewModal",
         data: () => {
             return {
-                image: null
+                image: null,
+                name: "",
+                text: "",
+                error: false,
+                success: false,
+                loading: false
             }
         },
         methods: {
@@ -39,19 +51,28 @@
                 this.$refs.preview.setAttribute("src", URL.createObjectURL(this.image));
             },
             sendReview() {
+                this.loading = true;
+                this.error = false;
                 let formData = new FormData();
-                formData.append('file', this.image);
-                axios.post( '/single-file',
+                formData.append('image', this.image);
+                formData.append('name', this.name);
+                formData.append('text', this.text);
+                axios.post( process.env.VUE_APP_DATA_URL + '/api/leave-review',
                     formData,
                     {
                         headers: {
                             'Content-Type': 'multipart/form-data'
                         }
                     }
-                ).then(function(){
-
-                }).catch(function(){
-
+                ).then((r) => {
+                    this.success = "You Have Successfully Reviewed.";
+                    this.name = "";
+                    this.text = "";
+                    this.image = null;
+                }).catch((e) => {
+                    this.error = e.response.data.message
+                }).finally( e => {
+                    this.loading = false;
                 });
             }
         }

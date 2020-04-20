@@ -5,42 +5,17 @@
                 <h3 class="slider-title pt-0">Customer stories</h3>
                 <p class="text-white text-center">We Appreciate Your Feedback. <a v-b-modal.review href="javascript:void(0)" class="text-white font-weight-bold font-italic border-bottom text-decoration-none">LEAVE A REVIEW</a> </p>
                 <carousel :autoplayTimeout=8000 autoplay="autoplay" id="content-slider" class="content-slider" :navigationNextLabel="''" :navigationPrevLabel="''" :scrollPerPage="false" :navigationEnabled="true" :paginationEnabled="false" :perPageCustom="[[320, 1], [768, 2]]">
-                    <slide>
+                    <slide v-for="review in reviews" :key="review.id">
                         <div class="slider-inner-box">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting.
+                            {{ review.text }}
                         </div>
                         <div class="img-box">
-                            <img src="../../assets/images/slider-item.png" alt="First slide">
-                            <p class="text-white">Name Surname</p>
+                            <img :src="review.image" alt="slide item">
+                            <p class="text-white">{{ review.name }}</p>
                         </div>
                     </slide>
-                    <slide>
-                        <div class="slider-inner-box">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting.
-                        </div>
-                        <div class="img-box">
-                            <img src="../../assets/images/slider-item.png" alt="First slide">
-                            <p class="text-white">Name Surname</p>
-                        </div>
-                    </slide>
-                    <slide>
-                        <div class="slider-inner-box">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting.
-                        </div>
-                        <div class="img-box">
-                            <img src="../../assets/images/slider-item.png" alt="First slide">
-                            <p class="text-white">Name Surname</p>
-                        </div>
-                    </slide>
-                    <slide>
-                        <div class="slider-inner-box">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting.
-                        </div>
-                        <div class="img-box">
-                            <img src="../../assets/images/slider-item.png" alt="First slide">
-                            <p class="text-white">Name Surname</p>
-                        </div>
-                    </slide>
+
+<!--                    .slider-banner img-->
                 </carousel>
             </div>
         </div>
@@ -51,13 +26,32 @@
 <script>
     import { Carousel, Slide } from 'vue-carousel';
     import ReviewModal from "./ReviewModal";
+    import axios from "axios";
+
     export default {
         name: "CustomerSlider",
+        data: () => {
+            return {
+                reviews: []
+            }
+        },
         components: {
             Carousel,
             Slide,
             ReviewModal
         },
+        methods: {
+            getReviews() {
+                axios.get(process.env.VUE_APP_DATA_URL + "api/get-reviews").then(r => {
+                    if(r.data) {
+                        this.reviews = r.data.data;
+                    }
+                })
+            }
+        },
+        created() {
+            this.getReviews();
+        }
     }
 </script>
 
@@ -67,6 +61,7 @@
         border-radius: 50%;
         position: relative;
         height: 105px;
+        width: 105px;
         bottom: 60px;
         padding: 2px;
         left: 30px;
