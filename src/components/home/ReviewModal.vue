@@ -1,7 +1,7 @@
 <template>
     <b-modal id="review" size="lg" centered title="Leave A Review">
         <div class="row">
-            <div class="col-md-4 d-flex align-items-center justify-content-center">
+            <div class="col-md-4 d-flex justify-content-center">
                 <div class="img-cont text-center">
                     <img @click="$refs.file.click()" ref="preview" class="img-fluid" src="../../assets/images/upload-icon.png" alt="asd">
                     <p class="mt-3">Upload Your Image</p>
@@ -18,8 +18,9 @@
                 <div class="form-group">
                     <input type="text" v-model="name" class="form-control" placeholder="Name Or Company Name:">
                 </div>
-                <div class="form-group">
-                    <textarea name="" v-model="text" class="form-control" placeholder="Write A Review:" rows="3"></textarea>
+                <div class="form-group position-relative">
+                    <textarea @input="countLen" name="" v-model="text" class="form-control text-area" placeholder="Write A Review:"></textarea>
+                    <span ref="count" class="count"> {{ text.length }} / {{ maxLength }}</span>
                 </div>
                 <div class="form-group">
                     <button ref="submit" v-show="!loading" @click="sendReview" class="btn submit-btn">SUBMIT</button>
@@ -37,18 +38,27 @@
         name: "ReviewModal",
         data: () => {
             return {
-                image: null,
+                image: "",
                 name: "",
                 text: "",
                 error: false,
                 success: false,
-                loading: false
+                loading: false,
+                maxLength: 175
             }
         },
         methods: {
             handleFileUpload(){
                 this.image = this.$refs.file.files[0];
                 this.$refs.preview.setAttribute("src", URL.createObjectURL(this.image));
+            },
+            countLen() {
+                if(this.text.length >= this.maxLength){
+                    this.text = this.text.slice(0, this.maxLength);
+                    this.$refs.count.style.color = "red";
+                } else {
+                    this.$refs.count.style.color = "#009fe3";
+                }
             },
             sendReview() {
                 this.loading = true;
@@ -68,9 +78,13 @@
                     this.success = "You Have Successfully Reviewed.";
                     this.name = "";
                     this.text = "";
-                    this.image = null;
+                    this.image = "";
                 }).catch((e) => {
-                    this.error = e.response.data.message
+                    if(e.response.status == 422){
+                        this.error = e.response.data.message
+                    } else {
+                        this.error = "Something Went Wrong, Please Try Again Later."
+                    }
                 }).finally( e => {
                     this.loading = false;
                 });
@@ -107,6 +121,16 @@
         color: white;
     }
     .img-cont img{
-        height: 150px;
+        height: 170px;
+    }
+    .count{
+        position: absolute;
+        bottom: 0;
+        right: 20px;
+        font-size: 12px;
+        color: #009fe3;
+    }
+    .text-area{
+        height: 115px!important;
     }
 </style>

@@ -42,7 +42,7 @@
         created() {
             axios.get(process.env.VUE_APP_DATA_URL + "api/get-business-services").then(r => {
                 if(r.data) {
-                    this.services = r.data;
+                    this.services = r.data.services;
                 }
             })
         }

@@ -33,7 +33,7 @@
 
                                         <ul>
                                             <b-dropdown-item href="#"><p>Services</p></b-dropdown-item>
-                                            <b-dropdown-item v-for="service in services" :key="service.key" :to="'/business-service/' + service.slug">{{ service.name }}</b-dropdown-item>
+                                            <b-dropdown-item v-for="service in services" :key="service.key" :to="'/business-service/' + service.slug">{{ service.title }}</b-dropdown-item>
                                         </ul>
                                             <!--                                        <ul class="dropdown-list" ref="drop">-->
 <!--                                            <i class="fa fa-sort-up"/>-->
@@ -142,6 +142,7 @@
             window.addEventListener('scroll', this.handleScroll);
             axios.get(process.env.VUE_APP_DATA_URL + "api/get-business-services").then(r => {
                 if(r.data) {
+                    console.log(r.data.services)
                     this.services = r.data.services;
                     this.products = r.data.printServices;
                     this.signage = r.data.signage;
@@ -152,7 +153,6 @@
         methods: {
             handleClick(e) {
                 e.stopPropagation()
-                console.log("s")
                 this.$refs.drop.classList.remove("d-none");
             },
             closeHamburger(){
@@ -166,7 +166,6 @@
                 // this.$refs.drop.classList.add("d-none");
             },
             openDrop(e) {
-                console.log("s")
                 e.trigger("click")
             },
             handleScroll () {

@@ -6,7 +6,7 @@
                 <p class="text-white text-center">We Appreciate Your Feedback. <a v-b-modal.review href="javascript:void(0)" class="text-white font-weight-bold font-italic border-bottom text-decoration-none">LEAVE A REVIEW</a> </p>
                 <carousel :autoplayTimeout=8000 autoplay="autoplay" id="content-slider" class="content-slider" :navigationNextLabel="''" :navigationPrevLabel="''" :scrollPerPage="false" :navigationEnabled="true" :paginationEnabled="false" :perPageCustom="[[320, 1], [768, 2]]">
                     <slide v-for="review in reviews" :key="review.id">
-                        <div class="slider-inner-box">
+                        <div class="slider-inner-box d-flex align-items-center">
                             {{ review.text }}
                         </div>
                         <div class="img-box">
