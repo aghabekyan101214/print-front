@@ -2,7 +2,7 @@
     <section class="menu">
         <ul class="container">
             <li><i class="fa fa-caret-right"/>
-                <router-link to="/">Home /</router-link>
+                <router-link to="/" class="ml-1">Home /</router-link>
             </li>
             <li>
                 <p class="text-capitalize">{{ endpoint }}</p>

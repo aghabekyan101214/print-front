@@ -1,12 +1,12 @@
 <template>
     <section class="popular-products container">
         <h2 class="title text-center">Most <span class="blue">Popular</span> Demands</h2>
-        <p class="decoration text-center">Focus on a products you love and we will handle the rest.</p>
+        <p class="decoration text-center mb-30">Focus on a products you love and we will handle the rest.</p>
         <div class="row">
 
             <div class="col-md-6 col-xl-3 col-12 prod-cont">
                 <div class="product-box">
-                    <p class="text-center mt-2 mb-1 pre-title">16pt Premium Matte Business Cards</p>
+                    <p class="text-center mt-2 mb-1 pre-title">16pt Premium <br> <b>Matte Business Cards</b> </p>
 <!--                    <h5 class="text-center  product-title">Most Popular</h5>-->
                     <p class="m-0 text-center">
                         <i class="fa fa-caret-down"/>
@@ -35,7 +35,7 @@
 
             <div class="col-md-6 col-xl-3 col-12 prod-cont">
                 <div class="product-box">
-                    <p class="text-center mt-2 mb-1 pre-title">14pt Gloss Cover Greeting Cards</p>
+                    <p class="text-center mt-2 mb-1 pre-title">14pt Gloss <br> <b>Cover Greeting Cards</b> </p>
                     <!--                    <h5 class="text-center  product-title">Most Popular</h5>-->
                     <p class="m-0 text-center">
                         <i class="fa fa-caret-down"/>
@@ -66,7 +66,7 @@
 
             <div class="col-md-6 col-xl-3 col-12 prod-cont">
                 <div class="product-box">
-                    <p class="text-center mt-2 mb-1 pre-title">100# Gloss CVR <br> Door Hangers</p>
+                    <p class="text-center mt-2 mb-1 pre-title">100# Gloss <br> <b>CVR Door Hangers</b> </p>
                     <!--                    <h5 class="text-center  product-title">Most Popular</h5>-->
                     <p class="m-0 text-center">
                         <i class="fa fa-caret-down"/>
@@ -97,7 +97,7 @@
 
             <div class="col-md-6 col-xl-3 col-12 prod-cont">
                 <div class="product-box">
-                    <p class="text-center mt-2 mb-1 pre-title">70lb Uncoated <br> Notepads</p>
+                    <p class="text-center mt-2 mb-1 pre-title">70lb <br> <b>Uncoated Notepads</b></p>
                     <!--                    <h5 class="text-center  product-title">Most Popular</h5>-->
                     <p class="m-0 text-center">
                         <i class="fa fa-caret-down"/>
@@ -237,5 +237,8 @@
     }
     .blue-web{
         color: #009fe4;
+    }
+    .pre-title b{
+        color: black;
     }
 </style>

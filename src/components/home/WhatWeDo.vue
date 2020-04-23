@@ -3,7 +3,7 @@
         <h2 class="title text-center">
             What <span class="blue">we do</span>
         </h2>
-        <p class="decoration text-center">
+        <p class="decoration text-center mb-40">
             We love what we do. We do what we love. Nothing prints until you’re 100% satisfied!
         </p>
         <div class="whatwedo-inner">
@@ -52,7 +52,7 @@
         justify-content: space-between;
     }
     .whatwedo {
-        margin-top:50px;
+        margin-top:80px;
     }
     .whatwedo-inner h2{
         font-size:20px;

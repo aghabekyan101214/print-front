@@ -27,7 +27,7 @@
         <section class="slider-banner1 full-container ">
             <div class="demo">
                 <div class="item">
-                    <h2 class="title text-center mb-5">trusted by <span class="blue">these brands</span></h2>
+                    <h2 class="title text-center mb-40">trusted by <span class="blue">these brands</span></h2>
 
                     <carousel autoplay="autoplay" :loop=true :autoplayTimeout=5000 :navigationNextLabel="''" :navigationPrevLabel="''" :perPageCustom="[[0, 1], [768, 3], [1024, 4], [1600, 6]]" :navigationEnabled="true" :paginationEnabled="false" :scrollPerPage="false">
                         <slide v-for="logo in logos" :key="logo.id">
@@ -162,9 +162,8 @@
     }
 
     .slider-banner1 {
-        margin-top: 47px;
         background: #fafafa;
-        padding: 80px;
+        padding: 60px;
     }
     .slider-banner1 .VueCarousel-slide{
         display: flex;

@@ -11,8 +11,9 @@
 
                             <b-collapse id="nav-collapse" is-nav>
                                 <b-navbar-nav right>
-                                    <b-nav-item-dropdown class="nav-dropdown pt-0" text="ALL products">
-                                        <i class="fa fa-sort-up"></i>
+
+                                    <b-nav-item-dropdown class="nav-dropdown pt-0" html='ALL products <i class="fa fa-sort-up"></i>'>
+
 
                                         <ul>
                                             <b-dropdown-item href="#"><p>Print services</p></b-dropdown-item>
@@ -270,9 +271,11 @@
     /********* header ***********/
 
     ul.navbar-nav{
-        position:absolute;
         right:0;
         bottom: 0;
+    }
+    .navbar-expand-lg .navbar-collapse{
+        justify-content: flex-end;
     }
     .nav-item {
         position: relative;
@@ -409,7 +412,7 @@
     footer {
         background: #1c1b1a;
         border-top: 1px solid #fff;
-        padding: 40px 0;
+        padding: 30px 0;
     }
     footer ul {
         list-style-type: none;
@@ -423,11 +426,12 @@
     }
     footer ul li a{
         color:#fff;
+        font-size: 14px;
     }
     footer h2 {
         color: #fff;
         text-transform: uppercase;
-        font-size: 20px;
+        font-size: 16px;
         border-bottom: 2px solid #fff;
         position: relative;
         padding-bottom: 20px;
@@ -442,7 +446,7 @@
         display: block;
         width: 32%;
         height: 4px;
-        top: 42px;
+        top: 35px;
         position: absolute;
     }
     footer p{
@@ -688,5 +692,22 @@
     .dropdown-menu a:hover{
         color: #007bff;
     }
+    .nav-item.b-nav-dropdown.dropdown.nav-dropdown:hover  > a > span > i, .show > a > span > i {
+        display: block!important;
+    }
 
+    .b-nav-dropdown.dropdown > a > span > i{
+        top: 34px;
+        left: 69px;
+        display: none;
+    }
+    .mb-30{
+         margin-bottom: 30px;
+     }
+    .mb-40{
+        margin-bottom: 40px;
+    }
+    .order-btn{
+        font-weight: bold;
+    }
 </style>
