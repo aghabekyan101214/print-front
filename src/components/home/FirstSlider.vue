@@ -1,6 +1,6 @@
 <template>
     <section class="banner full-container adaptive">
-        <carousel :per-page="1" :paginationEnabled="true" :scrollPerPage="true">
+        <carousel autoplay="autoplay" :loop=true :autoplayTimeout=5000 :per-page="1" :paginationEnabled="true" :scrollPerPage="true">
             <slide>
                 <div class="row m0">
                     <div class="col-xl-12 pl-0 pr-0">

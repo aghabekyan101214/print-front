@@ -1,6 +1,14 @@
 <template>
     <b-modal id="review" size="lg" centered title="Leave A Review">
         <div class="row">
+            <div class="col-md-12">
+                <div class="form-group text-center" v-show="error">
+                    <p style="color: red"><strong>{{ error }}</strong></p>
+                </div>
+                <div class="form-group text-center" v-show="success">
+                    <p style="color: #155724"><strong>{{ success }}</strong></p>
+                </div>
+            </div>
             <div class="col-md-4 d-flex justify-content-center">
                 <div class="img-cont text-center">
                     <img @click="$refs.file.click()" ref="preview" class="img-fluid" src="../../assets/images/upload-icon.png" alt="asd">
@@ -9,12 +17,6 @@
                 <input type="file" @change="handleFileUpload()" ref="file" accept="image/*" class="d-none">
             </div>
             <div class="col-md-8 input-cont">
-                <div class="form-group" v-show="error">
-                    <p style="color: red"><strong>{{ error }}</strong></p>
-                </div>
-                <div class="form-group" v-show="success">
-                    <p style="color: #155724"><strong>{{ success }}</strong></p>
-                </div>
                 <div class="form-group">
                     <input type="text" v-model="name" class="form-control" placeholder="Name Or Company Name:">
                 </div>
@@ -44,12 +46,14 @@
                 error: false,
                 success: false,
                 loading: false,
-                maxLength: 175
+                maxLength: 175,
+                oldImage: ""
             }
         },
         methods: {
             handleFileUpload(){
                 this.image = this.$refs.file.files[0];
+                this.oldImage = this.$refs.preview.getAttribute("src");
                 this.$refs.preview.setAttribute("src", URL.createObjectURL(this.image));
             },
             countLen() {
@@ -79,13 +83,18 @@
                     this.name = "";
                     this.text = "";
                     this.image = "";
+                    this.$refs.preview.setAttribute("src", this.oldImage);
+                    setTimeout(() => {
+                        this.$bvModal.hide("review")
+                        this.success = "";
+                    }, 2000)
                 }).catch((e) => {
                     if(e.response.status == 422){
                         this.error = e.response.data.message
                     } else {
                         this.error = "Something Went Wrong, Please Try Again Later."
                     }
-                }).finally( e => {
+                }).finally( () => {
                     this.loading = false;
                 });
             }

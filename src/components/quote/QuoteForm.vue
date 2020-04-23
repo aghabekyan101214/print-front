@@ -2,7 +2,7 @@
     <section class="service-quote container">
         <div class="row first">
 
-            <div class="col-xl-6 col-md-6 mb-3">
+            <div class="col-xl-6 col-md-6 mb-md-0 mb-3">
 
                 <b-input-group>
                     <b-input-group-prepend>
@@ -16,7 +16,7 @@
 
             </div>
 
-            <div class="col-xl-6 col-md-6 mb-3">
+            <div class="col-xl-6 col-md-6 mb-md-0 mb-3">
 
                 <b-input-group>
                     <b-input-group-prepend>
@@ -32,80 +32,84 @@
 
         </div>
 
-        <div class="form-more-details row">
-            <div class="col-lg-4">
-                <p class="decoration">Shipping Estimate</p>
-                <p>Enter Shipping address or zip code to get an estimate for taxes and shipping with your quote.</p>
-                </br>
-                </br>
-                <input type="text" class="form-control">
-            </div>
-            <div class="col-lg-4">
-                <p class="decoration">Project Deadline Estimate</p>
-                <p>Do you have a due date for this project?*</p>
-                <div class="container1">
-                    <div class="radio">
-                        <input type="radio" name="radio" id="radio1" class="radio__input" checked>
-                        <label for="radio1" class="radio__label">No</label>
-                    </div><br>
-                    <div class="radio">
-                        <input type="radio" name="radio" id="radio2" class="radio__input">
-                        <label for="radio2" class="radio__label">Yes</label>
-                    </div><br>
-                </div>
-                <div class="row m0">
-                    <label class="label">
-                        Due Date*
-                    </label>
-                    <div class="select-blue col-md-m">
-                        <select class="form-control" id="sel1">
-                            <option>Month</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                        </select>
+        <div class="form-more-details row justify-content-center">
+<!--            <div class="col-lg-4">-->
+<!--                <p class="decoration">Shipping Estimate</p>-->
+<!--                <p>Enter Shipping address or zip code to get an estimate for taxes and shipping with your quote.</p>-->
+<!--                </br>-->
+<!--                </br>-->
+<!--                <input type="text" class="form-control">-->
+<!--            </div>-->
+<!--            <div class="col-lg-4">-->
+<!--                <p class="decoration">Project Deadline Estimate</p>-->
+<!--                <p>Do you have a due date for this project?*</p>-->
+<!--                <div class="container1">-->
+<!--                    <div class="radio">-->
+<!--                        <input type="radio" name="radio" id="radio1" class="radio__input" checked>-->
+<!--                        <label for="radio1" class="radio__label">No</label>-->
+<!--                    </div><br>-->
+<!--                    <div class="radio">-->
+<!--                        <input type="radio" name="radio" id="radio2" class="radio__input">-->
+<!--                        <label for="radio2" class="radio__label">Yes</label>-->
+<!--                    </div><br>-->
+<!--                </div>-->
+<!--                <div class="row m0">-->
+<!--                    <label class="label">-->
+<!--                        Due Date*-->
+<!--                    </label>-->
+<!--                    <div class="select-blue col-md-m">-->
+<!--                        <select class="form-control" id="sel1">-->
+<!--                            <option>Month</option>-->
+<!--                            <option>2</option>-->
+<!--                            <option>3</option>-->
+<!--                            <option>4</option>-->
+<!--                        </select>-->
+<!--                    </div>-->
+<!--                    <div class="select-blue col-sm-m">-->
+<!--                        <select class="form-control" id="sel2">-->
+<!--                            <option>Day</option>-->
+<!--                            <option>2</option>-->
+<!--                            <option>3</option>-->
+<!--                            <option>4</option>-->
+<!--                        </select>-->
+<!--                    </div>-->
+<!--                    <div class="select-blue col-sm-m">-->
+<!--                        <select class="form-control" id="sel1">-->
+<!--                            <option>Year</option>-->
+<!--                            <option>2</option>-->
+<!--                            <option>3</option>-->
+<!--                            <option>4</option>-->
+<!--                        </select>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+                <div class="col-lg-12">
+                    <p class="decoration">Contact Information</p>
+                    <p>What is the best way to contact you if we have any questions about your project?</p>
+                    <div class="container1">
+                        <div class="radio">
+                            <input type="radio" name="radio" id="radio3" class="radio__input" checked>
+                            <label for="radio3" class="radio__label">Phone</label>
+                        </div><br>
+                        <div class="radio">
+                            <input type="radio" name="radio" id="radio4" class="radio__input">
+                            <label for="radio4" class="radio__label">Email</label>
+                        </div><br>
+                        <div class="radio">
+                            <input type="radio" name="radio" id="radio5" class="radio__input">
+                            <label for="radio5" class="radio__label">Phone and Email</label>
+                        </div><br>
                     </div>
-                    <div class="select-blue col-sm-m">
-                        <select class="form-control" id="sel1">
-                            <option>Day</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                        </select>
-                    </div>
-                    <div class="select-blue col-sm-m">
-                        <select class="form-control" id="sel1">
-                            <option>Year</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                        </select>
-                    </div>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <p class="decoration">Contact Information</p>
-                <p>What is the best way to contact you if we have any questions about your project?</p>
-                <div class="container1">
-                    <div class="radio">
-                        <input type="radio" name="radio" id="radio3" class="radio__input" checked>
-                        <label for="radio3" class="radio__label">Phone</label>
-                    </div><br>
-                    <div class="radio">
-                        <input type="radio" name="radio" id="radio4" class="radio__input">
-                        <label for="radio4" class="radio__label">Email</label>
-                    </div><br>
-                    <div class="radio">
-                        <input type="radio" name="radio" id="radio5" class="radio__input">
-                        <label for="radio5" class="radio__label">Phone and Email</label>
-                    </div><br>
+                <div class="col-lg-6 mb-3">
+                    <input type="text" class="form-control" placeholder="Phone number*">
                 </div>
-                <div><input type="text" class="form-control" placeholder="Phone number*"></div>
-                </br>
-                <div><input type="text" class="form-control" placeholder="Email*"></div>
-            </div>
+                <div class="col-lg-6">
+                    <input type="text" class="form-control" placeholder="Email*">
+                </div>
         </div>
-        <div class="container pl-0 pr-0 textarea-form">
+        <div class="container pl-0 pr-0 textarea-form mb-5">
             <b-input-group>
                 <b-input-group-prepend>
                     <span class="input-group-text">
@@ -116,36 +120,19 @@
                 </b-form-textarea>
             </b-input-group>
         </div>
-        <div class="select-blue col-lg-m pull-left">
-            <select class="form-control" id="sel1">
-                <option>Which of our service center is closest to you?</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-            </select>
-        </div>
+
         <p class="clear">You are able to add more than 1 file by selecting multiple files at once</p>
         <div class="upload-file "> Upload A file<input type="file" class="custom-file-input" ></div>
 
-        <form action="" method="post" class="validate-form">
-            <vue-recaptcha :loadRecaptchaScript="true" sitekey="6Ldbdg0TAAAAAI7KAf72Q6uagbWzWecTeBWmrCpJ">
-            </vue-recaptcha>
-<!--            <div class="g-recaptcha" data-sitekey="6Ldbdg0TAAAAAI7KAf72Q6uagbWzWecTeBWmrCpJ"></div>-->
-            <input type="submit" value="Submit" class="fb9" />
 
-        </form>
+        <button class="btn submit">Submit</button>
 
     </section>
 </template>
 
 <script>
-    import VueRecaptcha from 'vue-recaptcha';
     export default {
         name: "QuoteForm",
-        components: {
-            VueRecaptcha
-        },
-
     }
 </script>
 
@@ -181,7 +168,7 @@
         border: 1px solid #009fe4;
         border-radius: 10px;
         margin: 30px 0 !important;
-        padding: 40px 0;
+        padding: 20px 0;
         font-size: 14px;
     }
     .generic-input{
@@ -410,4 +397,18 @@
          width: 100%;
      }
  }
+    .submit{
+        margin-bottom: 50px;
+        background: #009fe4;
+        border: none;
+        width: 153px;
+        height: 50px;
+        border-radius: 10px;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-top: 12px;
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
 </style>

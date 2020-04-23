@@ -318,6 +318,7 @@
         padding: 14px 17px;
         color: #1c1b1a;
         left: 0;
+        height: 400px;
     }
     /*.dropdown-menu{*/
     /*    display:none;*/
