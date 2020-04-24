@@ -714,4 +714,7 @@
     .order-btn{
         font-weight: bold;
     }
+    .dropdown-item:hover{
+        background-color: transparent!important;
+    }
 </style>
