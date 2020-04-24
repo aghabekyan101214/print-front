@@ -318,7 +318,7 @@
         background: #fff;
         z-index: 300000;
         border: 2px solid #009fe4;
-        padding: 14px 17px;
+        padding-top: 20px!important;
         color: #1c1b1a;
         left: 0;
         height: 400px;
@@ -452,6 +452,9 @@
     footer p{
         color: #fff;
         margin: 26px;
+    }
+    footer .social-list{
+        margin-top: 17px;
     }
 
     .m0{
@@ -691,6 +694,7 @@
     }
     .dropdown-menu a:hover{
         color: #007bff;
+        background-color: none!important;
     }
     .nav-item.b-nav-dropdown.dropdown.nav-dropdown:hover  > a > span > i, .show > a > span > i {
         display: block!important;
