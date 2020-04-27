@@ -7,10 +7,10 @@
                     <h2>Special Deals</h2>
                 </div>
                 <div class="col-md-6 pb-3">
-                    <img class="img-fluid" src="../assets/images/special/open-house-min.jpg" alt="">
+                    <img class="img-fluid pointer" @click="goTo" src="../assets/images/special/open-house-min.jpg" alt="">
                 </div>
-                <div class="col-md-6 pb-3">
-                    <img class="img-fluid" src="../assets/images/special/t-shirt-min.jpg" alt="">
+                <div class="col-md-6 pb-3" >
+                    <img class="img-fluid pointer" @click="goTo" src="../assets/images/special/t-shirt-min.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -37,6 +37,11 @@
             $route (to, from){
                 this.getTitle();
             }
+        },
+        methods: {
+            goTo() {
+                this.$router.push("/contact")
+            }
         }
     }
 </script>
@@ -57,6 +62,9 @@
     .gallery-thumbs .swiper-slide {
         width: 100%;
         height: 100px;
+    }
+    .pointer{
+        cursor: pointer;
     }
 
 </style>

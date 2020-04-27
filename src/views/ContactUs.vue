@@ -11,15 +11,14 @@
             </ul>
         </section>
         <section class="container">
-            <p class="text-center">Our specialists stay late to answer and reply to all your needs. To get your order in advance and make sure everything is processed correctly, also to ensure  an uninterrupted flow of work for next day early production team.
-            </p>
-
+            <p>We are adding new products all the time. Contact us at CPW for any information on our new products and we will always reply to you the same day to ensure you receive the best service ever.</p>
+            <p>Follow us on our social media profiles and special deals page and keep an eye out for our latest offers and promotions.</p>
             <div class="row pt-3">
                 <div class="col-4 col-md-2">
                     <p class="blue">Phone number:</p>
                 </div>
                 <div class="col-6 col-md-4 pl-0">
-                    <p>+1(818)814-4220, +1(818)221-5451</p>
+                    <p>(818) 814-4220</p>
                 </div>
 
                 <div class="col-4 col-md-2">
@@ -34,14 +33,17 @@
                     <p class="blue">Email:</p>
                 </div>
                 <div class="col-6 col-md-4 pl-0">
-                    <p>production@caliprintworks.com, Info@caliprintworks.com</p>
+                    <p>info@caliprintworks.com, production@caliprintworks.com</p>
                 </div>
 
                 <div class="col-4 col-md-2">
                     <p class="blue">Hours:</p>
                 </div>
                 <div class="col-6 col-md-4 pl-0">
-                    <p>Monday-Friday: 8:00am  - 7:00pm </p>
+                    <p> M - F 6:00am to 3:30pm
+                        <br>
+                        S 8:am to 1:00pm
+                    </p>
                 </div>
             </div>
 
