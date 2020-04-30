@@ -20,7 +20,7 @@
 
         <PopularProducts/>
 
-        <ServiceBoxes/>
+        <ServiceBoxes :boxes="boxes"/>
 
         <WhatWeDo/>
 
@@ -57,7 +57,8 @@
         data: () => {
             return {
                 about_text: "",
-                logos: []
+                logos: [],
+                boxes: []
             }
         },
         created() {
@@ -65,6 +66,7 @@
                if(r.data) {
                    this.about_text = r.data.about.about_text;
                    this.logos = r.data.logos;
+                   this.boxes = r.data.banners;
                }
             })
         },

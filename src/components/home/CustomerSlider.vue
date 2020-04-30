@@ -11,7 +11,7 @@
                         </div>
                         <div class="img-box">
                             <img :src="review.image" alt="slide item">
-                            <p class="text-white">{{ review.name }}</p>
+                            <p>{{ review.name }}</p>
                         </div>
                     </slide>
 
@@ -95,7 +95,8 @@
     .img-box p{
         position: relative;
         margin-bottom: 0;
-        bottom: 60px;
+        bottom: 135px;
         left: 30%;
+        color: black;
     }
 </style>

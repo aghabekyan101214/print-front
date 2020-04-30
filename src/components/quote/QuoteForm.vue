@@ -398,7 +398,6 @@
      }
  }
     .submit{
-        margin-bottom: 50px;
         background: #009fe4;
         border: none;
         width: 153px;

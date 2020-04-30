@@ -30,7 +30,7 @@
                     <p>Colors of printing</p>
                     <p>Quantity</p>
                     <p>Finishing (lamination,die-cut)</p>
-                    <router-link :to="service.slug + '/get-quote'" class="blue-btn">get a quote</router-link>
+                    <router-link to="/contact" class="blue-btn">contact us</router-link>
 
                 </div>
             </div>

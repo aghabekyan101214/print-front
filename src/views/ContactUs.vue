@@ -12,7 +12,6 @@
         </section>
         <section class="container">
             <p>We are adding new products all the time. Contact us at CPW for any information on our new products and we will always reply to you the same day to ensure you receive the best service ever.</p>
-            <p>Follow us on our social media profiles and special deals page and keep an eye out for our latest offers and promotions.</p>
             <div class="row pt-3">
                 <div class="col-4 col-md-2">
                     <p class="blue">Phone number:</p>
@@ -46,30 +45,12 @@
                     </p>
                 </div>
             </div>
-
-
-<!--                <div>-->
-<!--                    <div class="flex">-->
-<!--                        <p class="blue">Phone number:</p>-->
-<!--                        <p class="ml-2">+1(818)814-4220, +1(818)221-5451</p>-->
-<!--                    </div>-->
-<!--                    <div class="flex">-->
-<!--                        <p class="blue">Address:</p>-->
-<!--                        <p class="ml-2">PO Box 11174 Glendale, CA 91226</p>-->
-<!--                    </div>-->
-<!--                    <div class="flex">-->
-<!--                        <p class="blue">Email:</p>-->
-<!--                        <p class="ml-2">production@caliprintworks.com, Info@caliprintworks.com</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-                <div>
-                    <div class="flex">
-
-
-                    </div>
-                </div>
+        </section>
+        <section class="quote">
+            <quote-form/>
         </section>
         <section class="boxes container">
+            <p class="text-center mb-40">Follow us on our social media profiles and special deals page and keep an eye out for our latest offers and promotions.</p>
             <div class="row">
                 <div class="col-xl-3 col-md-3 col-sm-6 col-12">
                     <a href="#">
@@ -101,15 +82,20 @@
 </template>
 
 <script>
+    import QuoteForm from "../components/quote/QuoteForm";
 
     export default {
-        name: "ContactUs"
+        name: "ContactUs",
+        components: {QuoteForm}
     }
 </script>
 
 <style scoped>
     .boxes {
-        margin:40px auto;
+        margin:80px auto 40px auto;
+    }
+    .quote{
+        margin-top: 70px;
     }
     .boxes a > img:first-child:hover {
         display: none;

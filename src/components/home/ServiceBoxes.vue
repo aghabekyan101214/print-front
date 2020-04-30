@@ -2,45 +2,24 @@
     <div class="service-boxes">
         <h2 class="title text-center">Everything you need: <span class="blue">Ask For!</span></h2>
         <section class="container service-section">
-            <div class="box-bg box1">
+
+            <div v-for="(box, i) in boxes" :key="box.id" class="box-bg box">
                 <div class="box-bg-inner">
                     <div class="bg-layout">
-                        <a href="#" class="order-btn">Order now</a>
+                        <router-link class="order-btn" :to="'/get-quote/' + box.product_slug">Order now</router-link>
                     </div>
-                    <img class="img-fluid" src="../../assets/images/banners/lt-min.jpg" alt="">
+                    <img class="img-fluid" :src="box.image" alt="">
                 </div>
             </div>
-            <div class="box-bg box2">
-                <div class="box-bg-inner">
-                    <div class="bg-layout">
-                        <a href="#" class="order-btn">Order now</a>
-                    </div>
-                    <img class="img-fluid" src="../../assets/images/banners/rt-min.jpg" alt="">
-                </div>
-            </div>
-            <div class="box-bg box3">
-                <div class="box-bg-inner">
-                    <div class="bg-layout">
-                        <a href="#" class="order-btn">Order now</a>
-                    </div>
-                    <img class="img-fluid" src="../../assets/images/banners/lb-min.jpg" alt="">
-                </div>
-            </div>
-            <div class="box-bg box4">
-                <div class="box-bg-inner">
-                    <div class="bg-layout">
-                        <a href="#" class="order-btn">Order now</a>
-                    </div>
-                    <img class="img-fluid" src="../../assets/images/banners/rb-min.jpg" alt="">
-                </div>
-            </div>
+
         </section>
     </div>
 </template>
 
 <script>
     export default {
-        name: "ServiceBoxes"
+        name: "ServiceBoxes",
+        props: ["boxes"]
     }
 </script>
 
