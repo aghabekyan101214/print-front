@@ -171,19 +171,27 @@
                 <div class="col-xl-6 col-md-6 mb-3 center-xs">
                     <p class="mb-1">Production Time</p>
                     <div class="radio-toolbar">
-                        <input type="radio" id="radioApple" name="radioFruit" value="apple" checked>
-                        <label for="radioApple">
-                            Regular
-                            <br>
-                            <small>4-6 Business Days</small>
-                        </label>
 
-                        <input type="radio" id="radioBanana" name="radioFruit" value="banana">
-                        <label for="radioBanana" class="text-center ml-1">
-                            Rush
-                            <br>
-                            <small>Not Available</small>
-                        </label>
+                        <span v-for="t in time.values" :key="t.id" class="rad-span">
+                            <input type="radio" :id="t.id" v-model="productionTime" :value="t.id">
+                            <label :for="t.id">
+                                {{ t.name }}
+                                <br>
+                                <small v-if="t.name.toLowerCase() == 'regular'">4-6 Business Days <br></small>
+                                <small v-if="t.name.toLowerCase() == 'rush'">Not Available <br></small>
+                            </label>
+                        </span>
+
+<!--                        <span>-->
+<!--                            <input type="radio" id="radioBanana" name="radioFruit" value="banana">-->
+<!--                            <label for="radioBanana" class="text-center ml-1">-->
+<!--                                Rush-->
+<!--                                <br>-->
+<!--                                <small>Not Available</small>-->
+<!--                            </label>-->
+<!--                        </span>-->
+
+
 
                     </div>
                 </div>
@@ -249,7 +257,9 @@
                 forms: [],
                 product: "",
                 image: "",
-                data:[]
+                data:[],
+                productionTime: "",
+                time: {}
             }
         },
         created: function() {
@@ -260,6 +270,7 @@
                 axios.get(process.env.VUE_APP_DATA_URL + "api/get-form/" + this.$route.params.product).then(r => {
                     if(r.data) {
                         this.forms = r.data.data.forms || [];
+                        this.time = r.data.data.forms.find(e => e.form_id == 10) || {};
                     }
                 })
             },
@@ -369,6 +380,7 @@
         display: inline-block;
         cursor: pointer;
         padding: 7px 0;
+        height: 50px;
         text-align: center;
         width: 130px;
         font-family: Poppins-Regular, sans-serif;
@@ -404,5 +416,8 @@
         border-radius: 8px;
         border: 1px solid #009fe4;
         overflow: hidden;
+    }
+    .rad-span{
+        margin-right: 10px;
     }
 </style>
