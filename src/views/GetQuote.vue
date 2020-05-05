@@ -28,7 +28,7 @@
                                 <img src="../assets/images/quote/users.png" alt="User Icon">
                             </span>
                         </b-input-group-prepend>
-                        <b-form-input class="LoginInput" placeholder="Full Name*">
+                        <b-form-input class="LoginInput" v-model="contact.full_name" placeholder="Full Name*">
                         </b-form-input>
                     </b-input-group>
 
@@ -42,7 +42,7 @@
                                 <img src="../assets/images/quote/email.png" alt="Email Icon">
                             </span>
                         </b-input-group-prepend>
-                        <b-form-input class="LoginInput" placeholder="Email*">
+                        <b-form-input class="LoginInput" v-model="contact.email" placeholder="Email*">
                         </b-form-input>
                     </b-input-group>
 
@@ -56,7 +56,7 @@
                                 <img src="../assets/images/quote/portfolio.png" alt="Company Icon">
                             </span>
                         </b-input-group-prepend>
-                        <b-form-input class="LoginInput" placeholder="Company Name">
+                        <b-form-input class="LoginInput" v-model="contact.company_name" placeholder="Company Name">
                         </b-form-input>
                     </b-input-group>
 
@@ -70,7 +70,7 @@
                                 <img src="../assets/images/quote/phone.png" alt="Phone Icon">
                             </span>
                         </b-input-group-prepend>
-                        <b-form-input class="LoginInput" placeholder="Phone">
+                        <b-form-input class="LoginInput" v-model="contact.phone" placeholder="Phone">
                         </b-form-input>
                     </b-input-group>
 
@@ -84,7 +84,7 @@
                                 <img src="../assets/images/quote/globe.png" alt="Deliver Icon">
                             </span>
                         </b-input-group-prepend>
-                        <b-form-input class="LoginInput" placeholder="Deliver To">
+                        <b-form-input class="LoginInput" v-model="contact.deliver_to" placeholder="Deliver To">
                         </b-form-input>
                     </b-input-group>
 
@@ -94,11 +94,11 @@
                     <p class="mb-0"><b>How May We Contact You</b></p>
                     <div class="group d-flex">
                         <div class="custom-control custom-checkbox">
-                            <input type="radio" checked name="contact-type" class="custom-control-input" id="phone">
+                            <input type="radio" checked value="0" v-model="contact.contact_method" name="contact-type" class="custom-control-input" id="phone">
                             <label class="custom-control-label" for="phone">Phone</label>
                         </div>
                         <div class="custom-control custom-checkbox ml-2">
-                            <input type="radio" name="contact-type" class="custom-control-input" id="email">
+                            <input type="radio" name="contact-type" v-model="contact.contact_method" value="1" class="custom-control-input" id="email">
                             <label class="custom-control-label" for="email">Email</label>
                         </div>
                     </div>
@@ -114,66 +114,17 @@
                 <div v-for="form in forms" :key="form.id" class="col-xl-6 col-md-6 mb-3">
                     <p class="mb-1">{{ form.form.name }}</p>
                     <select @change="chF" :data-form_id="form.form_id" class="form-control print-product" id="stock">
+                        <option value="">Choose Value</option>
                         <option v-for="val in form.values" :key="val.id" :value="val.id">{{ val.name }}</option>
                     </select>
                 </div>
-
-<!--                <div class="col-xl-6 col-md-6 mb-3">-->
-<!--                    <p class="mb-1">Shape</p>-->
-<!--                    <select class="form-control print-product" id="quantity">-->
-<!--                        <option value="">Shape1</option>-->
-<!--                        <option value="">Shape2</option>-->
-<!--                        <option value="">Shape3</option>-->
-<!--                        <option value="">Shape4</option>-->
-<!--                    </select>-->
-<!--                </div>-->
-
-<!--                <div class="col-xl-6 col-md-6 mb-3">-->
-<!--                    <p class="mb-1">Colors</p>-->
-<!--                    <select class="form-control print-product" id="colors">-->
-<!--                        <option value="">4/1 Full Color Front/Black</option>-->
-<!--                        <option value="">White</option>-->
-<!--                        <option value="">Green</option>-->
-<!--                        <option value="">Yellow</option>-->
-<!--                    </select>-->
-<!--                </div>-->
-
-<!--                <div class="col-xl-6 col-md-6 mb-3">-->
-<!--                    <p class="mb-1">Finishing</p>-->
-<!--                    <select class="form-control print-product" id="finishing">-->
-<!--                        <option value="">4/1 Full Color Front/Black</option>-->
-<!--                        <option value="">White</option>-->
-<!--                        <option value="">Green</option>-->
-<!--                        <option value="">Yellow</option>-->
-<!--                    </select>-->
-<!--                </div>-->
-
-<!--                <div class="col-xl-6 col-md-6 mb-3">-->
-<!--                    <p class="mb-1">Size*</p>-->
-<!--                    <select class="form-control print-product" id="size">-->
-<!--                        <option value="">1300*100</option>-->
-<!--                        <option value="">1300*1300</option>-->
-<!--                        <option value="">1600*1600</option>-->
-<!--                        <option value="">2100*1700</option>-->
-<!--                    </select>-->
-<!--                </div>-->
-
-<!--                <div class="col-xl-6 col-md-6 mb-3">-->
-<!--                    <p class="mb-1">Quantity</p>-->
-<!--                    <select class="form-control print-product" id="duration">-->
-<!--                        <option value="">100</option>-->
-<!--                        <option value="">1000</option>-->
-<!--                        <option value="">10000</option>-->
-<!--                        <option value="">100000</option>-->
-<!--                    </select>-->
-<!--                </div>-->
 
                 <div class="col-xl-6 col-md-6 mb-3 center-xs">
                     <p class="mb-1">Production Time</p>
                     <div class="radio-toolbar">
 
                         <span v-for="t in time.values" :key="t.id" class="rad-span">
-                            <input type="radio" :id="t.id" v-model="productionTime" :value="t.id">
+                            <input type="radio" @click="chT" :id="t.id" v-model="productionTime" :value="t.id">
                             <label :for="t.id">
                                 {{ t.name }}
                                 <br>
@@ -181,17 +132,6 @@
                                 <small v-if="t.name.toLowerCase() == 'rush'">Not Available <br></small>
                             </label>
                         </span>
-
-<!--                        <span>-->
-<!--                            <input type="radio" id="radioBanana" name="radioFruit" value="banana">-->
-<!--                            <label for="radioBanana" class="text-center ml-1">-->
-<!--                                Rush-->
-<!--                                <br>-->
-<!--                                <small>Not Available</small>-->
-<!--                            </label>-->
-<!--                        </span>-->
-
-
 
                     </div>
                 </div>
@@ -206,7 +146,7 @@
                 </div>
                 <div class="col-xl-3 col-md-3 col-3">
                     <p class="sub">
-                        <b>$150</b>
+                        <b>$ {{ price }}</b>
                     </p>
                 </div>
             </div>
@@ -233,7 +173,7 @@
 
             <div class="row bg-white mt-3">
                 <div class="col-xl-12 text-center">
-                    <button class="submit filled btn">Submit</button>
+                    <button class="submit filled btn" @click="submit">Submit</button>
                 </div>
             </div>
         </div>
@@ -256,10 +196,23 @@
                 // products: [],
                 forms: [],
                 product: "",
-                image: "",
                 data:[],
-                productionTime: "",
-                time: {}
+                productionTime: 0,
+                time: {},
+                productId: 0,
+                countForm: 0,
+                price: 0,
+                image: "",
+                oldImage: "",
+                contact: {
+                    full_name: "",
+                    company_name: "",
+                    email: "",
+                    phone: "",
+                    deliver_to: "",
+                    contact_method: "0",
+
+                }
             }
         },
         created: function() {
@@ -269,32 +222,65 @@
             getForms(){
                 axios.get(process.env.VUE_APP_DATA_URL + "api/get-form/" + this.$route.params.product).then(r => {
                     if(r.data) {
-                        this.forms = r.data.data.forms || [];
-                        this.time = r.data.data.forms.find(e => e.form_id == 10) || {};
+                        this.countForm = r.data.data.forms.length;
+                        this.time = r.data.data.forms.find(e => e.form_id == 10) || {}; // If form id is 10 it is radio button
+                        this.forms = r.data.data.forms.filter(e => e.form_id != 10) || [];
+                        if(this.forms.length) this.productId = this.forms[0].product_id;
                     }
                 })
             },
+
+            submit() {
+                this.chT();
+                if(this.data.length != (this.countForm)){
+                    alert("Please, Select Product Options ");
+                    return false;
+                }
+
+                let formData = new FormData();
+                formData.append('arr', this.data);
+                formData.append('productId', this.productId);
+                formData.append('contact', this.contact);
+                formData.append('image', this.image);
+                axios.post(process.env.VUE_APP_DATA_URL + "api/get-price", formData,
+                    {
+                        headers: {
+                            'Content-Type': 'multipart/form-data'
+                        }
+                    }
+                ).then(r => {
+                    this.price = r.data.price;
+                    if(this.oldImage != "") {
+                        this.$refs.preview.setAttribute("src", this.oldImage);
+                    }
+                });
+
+            },
+            chT(){
+                if(this.time.values) {
+                    this.time.values.forEach(e => {
+                        let id = e.id;
+                        if(this.data.indexOf(id) != -1) {
+                            this.data.splice(this.data.indexOf(id), 1);
+                        }
+                    });
+                    if(this.productionTime) {
+                        this.data.push(this.productionTime)
+                    }
+                }
+            },
             chF(e){
                 let formValue = e.target.value;
-                let formId = e.target.getAttribute("data-form_id");
                 let push = true;
                 this.data.forEach(function(e){
-                    if(e.formId == formId) {
-                        e.formValue = formValue;
+                    if(e == formValue) {
                         push = false;
                         return;
                     }
                 });
                 if(push) {
-                    this.data.push({
-                        formId, formValue
-                    });
+                    this.data.push(formValue);
                 }
-                if(this.data.length != this.forms.length) {
-
-
-                }
-                console.log(this.data.length, this.forms.length)
             },
             changeProduct(product) {
                 this.product = product
@@ -304,6 +290,7 @@
             },
             handleFileUpload(){
                 this.image = this.$refs.file.files[0];
+                this.oldImage = this.$refs.preview.getAttribute("src");
                 this.$refs.preview.setAttribute("src", URL.createObjectURL(this.image));
             },
         },
