@@ -252,13 +252,16 @@
                 });
             },
             submit() {
-                if(this.data.length != (this.countForm)){
-                    alert("Please, Select Product Options ");
+                let err = this.validate();
+                if(err) {
+                    alert(err);
                     return false;
                 }
-
+                this.loading = true;
                 let formData = new FormData();
-                formData.append(`uploaded_files[0]`, this.image);
+                if(this.image != "") {
+                    formData.append('uploaded_files[0]', this.image);
+                }
                 formData.append('full_name', this.full_name);
                 formData.append('company_name', this.company_name);
                 formData.append('phone', this.phone);
@@ -279,8 +282,9 @@
                     this.phone = "";
                     this.email = "";
                     this.comment = "";
-                    this.files = [];
-
+                    this.image = [];
+                    this.$refs.preview.setAttribute("src", this.oldImage);
+                    alert("Your Form Has Been Sent Successfully");
                 }).catch((e) => {
                     if(e.response.status == 422){
                         alert(e.response.data.message);
@@ -291,6 +295,18 @@
                     this.loading = false;
                 });
 
+            },
+            validate(){
+                if(this.full_name == ""){
+                    return "Please, Fill in The Full Name Field";
+                } else if(this.contact_method == 0 && this.phone == "") {
+                    return "Please, Fill in Phone Field";
+                } else if(this.contact_method == 1 && this.email == "") {
+                    return "Please, Fill in Email Field";
+                } else if(this.data.length != (this.countForm)) {
+                    return "Please, Select Product Options";
+                }
+                return false;
             },
             chT(t){
                 if(this.time.values) {

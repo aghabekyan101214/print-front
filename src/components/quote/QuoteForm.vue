@@ -38,16 +38,12 @@
                     <p>What is the best way to contact you if we have any questions about your project?</p>
                     <div class="container1">
                         <div class="radio">
-                            <input type="radio" v-model="contact_method" name="radio" id="radio3" class="radio__input" value="1">
+                            <input type="radio" v-model="contact_method" name="radio" id="radio3" class="radio__input" value="0">
                             <label for="radio3" class="radio__label">Phone</label>
                         </div><br>
                         <div class="radio">
-                            <input type="radio" v-model="contact_method" name="radio" id="radio4" class="radio__input" value="2">
+                            <input type="radio" v-model="contact_method" name="radio" id="radio4" class="radio__input" value="1">
                             <label for="radio4" class="radio__label">Email</label>
-                        </div><br>
-                        <div class="radio">
-                            <input type="radio" v-model="contact_method" name="radio" id="radio5" class="radio__input" value="3">
-                            <label for="radio5" class="radio__label">Phone and Email</label>
                         </div><br>
                     </div>
                 </div>
@@ -117,7 +113,23 @@
                     this.preview.push(obj)
                 })
             },
+            validate(){
+                if(this.full_name == ""){
+                    return "Please, Fill in The Full Name Field";
+                } else if(this.contact_method == 0 && this.phone == "") {
+                    return "Please, Fill in Phone Field";
+                } else if(this.contact_method == 1 && this.email == "") {
+                    return "Please, Fill in Email Field";
+                }
+                return false;
+            },
             submit() {
+                let err = this.validate();
+                if(err) {
+                    alert(err);
+                    return false;
+                }
+
                 this.loading = true;
                 this.error = false;
                 let formData = new FormData();
@@ -144,7 +156,7 @@
                     this.comment = "";
                     this.files = [];
                     this.preview = [];
-
+                    alert("Your Form Has Been Sent Successfully");
                 }).catch((e) => {
                     if(e.response.status == 422){
                         alert(e.response.data.message);
