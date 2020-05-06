@@ -10,7 +10,7 @@
                                 <img src="../../assets/images/user-icon.png" alt="User Icon">
                             </span>
                     </b-input-group-prepend>
-                    <b-form-input class="LoginInput" placeholder="Full Name">
+                    <b-form-input class="LoginInput" v-model="full_name" placeholder="Full Name">
                     </b-form-input>
                 </b-input-group>
 
@@ -24,7 +24,7 @@
                                 <img src="../../assets/images/company-icon.png" alt="User Icon">
                             </span>
                     </b-input-group-prepend>
-                    <b-form-input class="LoginInput" placeholder="Company Name">
+                    <b-form-input class="LoginInput" v-model="company_name" placeholder="Company Name">
                     </b-form-input>
                 </b-input-group>
 
@@ -33,80 +33,29 @@
         </div>
 
         <div class="form-more-details row justify-content-center">
-<!--            <div class="col-lg-4">-->
-<!--                <p class="decoration">Shipping Estimate</p>-->
-<!--                <p>Enter Shipping address or zip code to get an estimate for taxes and shipping with your quote.</p>-->
-<!--                </br>-->
-<!--                </br>-->
-<!--                <input type="text" class="form-control">-->
-<!--            </div>-->
-<!--            <div class="col-lg-4">-->
-<!--                <p class="decoration">Project Deadline Estimate</p>-->
-<!--                <p>Do you have a due date for this project?*</p>-->
-<!--                <div class="container1">-->
-<!--                    <div class="radio">-->
-<!--                        <input type="radio" name="radio" id="radio1" class="radio__input" checked>-->
-<!--                        <label for="radio1" class="radio__label">No</label>-->
-<!--                    </div><br>-->
-<!--                    <div class="radio">-->
-<!--                        <input type="radio" name="radio" id="radio2" class="radio__input">-->
-<!--                        <label for="radio2" class="radio__label">Yes</label>-->
-<!--                    </div><br>-->
-<!--                </div>-->
-<!--                <div class="row m0">-->
-<!--                    <label class="label">-->
-<!--                        Due Date*-->
-<!--                    </label>-->
-<!--                    <div class="select-blue col-md-m">-->
-<!--                        <select class="form-control" id="sel1">-->
-<!--                            <option>Month</option>-->
-<!--                            <option>2</option>-->
-<!--                            <option>3</option>-->
-<!--                            <option>4</option>-->
-<!--                        </select>-->
-<!--                    </div>-->
-<!--                    <div class="select-blue col-sm-m">-->
-<!--                        <select class="form-control" id="sel2">-->
-<!--                            <option>Day</option>-->
-<!--                            <option>2</option>-->
-<!--                            <option>3</option>-->
-<!--                            <option>4</option>-->
-<!--                        </select>-->
-<!--                    </div>-->
-<!--                    <div class="select-blue col-sm-m">-->
-<!--                        <select class="form-control" id="sel1">-->
-<!--                            <option>Year</option>-->
-<!--                            <option>2</option>-->
-<!--                            <option>3</option>-->
-<!--                            <option>4</option>-->
-<!--                        </select>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-
                 <div class="col-lg-12">
                     <p class="decoration">Contact Information</p>
                     <p>What is the best way to contact you if we have any questions about your project?</p>
                     <div class="container1">
                         <div class="radio">
-                            <input type="radio" name="radio" id="radio3" class="radio__input" checked>
+                            <input type="radio" v-model="contact_method" name="radio" id="radio3" class="radio__input" value="1">
                             <label for="radio3" class="radio__label">Phone</label>
                         </div><br>
                         <div class="radio">
-                            <input type="radio" name="radio" id="radio4" class="radio__input">
+                            <input type="radio" v-model="contact_method" name="radio" id="radio4" class="radio__input" value="2">
                             <label for="radio4" class="radio__label">Email</label>
                         </div><br>
                         <div class="radio">
-                            <input type="radio" name="radio" id="radio5" class="radio__input">
+                            <input type="radio" v-model="contact_method" name="radio" id="radio5" class="radio__input" value="3">
                             <label for="radio5" class="radio__label">Phone and Email</label>
                         </div><br>
                     </div>
                 </div>
                 <div class="col-lg-6 mb-3">
-                    <input type="text" class="form-control" placeholder="Phone number*">
+                    <input type="text" class="form-control" v-model="phone" placeholder="Phone number*">
                 </div>
                 <div class="col-lg-6">
-                    <input type="text" class="form-control" placeholder="Email*">
+                    <input type="text" class="form-control" v-model="email" placeholder="Email*">
                 </div>
         </div>
         <div class="container pl-0 pr-0 textarea-form mb-5">
@@ -116,23 +65,97 @@
                         <img src="../../assets/images/message-icon.png" alt="User Icon">
                     </span>
                 </b-input-group-prepend>
-                <b-form-textarea class="LoginInput" rows="5" placeholder="Describe Yourself Here">
+                <b-form-textarea class="LoginInput" v-model="comment" rows="5" placeholder="Describe Yourself Here">
                 </b-form-textarea>
             </b-input-group>
         </div>
 
         <p class="clear">You are able to add more than 1 file by selecting multiple files at once</p>
-        <div class="upload-file "> Upload A file<input type="file" class="custom-file-input" ></div>
+        <div class="upload-file" @click="$refs.file.click()"> Upload A file
+            <input type="file" ref="file" @change="handleFileUpload" class="custom-file-input" multiple>
+        </div>
 
+        <b-row>
+            <b-col v-for="(file, i) in preview" :key="i">
+                <b-img thumbnail fluid :src="file.url" :alt="file.extension" style="height: 100px;"></b-img>
+            </b-col>
+        </b-row>
 
-        <button class="btn submit">Submit</button>
+        <button class="btn submit" @click="submit" v-if="!loading">Submit</button>
 
     </section>
 </template>
 
 <script>
+
+    import axios from "axios";
+
     export default {
         name: "QuoteForm",
+        data: () => {
+          return {
+              full_name: "",
+              company_name: "",
+              phone: "",
+              email: "",
+              comment: "",
+              files: [],
+              preview: [],
+              loading: false,
+              contact_method: 1
+          }
+        },
+        methods: {
+            handleFileUpload(){
+                this.files = this.$refs.file.files;
+                this.preview = [];
+                this.files.forEach(e => {
+                    let obj = {
+                        "url": URL.createObjectURL(e),
+                        "extension": e.name.split('.').pop().toUpperCase()
+                    }
+                    this.preview.push(obj)
+                })
+            },
+            submit() {
+                this.loading = true;
+                this.error = false;
+                let formData = new FormData();
+                this.files.forEach((e, i) => {
+                    formData.append(`uploaded_files[${i}]`, e);
+                });
+                formData.append('full_name', this.full_name);
+                formData.append('company_name', this.company_name);
+                formData.append('phone', this.phone);
+                formData.append('email', this.email);
+                formData.append('comment', this.comment);
+                axios.post( process.env.VUE_APP_DATA_URL + '/api/contact',
+                    formData,
+                    {
+                        headers: {
+                            'Content-Type': 'multipart/form-data'
+                        }
+                    }
+                ).then( () => {
+                    this.full_name = "";
+                    this.company_name = "";
+                    this.phone = "";
+                    this.email = "";
+                    this.comment = "";
+                    this.files = [];
+                    this.preview = [];
+
+                }).catch((e) => {
+                    if(e.response.status == 422){
+                        alert(e.response.data.message);
+                    } else {
+                        alert("Something Went Wrong, Please Try Again Later.");
+                    }
+                }).finally( () => {
+                    this.loading = false;
+                });
+            }
+        }
     }
 </script>
 
@@ -320,27 +343,7 @@
     .custom-file-input::-webkit-file-upload-button {
         visibility: hidden;
     }
-    .custom-file-input::before {
-        content: 'Select some files';
-        display: inline-block;
-        background: linear-gradient(top, #009fe4, #009fe4);
-        border: 1px solid #999;
-        border-radius: 3px;
-        padding: 5px 8px;
-        outline: none;
-        white-space: nowrap;
-        -webkit-user-select: none;
-        cursor: pointer;
-        text-shadow: 1px 1px #fff;
-        font-weight: 700;
-        font-size: 10pt;
-    }
-    .custom-file-input:hover::before {
-        border-color: black;
-    }
-    .custom-file-input:active::before {
-        background: -webkit-linear-gradient(top, #009fe4, #009fe4);
-    }
+
     .upload-file{
         background: #009fe4;
         width: 400px;
@@ -355,10 +358,13 @@
         position:relative;
         font-size: 12px;
         letter-spacing: 1px;
+        cursor: pointer;
     }
 
     .custom-file-input {
         top: -43px;
+        cursor: pointer;
+        display: none;
     }
     .validate-form [type=submit]{
         margin-bottom: 50px;

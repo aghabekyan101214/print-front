@@ -28,7 +28,7 @@
                                 <img src="../assets/images/quote/users.png" alt="User Icon">
                             </span>
                         </b-input-group-prepend>
-                        <b-form-input class="LoginInput" v-model="contact.full_name" placeholder="Full Name*">
+                        <b-form-input class="LoginInput" v-model="full_name" placeholder="Full Name*">
                         </b-form-input>
                     </b-input-group>
 
@@ -42,7 +42,7 @@
                                 <img src="../assets/images/quote/email.png" alt="Email Icon">
                             </span>
                         </b-input-group-prepend>
-                        <b-form-input class="LoginInput" v-model="contact.email" placeholder="Email*">
+                        <b-form-input class="LoginInput" v-model="email" placeholder="Email*">
                         </b-form-input>
                     </b-input-group>
 
@@ -56,7 +56,7 @@
                                 <img src="../assets/images/quote/portfolio.png" alt="Company Icon">
                             </span>
                         </b-input-group-prepend>
-                        <b-form-input class="LoginInput" v-model="contact.company_name" placeholder="Company Name">
+                        <b-form-input class="LoginInput" v-model="company_name" placeholder="Company Name">
                         </b-form-input>
                     </b-input-group>
 
@@ -70,7 +70,7 @@
                                 <img src="../assets/images/quote/phone.png" alt="Phone Icon">
                             </span>
                         </b-input-group-prepend>
-                        <b-form-input class="LoginInput" v-model="contact.phone" placeholder="Phone">
+                        <b-form-input class="LoginInput" v-model="phone" placeholder="Phone">
                         </b-form-input>
                     </b-input-group>
 
@@ -84,7 +84,7 @@
                                 <img src="../assets/images/quote/globe.png" alt="Deliver Icon">
                             </span>
                         </b-input-group-prepend>
-                        <b-form-input class="LoginInput" v-model="contact.deliver_to" placeholder="Deliver To">
+                        <b-form-input class="LoginInput" v-model="deliver_to" placeholder="Deliver To">
                         </b-form-input>
                     </b-input-group>
 
@@ -94,11 +94,11 @@
                     <p class="mb-0"><b>How May We Contact You</b></p>
                     <div class="group d-flex">
                         <div class="custom-control custom-checkbox">
-                            <input type="radio" checked value="0" v-model="contact.contact_method" name="contact-type" class="custom-control-input" id="phone">
+                            <input type="radio" checked value="0" v-model="contact_method" name="contact-type" class="custom-control-input" id="phone">
                             <label class="custom-control-label" for="phone">Phone</label>
                         </div>
                         <div class="custom-control custom-checkbox ml-2">
-                            <input type="radio" name="contact-type" v-model="contact.contact_method" value="1" class="custom-control-input" id="email">
+                            <input type="radio" name="contact-type" v-model="contact_method" value="1" class="custom-control-input" id="email">
                             <label class="custom-control-label" for="email">Email</label>
                         </div>
                     </div>
@@ -111,20 +111,20 @@
                     <label for="">Step 2: Select Product Options</label>
                 </div>
 
-                <div v-for="form in forms" :key="form.id" class="col-xl-6 col-md-6 mb-3">
+                <div v-for="(form, i) in forms" :key="form.id" class="col-xl-6 col-md-6 mb-3">
                     <p class="mb-1">{{ form.form.name }}</p>
-                    <select @change="chF" :data-form_id="form.form_id" class="form-control print-product" id="stock">
+                    <select @change="chF" :data-form_id="form.form_id" ref="sel" class="form-control print-product" id="stock">
                         <option value="">Choose Value</option>
                         <option v-for="val in form.values" :key="val.id" :value="val.id">{{ val.name }}</option>
                     </select>
                 </div>
 
-                <div class="col-xl-6 col-md-6 mb-3 center-xs">
+                <div v-if="time.values" class="col-xl-6 col-md-6 mb-3 center-xs">
                     <p class="mb-1">Production Time</p>
                     <div class="radio-toolbar">
 
-                        <span v-for="t in time.values" :key="t.id" class="rad-span">
-                            <input type="radio" @click="chT" :id="t.id" v-model="productionTime" :value="t.id">
+                        <span v-for="(t, i) in time.values" :key="t.id" class="rad-span">
+                            <input type="radio" @change="chF" ref="rad" :id="t.id" v-model="productionTime" :value="t.id">
                             <label :for="t.id">
                                 {{ t.name }}
                                 <br>
@@ -146,7 +146,8 @@
                 </div>
                 <div class="col-xl-3 col-md-3 col-3">
                     <p class="sub">
-                        <b>$ {{ price }}</b>
+                        <b v-if="price != 0">$ {{ price }}</b>
+                        <b v-else>No Price</b>
                     </p>
                 </div>
             </div>
@@ -173,7 +174,7 @@
 
             <div class="row bg-white mt-3">
                 <div class="col-xl-12 text-center">
-                    <button class="submit filled btn" @click="submit">Submit</button>
+                    <button v-if="!loading" class="submit filled btn" @click="submit">Submit</button>
                 </div>
             </div>
         </div>
@@ -202,17 +203,18 @@
                 productId: 0,
                 countForm: 0,
                 price: 0,
-                image: "",
+                image: [],
                 oldImage: "",
-                contact: {
-                    full_name: "",
-                    company_name: "",
-                    email: "",
-                    phone: "",
-                    deliver_to: "",
-                    contact_method: "0",
+                full_name: "",
+                company_name: "",
+                phone: "",
+                email: "",
+                comment: "",
+                contact_method: "0",
+                deliver_to: "",
+                combinationId: 0,
+                loading: false,
 
-                }
             }
         },
         created: function() {
@@ -229,19 +231,14 @@
                     }
                 })
             },
-
-            submit() {
-                this.chT();
+            getPrice(){
                 if(this.data.length != (this.countForm)){
-                    alert("Please, Select Product Options ");
                     return false;
                 }
 
                 let formData = new FormData();
                 formData.append('arr', this.data);
                 formData.append('productId', this.productId);
-                formData.append('contact', this.contact);
-                formData.append('image', this.image);
                 axios.post(process.env.VUE_APP_DATA_URL + "api/get-price", formData,
                     {
                         headers: {
@@ -250,13 +247,74 @@
                     }
                 ).then(r => {
                     this.price = r.data.price;
-                    if(this.oldImage != "") {
-                        this.$refs.preview.setAttribute("src", this.oldImage);
+                    this.combinationId = r.data.obj.id || 0;
+                    console.log(this.combinationId)
+                });
+            },
+            submit() {
+                if(this.data.length != (this.countForm)){
+                    alert("Please, Select Product Options ");
+                    return false;
+                }
+
+                let formData = new FormData();
+                formData.append(`uploaded_files[0]`, this.image);
+                formData.append('full_name', this.full_name);
+                formData.append('company_name', this.company_name);
+                formData.append('phone', this.phone);
+                formData.append('email', this.email);
+                formData.append('deliver_to', this.deliver_to);
+                formData.append('combination_id', this.combinationId);
+                formData.append('product_id', this.product_id);
+                axios.post( process.env.VUE_APP_DATA_URL + '/api/contact',
+                    formData,
+                    {
+                        headers: {
+                            'Content-Type': 'multipart/form-data'
+                        }
                     }
+                ).then( () => {
+                    this.full_name = "";
+                    this.company_name = "";
+                    this.phone = "";
+                    this.email = "";
+                    this.comment = "";
+                    this.files = [];
+
+                }).catch((e) => {
+                    if(e.response.status == 422){
+                        alert(e.response.data.message);
+                    } else {
+                        alert("Something Went Wrong, Please Try Again Later.");
+                    }
+                }).finally( () => {
+                    this.loading = false;
                 });
 
             },
-            chT(){
+            chT(t){
+                if(this.time.values) {
+                    this.time.values.forEach(e => {
+                        let id = e.id;
+                        console.log(id)
+                        if(this.data.indexOf(id) != -1) {
+                            this.data.splice(this.data.indexOf(id), 1);
+                        }
+                    });
+                    console.log(t.target.value)
+                    this.data.push(Number(t.target.value));
+                    console.log(this.data)
+                    this.getPrice();
+                }
+
+            },
+            chF(e){
+                this.data = [];
+                for(let i = 0; i < this.forms.length; i++) {
+                    if(this.$refs.sel[i].value != "") {
+                        this.data.push(this.$refs.sel[i].value);
+                    }
+                }
                 if(this.time.values) {
                     this.time.values.forEach(e => {
                         let id = e.id;
@@ -264,23 +322,10 @@
                             this.data.splice(this.data.indexOf(id), 1);
                         }
                     });
-                    if(this.productionTime) {
-                        this.data.push(this.productionTime)
-                    }
+                    this.data.push(this.productionTime);
+
                 }
-            },
-            chF(e){
-                let formValue = e.target.value;
-                let push = true;
-                this.data.forEach(function(e){
-                    if(e == formValue) {
-                        push = false;
-                        return;
-                    }
-                });
-                if(push) {
-                    this.data.push(formValue);
-                }
+                this.getPrice();
             },
             changeProduct(product) {
                 this.product = product
@@ -298,6 +343,7 @@
             $route(to, from) {
                 this.changeProduct(this.$route.params.product);
                 this.getForms();
+                this.price = 0;
             }
         }
     }
