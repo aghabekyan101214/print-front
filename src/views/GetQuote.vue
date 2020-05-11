@@ -114,24 +114,20 @@
                 <div v-for="(form, i) in forms" :key="form.id" class="col-xl-6 col-md-6 mb-3">
                     <p class="mb-1">{{ form.form.name }}</p>
                     <select @change="chF" :data-form_id="form.form_id" ref="sel" class="form-control print-product" id="stock">
-                        <option value="">Choose Value</option>
                         <option v-for="val in form.values" :key="val.id" :value="val.id">{{ val.name }}</option>
                     </select>
                 </div>
 
-                <div v-if="time.values" class="col-xl-6 col-md-6 mb-3 center-xs">
+                <div v-if="time.values" class="col-xl-6 col-md-6 mb-3">
                     <p class="mb-1">Production Time</p>
-                    <div class="radio-toolbar">
+                    <div class="radio-toolbar d-flex">
 
-                        <span v-for="(t, i) in time.values" :key="t.id" class="rad-span">
+                        <div v-for="(t, i) in time.values" :key="t.id" class="rad-span">
                             <input type="radio" @change="chF" ref="rad" :id="t.id" v-model="productionTime" :value="t.id">
-                            <label :for="t.id">
+                            <label class="d-flex align-items-center justify-content-center" :for="t.id">
                                 {{ t.name }}
-                                <br>
-                                <small v-if="t.name.toLowerCase() == 'regular'">4-6 Business Days <br></small>
-                                <small v-if="t.name.toLowerCase() == 'rush'">Not Available <br></small>
                             </label>
-                        </span>
+                        </div>
 
                     </div>
                 </div>
@@ -166,8 +162,8 @@
                         <p>Bleed: 0.125</p>
                         <p>Resolution: 300 dpi</p>
                         <p>Color Mode: CMYK</p>
-                        <p>File Type: PDF, EPS, TIFF & All(created outline)</p>
-                        <p>Maxiumum Upload Size: 10 MB</p>
+                        <p>AI in File Type: PDF, EPS, TIFF & All(created outline)</p>
+                        <p>Maximum Upload Size: 10 MB</p>
                     </div>
                 </div>
             </div>
@@ -221,21 +217,22 @@
             this.getForms();
         },
         methods: {
-            getForms(){
-                axios.get(process.env.VUE_APP_DATA_URL + "api/get-form/" + this.$route.params.product).then(r => {
+            async getForms(){
+              await axios.get(process.env.VUE_APP_DATA_URL + "api/get-form/" + this.$route.params.product).then(r => {
                     if(r.data) {
                         this.countForm = r.data.data.forms.length;
                         this.time = r.data.data.forms.find(e => e.form_id == 10) || {}; // If form id is 10 it is radio button
                         this.forms = r.data.data.forms.filter(e => e.form_id != 10) || [];
                         if(this.forms.length) this.productId = this.forms[0].product_id;
+                        this.productionTime = this.time.values[0].id || 0;
                     }
                 })
+                this.getValues();
             },
             getPrice(){
                 if(this.data.length != (this.countForm)){
                     return false;
                 }
-
                 let formData = new FormData();
                 formData.append('arr', this.data);
                 formData.append('productId', this.productId);
@@ -248,15 +245,16 @@
                 ).then(r => {
                     this.price = r.data.price;
                     this.combinationId = r.data.obj.id || 0;
-                    console.log(this.combinationId)
                 });
             },
             submit() {
+
                 let err = this.validate();
                 if(err) {
                     alert(err);
                     return false;
                 }
+
                 this.loading = true;
                 let formData = new FormData();
                 if(this.image != "") {
@@ -312,15 +310,13 @@
                 if(this.time.values) {
                     this.time.values.forEach(e => {
                         let id = e.id;
-                        console.log(id)
                         if(this.data.indexOf(id) != -1) {
                             this.data.splice(this.data.indexOf(id), 1);
                         }
                     });
-                    console.log(t.target.value)
                     this.data.push(Number(t.target.value));
-                    console.log(this.data)
                     this.getPrice();
+
                 }
 
             },
@@ -341,6 +337,15 @@
                     this.data.push(this.productionTime);
 
                 }
+                this.getPrice();
+            },
+            getValues() {
+                for(let i = 0; i < this.forms.length; i++) {
+                    this.data.push(this.$refs.sel[i].value);
+                }
+
+                if(this.productionTime) this.data.push(this.productionTime);
+
                 this.getPrice();
             },
             changeProduct(product) {

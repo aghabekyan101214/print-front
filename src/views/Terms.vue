@@ -5,7 +5,7 @@
             <p>Welcome to caliprintworks terms and conditions, we provide our services subject to the
                 following terms and conditions.</p>
             <p class="mb-1"><b>Production hours:</b></p>
-            <p>Monday through Friday from <b>5am to 3:30pm PST</b>. <br> We are <b>closed </b> on weekends and <b>national
+            <p>M - F from <b>5am to 3:30pm PST</b>, <b>S 8:am to 1:00pm</b> <br> We are <b>closed </b> on weekends and <b>national
                 holidays</b>.</p>
             <p class="mb-1"><b>Legal Claim:</b></p>
             <p>Please read these terms and conditions carefully. By accessing <router-link to="/">Caliprintworks.com</router-link> website

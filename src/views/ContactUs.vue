@@ -39,7 +39,7 @@
                     <p class="blue">Hours:</p>
                 </div>
                 <div class="col-6 col-md-4 pl-0">
-                    <p> M - F 6:00am to 3:30pm
+                    <p> M - F 5:00am to 3:30pm
                         <br>
                         S 8:am to 1:00pm
                     </p>

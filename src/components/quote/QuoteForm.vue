@@ -61,7 +61,7 @@
                         <img src="../../assets/images/message-icon.png" alt="User Icon">
                     </span>
                 </b-input-group-prepend>
-                <b-form-textarea class="LoginInput" v-model="comment" rows="5" placeholder="Describe Yourself Here">
+                <b-form-textarea class="LoginInput" v-model="comment" rows="5" placeholder="Your message here">
                 </b-form-textarea>
             </b-input-group>
         </div>
