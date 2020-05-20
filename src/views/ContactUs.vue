@@ -53,25 +53,25 @@
             <p class="text-center mb-40">Follow us on our social media profiles and special deals page and keep an eye out for our latest offers and promotions.</p>
             <div class="row">
                 <div class="col-xl-3 col-md-3 col-sm-6 col-12">
-                    <a href="#">
+                    <a href="mailto:info@caliprintworks.com">
                         <img src="../assets/images/box1.png" class="h75" alt="Envelope">
                         <img src="../assets/images/box1-hover.png" class="h75 d-none" alt="Envelope">
                     </a>
                 </div>
                 <div class="col-xl-3 col-md-3 col-sm-6">
-                    <a href="#">
+                    <a href="tel:8188144220">
                         <img src="../assets/images/box2.png" class="h50" alt="Phone">
                         <img src="../assets/images/box2-hover.png" class="h50 d-none" alt="Phone">
                     </a>
                 </div>
                 <div class="col-xl-3 col-md-3 col-sm-6">
-                    <a href="#">
+                    <a href="https://www.facebook.com/caliprintworks/" target="_blank">
                         <img src="../assets/images/box3.png" class="h50" alt="Facebook">
                         <img src="../assets/images/box3-hover.png" class="h50 d-none" alt="Facebook">
                     </a>
                 </div>
                 <div class="col-xl-3 col-md-3 col-sm-6">
-                    <a href="#">
+                    <a href="https://instagram.com/caliprintworks?igshid=1j930zipis304" target="_blank">
                         <img src="../assets/images/box4.png" class="h75" alt="Instagram">
                         <img src="../assets/images/box4-hover.png" class="h75 d-none" alt="Instagram">
                     </a>

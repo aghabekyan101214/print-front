@@ -1,7 +1,7 @@
 <template>
     <section class="popular-products container">
         <h2 class="title text-center">Most <span class="blue">Popular</span> Demands</h2>
-        <p class="decoration text-center mb-30">Focus on a product you love and we will handle the rest.</p>
+        <p class="decoration text-center mb-30">Focus on the product you love and we will handle the rest.</p>
         <div class="row">
 
             <div class="col-md-6 col-xl-3 col-12 prod-cont">
