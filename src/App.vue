@@ -143,7 +143,6 @@
             window.addEventListener('scroll', this.handleScroll);
             axios.get(process.env.VUE_APP_DATA_URL + "api/get-business-services").then(r => {
                 if(r.data) {
-                    console.log(r.data.services)
                     this.services = r.data.services;
                     this.products = r.data.printServices;
                     this.signage = r.data.signage;

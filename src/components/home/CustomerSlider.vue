@@ -3,8 +3,9 @@
         <div class="demo container">
             <div class="item">
                 <h3 class="slider-title pt-0">Customer stories</h3>
-                <p class="text-white text-center">We Appreciate Your Feedback. <a v-b-modal.review href="javascript:void(0)" class="text-white font-weight-bold font-italic border-bottom text-decoration-none">LEAVE A REVIEW</a> </p>
+                <p class="text-white text-center slider-sub-title">We Appreciate Your Feedback. <a v-b-modal.review href="javascript:void(0)" class="text-white font-weight-bold font-italic border-bottom text-decoration-none">LEAVE A REVIEW</a> </p>
                 <carousel :autoplayTimeout=8000 autoplay="autoplay" id="content-slider" class="content-slider" :navigationNextLabel="''" :navigationPrevLabel="''" :scrollPerPage="false" :navigationEnabled="true" :paginationEnabled="false" :perPageCustom="[[320, 1], [768, 2]]">
+
                     <slide v-for="review in reviews" :key="review.id">
                         <div class="slider-inner-box d-flex align-items-center">
                             {{ review.text }}
@@ -15,7 +16,6 @@
                         </div>
                     </slide>
 
-<!--                    .slider-banner img-->
                 </carousel>
             </div>
         </div>
@@ -98,5 +98,25 @@
         bottom: 135px;
         left: 30%;
         color: black;
+        display: inline-block;
+    }
+    @media all and (max-width: 768px) {
+        .img-box p{
+            left: 50%;
+            font-size: 14px;
+        }
+        .slider-sub-title{
+            font-size: 14px;
+        }
+    }
+
+    @media all and (max-width: 320px) {
+        .img-box p{
+            left: 50%;
+            font-size: 12px;
+        }
+        .slider-sub-title{
+            font-size: 12px;
+        }
     }
 </style>
