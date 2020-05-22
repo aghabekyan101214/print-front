@@ -6,7 +6,7 @@
 
             <div class="col-md-6 col-xl-3 col-12 prod-cont">
                 <div class="product-box">
-                    <p class="text-center mt-2 mb-1 pre-title">16pt Premium <br> <b>Matte Business Cards</b> </p>
+                    <p class="text-center mt-2 mb-1 pre-title">16pt Premium Matte<br> <b>Business Cards</b> </p>
 <!--                    <h5 class="text-center  product-title">Most Popular</h5>-->
                     <p class="m-0 text-center">
                         <i class="fa fa-caret-down"/>
@@ -35,7 +35,7 @@
 
             <div class="col-md-6 col-xl-3 col-12 prod-cont">
                 <div class="product-box">
-                    <p class="text-center mt-2 mb-1 pre-title">14pt Gloss <br> <b>Cover Greeting Cards</b> </p>
+                    <p class="text-center mt-2 mb-1 pre-title">14pt Gloss Cover <br> <b>Greeting Cards</b> </p>
                     <!--                    <h5 class="text-center  product-title">Most Popular</h5>-->
                     <p class="m-0 text-center">
                         <i class="fa fa-caret-down"/>
@@ -66,7 +66,7 @@
 
             <div class="col-md-6 col-xl-3 col-12 prod-cont">
                 <div class="product-box">
-                    <p class="text-center mt-2 mb-1 pre-title">100# Gloss <br> <b>CVR Door Hangers</b> </p>
+                    <p class="text-center mt-2 mb-1 pre-title">100# Gloss Cover<br> <b>Door Hangers</b> </p>
                     <!--                    <h5 class="text-center  product-title">Most Popular</h5>-->
                     <p class="m-0 text-center">
                         <i class="fa fa-caret-down"/>
@@ -97,7 +97,7 @@
 
             <div class="col-md-6 col-xl-3 col-12 prod-cont">
                 <div class="product-box">
-                    <p class="text-center mt-2 mb-1 pre-title">70lb <br> <b>Uncoated Notepads</b></p>
+                    <p class="text-center mt-2 mb-1 pre-title">70lb Uncoated<br> <b>Notepads</b></p>
                     <!--                    <h5 class="text-center  product-title">Most Popular</h5>-->
                     <p class="m-0 text-center">
                         <i class="fa fa-caret-down"/>
@@ -225,6 +225,7 @@
     }
     .list{
         padding-left: 20px;
+        text-transform: capitalize;
     }
     .list li{
         color: white;
