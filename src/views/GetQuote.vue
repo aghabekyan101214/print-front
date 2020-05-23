@@ -315,19 +315,8 @@
                     let beforeValue = this.$refs.sel[i - 1] != undefined ? this.$refs.sel[i - 1].value : 0;
                     if(beforeValue) {
                         this.$refs.sel[i].removeAttribute("disabled")
-
-                        // if(this.$refs.sel[currentSelect + 1] != undefined) {
-                        //     this.$refs.sel[currentSelect + 1].options.forEach(option => {
-                        //         option.removeAttribute("disabled")
-                        //         if(option.value == "") return;
-                        //         let disable = this.disableOption(option.value);
-                        //         if(disable) {
-                        //             option.setAttribute("disabled", true)
-                        //         }
-                        //     })
-                        // }
-
-                        this.$refs.sel[i].options.forEach(option => {
+                        if(this.$refs.sel[currentSelect + 1] == undefined) continue;
+                        this.$refs.sel[currentSelect + 1].options.forEach(option => {
                             option.removeAttribute("disabled")
                             if(option.value == "") return;
                             let disable = this.disableOption(option.value);
@@ -338,10 +327,10 @@
                     }
                 }
 
-                for (let i = currentSelect; i < this.forms.length; i++) {
-                    if(this.$refs.sel[i + 1] != undefined) {
-                        this.$refs.sel[i + 1].options[0].selected = true;
-                    }
+                for (let i = currentSelect; i < this.forms.length - 1; i++) {
+                    this.data = [];
+                    this.price = [];
+                    this.$refs.sel[i + 1].options[0].selected = true;
                 }
 
                 this.getPrice();
