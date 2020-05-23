@@ -113,23 +113,10 @@
 
                 <div v-for="(form, i) in forms" :key="form.id" class="col-xl-6 col-md-6 mb-3">
                     <p class="mb-1">{{ form.form.name }}</p>
-                    <select @change="chF" :data-form_id="form.form_id" ref="sel" class="form-control print-product" id="stock">
+                    <select @change="chF(i)" :disabled="i > 0" :data-form_id="form.form_id" ref="sel" class="form-control print-product" id="stock">
+                        <option value="">Choose Value</option>
                         <option v-for="val in form.values" :key="val.id" :value="val.id">{{ val.name }}</option>
                     </select>
-                </div>
-
-                <div v-if="time.values" class="col-xl-6 col-md-6 mb-3">
-                    <p class="mb-1">Production Time</p>
-                    <div class="radio-toolbar d-flex">
-
-                        <div v-for="(t, i) in time.values" :key="t.id" class="rad-span">
-                            <input type="radio" @change="chF" ref="rad" :id="t.id" v-model="productionTime" :value="t.id">
-                            <label class="d-flex align-items-center justify-content-center" :for="t.id">
-                                {{ t.name }}
-                            </label>
-                        </div>
-
-                    </div>
                 </div>
 
             </div>
@@ -194,8 +181,6 @@
                 forms: [],
                 product: "",
                 data:[],
-                productionTime: 0,
-                time: {},
                 productId: 0,
                 countForm: 0,
                 price: 0,
@@ -210,7 +195,7 @@
                 deliver_to: "",
                 combinationId: 0,
                 loading: false,
-
+                combinations: [],
             }
         },
         created: function() {
@@ -221,10 +206,10 @@
               await axios.get(process.env.VUE_APP_DATA_URL + "api/get-form/" + this.$route.params.product).then(r => {
                     if(r.data) {
                         this.countForm = r.data.data.forms.length;
-                        this.time = r.data.data.forms.find(e => e.form_id == 10) || {}; // If form id is 10 it is radio button
-                        this.forms = r.data.data.forms.filter(e => e.form_id != 10) || [];
+                        this.forms = r.data.data.forms || [];
                         if(this.forms.length) this.productId = this.forms[0].product_id;
-                        this.productionTime = this.time.values[0].id || 0;
+                        this.combinations = r.data.data.combinations;
+                        console.log(this.combinations)
                     }
                 })
                 this.getValues();
@@ -306,38 +291,87 @@
                 }
                 return false;
             },
-            chT(t){
-                if(this.time.values) {
-                    this.time.values.forEach(e => {
-                        let id = e.id;
-                        if(this.data.indexOf(id) != -1) {
-                            this.data.splice(this.data.indexOf(id), 1);
-                        }
-                    });
-                    this.data.push(Number(t.target.value));
-                    this.getPrice();
-
-                }
-
-            },
-            chF(e){
+            // chT(t){
+            //     if(this.time.values) {
+            //         this.time.values.forEach(e => {
+            //             let id = e.id;
+            //             if(this.data.indexOf(id) != -1) {
+            //                 this.data.splice(this.data.indexOf(id), 1);
+            //             }
+            //         });
+            //         this.data.push(Number(t.target.value));
+            //         this.getPrice();
+            //
+            //     }
+            //
+            // },
+            chF(currentSelect){
                 this.data = [];
                 for(let i = 0; i < this.forms.length; i++) {
                     if(this.$refs.sel[i].value != "") {
                         this.data.push(this.$refs.sel[i].value);
                     }
-                }
-                if(this.time.values) {
-                    this.time.values.forEach(e => {
-                        let id = e.id;
-                        if(this.data.indexOf(id) != -1) {
-                            this.data.splice(this.data.indexOf(id), 1);
-                        }
-                    });
-                    this.data.push(this.productionTime);
 
+                    let beforeValue = this.$refs.sel[i - 1] != undefined ? this.$refs.sel[i - 1].value : 0;
+                    if(beforeValue) {
+                        this.$refs.sel[i].removeAttribute("disabled")
+
+                        // if(this.$refs.sel[currentSelect + 1] != undefined) {
+                        //     this.$refs.sel[currentSelect + 1].options.forEach(option => {
+                        //         option.removeAttribute("disabled")
+                        //         if(option.value == "") return;
+                        //         let disable = this.disableOption(option.value);
+                        //         if(disable) {
+                        //             option.setAttribute("disabled", true)
+                        //         }
+                        //     })
+                        // }
+
+                        this.$refs.sel[i].options.forEach(option => {
+                            option.removeAttribute("disabled")
+                            if(option.value == "") return;
+                            let disable = this.disableOption(option.value);
+                            if(disable) {
+                                option.setAttribute("disabled", true)
+                            }
+                        })
+                    }
                 }
+
+                for (let i = currentSelect; i < this.forms.length; i++) {
+                    if(this.$refs.sel[i + 1] != undefined) {
+                        this.$refs.sel[i + 1].options[0].selected = true;
+                    }
+                }
+
                 this.getPrice();
+            },
+            disableOption(newVal) {
+                let d = [];
+                d.push(...this.data);
+
+                if(d.indexOf(newVal) == -1) {
+                    d.push(newVal);
+                }
+
+                let answer = [];
+
+                this.combinations.forEach(c => {
+                    let arr = [];
+                    d.forEach(e => {
+                        arr.push(c.find(f => f == e));
+                    })
+                    answer.push(arr);
+                })
+                let ret = true; // true, if the select will be disabled
+                answer.forEach(e => {
+                    if(e.indexOf(undefined) == -1) {
+                        ret = false;
+                        return;
+                    }
+
+                });
+                return ret;
             },
             getValues() {
                 for(let i = 0; i < this.forms.length; i++) {
