@@ -22,14 +22,9 @@
 
                     </div>
                 </div>
-                <div class="col-lg-6 bussines-details">
+                <div class="col-lg-6 business-details">
                     <h3 class="title">{{ service.title }}</h3>
-                    <p>Communicate and spread your brand with every cup served to clients</p>
-                    <p>Guidelines:</p>
-                    <p>Size(in OZ)</p>
-                    <p>Colors of printing</p>
-                    <p>Quantity</p>
-                    <p>Finishing (lamination,die-cut)</p>
+                    <div v-html="service.comment"></div>
                     <router-link to="/contact" class="blue-btn">contact us</router-link>
 
                 </div>
@@ -62,7 +57,7 @@
                 },
                 swiperOptionThumbs: {
                     spaceBetween: 10,
-                    slidesPerView: 4,
+                    slidesPerView: 3,
                     touchRatio: 0.2,
                     loop: true,
                     loopedSlides: 5, //looped slides should be the same
@@ -132,7 +127,19 @@
     }
     .gallery-thumbs .swiper-slide {
         width: 100%;
-        height: 100px;
+    }
+    .business-details{
+        position: relative;
+    }
+    .blue-btn{
+        position: absolute;
+        bottom: 10px;
+    }
+    @media (max-width: 768px) {
+        .blue-btn{
+            position: relative;
+            bottom: 10px;
+        }
     }
 
 </style>
