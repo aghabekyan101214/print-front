@@ -209,7 +209,6 @@
                         this.forms = r.data.data.forms || [];
                         if(this.forms.length) this.productId = this.forms[0].product_id;
                         this.combinations = r.data.data.combinations;
-                        console.log(this.combinations)
                     }
                 })
                 this.getValues();
