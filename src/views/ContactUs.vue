@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="col-4 col-md-2">
-                    <p class="blue">Hours:</p>
+                    <p class="blue">Production Days:</p>
                 </div>
                 <div class="col-6 col-md-4 pl-0">
                     <p> M - F </p>
