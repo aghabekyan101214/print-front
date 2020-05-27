@@ -2,16 +2,6 @@
     <div class="get-quote">
         <Breadcrumb/>
         <div class="container">
-<!--            <div class="row">-->
-
-<!--                <div class="col-xl-6 col-md-6">-->
-<!--                    <label for="pr-p">Step 1: Select A Print Product</label>-->
-<!--                    <select @change="changeRoute" v-model="product" class="form-control print-product" id="pr-p">-->
-<!--                        <option v-for="product in products" :key="product.id" :value="product.slug">{{ product.name }}</option>-->
-<!--                    </select>-->
-<!--                </div>-->
-
-<!--            </div>-->
 
             <div class="row pt-5">
                 <div class="col-xl-12">
@@ -149,8 +139,8 @@
                         <p>Bleed: 0.125</p>
                         <p>Resolution: 300 dpi</p>
                         <p>Color Mode: CMYK</p>
-                        <p>AI in File Type: PDF, EPS, TIFF & All(created outline)</p>
-                        <p>Maximum Upload Size: 10 MB</p>
+                        <p>File Types: PDF, EPS, TIFF & AI (Created Outline)</p>
+                        <p>Maximum Upload Size: 80 MB</p>
                     </div>
                 </div>
             </div>

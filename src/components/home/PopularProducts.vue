@@ -6,7 +6,7 @@
 
             <div class="col-md-6 col-xl-3 col-12 prod-cont">
                 <div class="product-box">
-                    <p class="text-center mt-2 mb-1 pre-title">16pt Premium Matte<br> <b>Business Cards</b> </p>
+                    <p class="text-center mt-2 mb-1 pre-title">16pt Matte Cover<br> <b>Business Cards</b> </p>
 <!--                    <h5 class="text-center  product-title">Most Popular</h5>-->
                     <p class="m-0 text-center">
                         <i class="fa fa-caret-down"/>
@@ -23,7 +23,7 @@
                     </div>
                     <div class="detail-box pl-2 pr-2 pt-3 pb-2">
                         <ul class="list">
-                            <li>Eye Catching Premium Quality Cards</li>
+                            <li>Eye catching cremium quality cards</li>
                             <li>Full color double sided printing</li>
                             <li>AQ coated, Semi Matte finish</li>
                             <li>100% satisfaction guarantee</li>
@@ -225,7 +225,6 @@
     }
     .list{
         padding-left: 20px;
-        text-transform: capitalize;
     }
     .list li{
         color: white;

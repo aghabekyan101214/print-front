@@ -17,11 +17,11 @@
                     <p class="blue">Phone number:</p>
                 </div>
                 <div class="col-6 col-md-4 pl-0">
-                    <p>(818) 814-4220</p>
+                    <p>+1(818) 814-4220</p>
                 </div>
 
                 <div class="col-4 col-md-2">
-                    <p class="blue">Address:</p>
+                    <p class="blue">Postal Address:</p>
                 </div>
                 <div class="col-6 col-md-4 pl-0">
                     <p>PO Box 11174 Glendale, CA 91226</p>
@@ -39,10 +39,7 @@
                     <p class="blue">Hours:</p>
                 </div>
                 <div class="col-6 col-md-4 pl-0">
-                    <p> M - F 5:00am to 3:30pm
-                        <br>
-                        S 8:am to 1:00pm
-                    </p>
+                    <p> M - F </p>
                 </div>
             </div>
         </section>

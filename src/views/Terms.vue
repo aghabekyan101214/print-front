@@ -4,9 +4,8 @@
         <div class="container">
             <p>Welcome to caliprintworks terms and conditions, we provide our services subject to the
                 following terms and conditions.</p>
-            <p class="mb-1"><b>Production hours:</b></p>
-            <p>M - F from <b>5am to 3:30pm PST</b>, <b>S 8:am to 1:00pm</b> <br> We are <b>closed </b> on weekends and <b>national
-                holidays</b>.</p>
+            <p class="mb-1"><b>Production days:</b></p>
+            <p>M - F / We are <b>closed </b> on weekends and <b>national holidays</b>.</p>
             <p class="mb-1"><b>Legal Claim:</b></p>
             <p>Please read these terms and conditions carefully. By accessing <router-link to="/">Caliprintworks.com</router-link> website
                 you agree to be bound by terms and conditions stated below. If you do not agree our
@@ -43,12 +42,6 @@
                 prior to printing process. Once an order has started it can no longer be canceled, placed on
                 hold or changed and you will be required to pay the full amount.</p>
             <p class="mb-1"><b>Pick up &amp; Delivery:</b></p>
-            <ul>
-                <li>Free local delivery is for orders less than 10 miles.</li>
-                <li>Free local delivery is for orders of $150 or more Monday-Friday 6am to 2:30pm.</li>
-                <li>Free local delivery on the weekends is for orders of $200 or more Saturday – Sunday 9am to
-                    6:30pm</li>
-            </ul>
             <p>Quoted turnaround times started once we verify your order and have the files we need to
                 begin your job. Turnaround times may vary depending on quantity, paper type, coating and
                 finishing options and cannot be guaranteed.</p>
@@ -134,7 +127,7 @@
             <p>It is your responsibility to pay for all taxes on printed products. No tax exemption will be
                 offered unless you can offer us official proof of exemption with your purchase order.</p>
             <p class="mb-1"><b>Checks:</b></p>
-            <p>We do except checks from first time-time customers. If you have any questions, please email
+            <p>We do except checks from first time customers. If you have any questions, please email
                 us at <a href="mailto: orders@caliprintworks.com">orders@caliprintworks.com</a></p>
             <p>Please note that your order will not be processed and submitted to press until payment is
                 received.</p>

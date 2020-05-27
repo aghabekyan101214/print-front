@@ -41,7 +41,7 @@
                 This policy was last modified on 02/28/2020
             </p>
             <p class="mb-1"><b>Contacting us</b></p>
-            <p>Caliprintworks welcomes your comments regarding this statement of privacy. If you believe that caliprintworks has not adhered to this statement, please <router-link to="contact">contact us</router-link> at order@caliprintworks.com we will
+            <p>Caliprintworks welcomes your comments regarding this statement of privacy. If you believe that caliprintworks has not adhered to this statement, please <router-link to="contact">contact us</router-link> at info@caliprintworks.com we will
                 Use commercially reasonable efforts to promptly determine and remedy the problem.
             </p>
         </div>
