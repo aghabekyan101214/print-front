@@ -299,6 +299,7 @@
                 for(let i = 0; i < this.forms.length; i++) {
                     if(this.$refs.sel[i].value != "") {
                         this.data.push(this.$refs.sel[i].value);
+                        this.$refs.sel[i].classList.remove("red-borders");
                     }
 
                     let beforeValue = this.$refs.sel[i - 1] != undefined ? this.$refs.sel[i - 1].value : 0;
@@ -314,12 +315,19 @@
                             }
                         })
                     }
+
                 }
 
                 for (let i = currentSelect; i < this.forms.length - 1; i++) {
                     this.data = [];
                     this.price = [];
                     this.$refs.sel[i + 1].options[0].selected = true;
+
+                    if(this.$refs.sel[i + 1].getAttribute("disabled") == null && this.$refs.sel[i + 1].value == "") {
+                        this.$refs.sel[i + 1].classList.add("red-borders");
+                    } else {
+                        this.$refs.sel[i + 1].classList.remove("red-borders");
+                    }
                 }
 
                 this.getPrice();
@@ -485,5 +493,8 @@
     }
     .rad-span{
         margin-right: 10px;
+    }
+    .red-borders {
+        border: 1px solid red!important;
     }
 </style>
