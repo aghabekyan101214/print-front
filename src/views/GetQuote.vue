@@ -156,7 +156,6 @@
 
 <script>
     import Breadcrumb from "../components/Breadcrumb";
-    // import {products} from "../data/printProducts"
     import axios from "axios"
 
     export default {
@@ -280,20 +279,7 @@
                 }
                 return false;
             },
-            // chT(t){
-            //     if(this.time.values) {
-            //         this.time.values.forEach(e => {
-            //             let id = e.id;
-            //             if(this.data.indexOf(id) != -1) {
-            //                 this.data.splice(this.data.indexOf(id), 1);
-            //             }
-            //         });
-            //         this.data.push(Number(t.target.value));
-            //         this.getPrice();
-            //
-            //     }
-            //
-            // },
+
             chF(currentSelect){
                 this.data = [];
                 for(let i = 0; i < this.forms.length; i++) {

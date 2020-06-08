@@ -28,7 +28,7 @@
                                             <ul class="w-200">
                                                 <b-dropdown-item href="#"><p>Apparel Branding</p></b-dropdown-item>
 
-                                                <b-dropdown-item v-for="a in apparel" :key="a.key" :to="'/get-quote/' + a.slug">{{ a.name }}</b-dropdown-item>
+                                                <b-dropdown-item v-for="a in apparel" :key="a.key" :to="'/contact'">{{ a.name }}</b-dropdown-item>
                                             </ul>
                                         </ul>
 
