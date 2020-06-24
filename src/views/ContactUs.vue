@@ -17,7 +17,7 @@
                     <p class="blue">Phone number:</p>
                 </div>
                 <div class="col-6 col-md-4 pl-0">
-                    <p>+1(818) 814-4220</p>
+                    <p>+1(818) 221-5451</p>
                 </div>
 
                 <div class="col-4 col-md-2">
@@ -56,7 +56,7 @@
                     </a>
                 </div>
                 <div class="col-xl-3 col-md-3 col-sm-6">
-                    <a href="tel:8188144220">
+                    <a href="tel:8182215451">
                         <img src="../assets/images/box2.png" class="h50" alt="Phone">
                         <img src="../assets/images/box2-hover.png" class="h50 d-none" alt="Phone">
                     </a>
