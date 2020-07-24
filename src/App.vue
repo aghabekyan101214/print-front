@@ -122,7 +122,7 @@
                     </div>
                 </div>
             </div>
-            <p class="text-center">©Copyright 2019 CaliPrintWork. All rights reserved</p>
+            <p class="d-flex align-items-center justify-content-center flex-wrap">©Copyright 2019 CaliPrintWorks. <span>All rights reserved</span></p>
         </footer>
     </div>
 </template>
