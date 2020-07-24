@@ -7,7 +7,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 ab-logo-cont">
-                        <img class="img-fluid about-logo" src="../assets/images/about-logo.png" alt="About">
+                        <img class="img-fluid d-none d-lg-block about-logo" src="../assets/images/about-logo.png" alt="About">
+                        <img class="img-fluid d-lg-none about-logo" src="../assets/images/about-logo-mob.png" alt="About">
                     </div>
                     <div class="col-lg-8">
                         <div class="story-decoration">

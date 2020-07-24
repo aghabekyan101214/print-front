@@ -122,7 +122,7 @@
                     </div>
                 </div>
             </div>
-            <p class="text-center">CaliPrintWork. All rights reserved</p>
+            <p class="text-center">©Copyright 2019 CaliPrintWork. All rights reserved</p>
         </footer>
     </div>
 </template>

@@ -5,7 +5,7 @@
                 <div class="row m0">
                     <div class="col-xl-12 pl-0 pr-0">
                         <img class="img-fluid d-none d-lg-block" src="../../assets/images/home/banner1.jpg" alt="First slide">
-                        <img class="img-fluid d-lg-none" src="../../assets/images/banner1-mob.jpeg" alt="First slide">
+                        <img class="img-fluid d-lg-none" src="../../assets/images/home/banner1_mob.jpg" alt="First slide">
                     </div>
                 </div>
             </slide>
@@ -14,7 +14,7 @@
                 <div class="row m0">
                     <div class="col-xl-12 pl-0 pr-0">
                         <img class="img-fluid d-none d-lg-block" src="../../assets/images/home/banner2.jpg" alt="Second slide">
-                        <img class="img-fluid d-lg-none" src="../../assets/images/slider2_mob.jpg" alt="Second slide">
+                        <img class="img-fluid d-lg-none" src="../../assets/images/home/banner2_mob.jpg" alt="Second slide">
                     </div>
                 </div>
             </slide>
@@ -23,7 +23,7 @@
                 <div class="row m0">
                     <div class="col-xl-12 pl-0 pr-0">
                         <img class="img-fluid d-none d-lg-block" src="../../assets/images/home/banner3.jpg" alt="Third slide">
-                        <img class="img-fluid d-lg-none" src="../../assets/images/home/banner3.jpg" alt="Third slide">
+                        <img class="img-fluid d-lg-none" src="../../assets/images/home/banner3_mob.jpg" alt="Third slide">
                     </div>
                 </div>
             </slide>

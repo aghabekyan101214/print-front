@@ -46,7 +46,7 @@
                 error: false,
                 success: false,
                 loading: false,
-                maxLength: 175,
+                maxLength: 300,
                 oldImage: ""
             }
         },
