@@ -17,7 +17,7 @@
                     <p class="blue">Phone number:</p>
                 </div>
                 <div class="col-6 col-md-4 pl-0">
-                    <p>+1(818) 221-5451</p>
+                    <p>+1(818) 813-4430</p>
                 </div>
 
                 <div class="col-4 col-md-2">
