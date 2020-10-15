@@ -56,7 +56,7 @@
                     </a>
                 </div>
                 <div class="col-xl-3 col-md-3 col-sm-6">
-                    <a href="tel:8188134430">
+                    <a href="tel:+1(818)813-4430">
                         <img src="../assets/images/box2.png" class="h50" alt="Phone">
                         <img src="../assets/images/box2-hover.png" class="h50 d-none" alt="Phone">
                     </a>
